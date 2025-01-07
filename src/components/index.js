@@ -13,6 +13,7 @@ import WhitepapperData from "./InnerPages/whitepapers/whitePaperData";
 import About from "./InnerPages/About";
 import Blog from "./InnerPages/Blogs/Blog";
 import ContactSection from "./InnerPages/ContactSection";
+import Career from "./InnerPages/Career";
 
 export {
   Banner,
@@ -30,4 +31,5 @@ export {
   Blog,
   ContactSection,
   About,
+  Career,
 };

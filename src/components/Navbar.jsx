@@ -15,7 +15,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex  items-center justify-between px-10 md:px-24 py-2 h-14 md:h-24 ">
+    <nav className="flex  items-center justify-between px-5 md:px-24 py-2 h-14 md:h-24 ">
       <Link to="/" className="flex items-center">
         <img
           src={logo}
@@ -42,6 +42,9 @@ export default function Navbar() {
           </Link>
           <Link to="/about" className="bg-[#E7FBFF]  py-3 px-6 rounded-full">
             About Us
+          </Link>
+          <Link to="/career" className="bg-[#3dec866c]  py-3 px-6 rounded-full">
+            Career
           </Link>
         </div>
 
@@ -93,7 +96,10 @@ export default function Navbar() {
               >
                 Our Service
               </Link>
-              <Link to="/blog" className="bg-[#EEFFE7]  py-3  w-full rounded-full">
+              <Link
+                to="/blog"
+                className="bg-[#EEFFE7]  py-3  w-full rounded-full"
+              >
                 Blogs
               </Link>
               <Link
@@ -101,6 +107,12 @@ export default function Navbar() {
                 className="bg-[#E7FBFF]  py-3   w-full rounded-full"
               >
                 About Us
+              </Link>
+              <Link
+                to="/career"
+                className="bg-[#3dec866c]  py-3   w-full rounded-full"
+              >
+                Career
               </Link>
             </motion.div>
           </button>

@@ -12,9 +12,8 @@ import { Transition } from "./components/ui/Transition";
 function App() {
   return (
     <div className="text-justify overflow-hidden">
-      <div className="">
+      
         <Banner />
-      </div>
       <div className="bg-why-pattern bg-cover bg-no-repeat bg-center">
         <WhySection />
       </div>

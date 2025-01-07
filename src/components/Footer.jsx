@@ -57,45 +57,45 @@ export default function Footer() {
       </header>
 
       <div className=" flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl border shadow-md overflow-hidden max-w-5xl w-full">
+        <div className="bg-white rounded-3xl border shadow-md p-4 overflow-hidden max-w-5xl">
           <div className="flex flex-col md:flex-row">
             {/* Left Section */}
-            <div className="px-10 p-8 flex ">
+            <div className=" md:w-5/6  md:flex ">
               <img
                 src="https://picsum.photos/200"
                 alt=""
-                className=" rounded-2xl  w-[21rem] h-[18rem]"
+                className=" rounded-2xl w-full md:w-[50%]  md:h-[20rem] object-cover"
               />
-              <div className="grid grid-cols-2 px-10 md:px-1 gap-10 rounded-lg ">
+              <div className="grid grid-cols-2 px-1 gap-1 rounded-lg ">
                 <img
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
-                  className="rounded-2xl w-28 h-36 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
-                  className="rounded-2xl w-28 h-36 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
-                  className="rounded-2xl w-28 h-36 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
-                  className=" rounded-2xl w-28 h-36 object-cover hover:scale-105 transition-transform duration-300"
+                  className=" rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
 
             {/* Right Section  */}
-            <div className="md:w-1/2 p-8">
+            <div className="md:w-[60%] md:py-14 md:pr-5 ">
               <h2 className="text-3xl  text-gray-800 mb-4">
                 Book Your Consultation with Macula Consultant
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 text-justify ">
                 At Macula Consultant, we redefine consultancy through a dynamic
                 fusion of innovation, expertise, and strategic vision.
               </p>

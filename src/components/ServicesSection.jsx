@@ -303,7 +303,7 @@ export default function ServicesSection() {
             ref={ref}
             className={`${styles.sectionHeadText} ${
               isInView ? "motion-preset-slide-right-md" : "opacity-0"
-            } transition-all duration-1000 ease-in-out`}
+            } transition-all duration-1000 ease-in-out py-5`}
           >
             Explore Our <span className="text-[#588157] italic">Services</span>
           </h2>

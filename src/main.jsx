@@ -15,7 +15,8 @@ import {
   Blog,
   ContactSection,
   ContactForm,
-  About
+  About,
+  Career,
 } from "./components/index.js";
 import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
@@ -40,6 +41,7 @@ useEffect(()=>{
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactSection />} />
           <Route path="/about" element={<About />} />
+          <Route path="/career" element={<Career />} />
           <Route path="*" element={<App />} />
         </Routes>
         <ContactForm />

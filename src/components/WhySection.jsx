@@ -167,7 +167,7 @@ export default function WhySection() {
               isInView
                 ? "motion-preset-slide-down-lg motion-duration-1000"
                 : "opacity-0"
-            } transition-all ease-in-out`}
+            } transition-all ease-in-out tracking-wider`}
           >
             Why <span className="text-[#588157] italic">Consulting</span> is
             Important?
