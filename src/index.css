@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rounded-cylinder {
+  clip-path: path("M0 0C18 11 36 11 55 0 50 13 53 21 55 30 36 22 17 23 0 30 4 25 7 9 0 0"
+  
+  );
+}
+
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.breathing-bg {
+  background-image: url("/src/assets/uniqueImg.png"); /* Replace with your image URL */
+  background-size: 100%; /* Starting size */
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: breath 6s infinite ease-in-out;
+}
+
+@keyframes breath {
+  0%, 100% {
+    background-size: 100%; /* Normal size */
+  }
+  50% {
+    background-size: 105%; /* Expanded size */
+  }
+}
