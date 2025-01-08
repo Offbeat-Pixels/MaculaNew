@@ -57,14 +57,14 @@ export default function VideoSection() {
     <section className="py-0 bg-black">
       <div>
         <div
-          className="relative h-[50vh]  md:h-[100vh]  rounded-lg "
+          className="relative h-[40vh]  lg:h-[100vh]  rounded-lg "
           ref={ref} // Attach the observer here
         >
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Video element */}
             <video
               ref={videoRef}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain lg:object-cover"
               muted
               loop
               preload="auto"

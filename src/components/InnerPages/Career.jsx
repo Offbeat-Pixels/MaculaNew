@@ -43,7 +43,7 @@ const Career = () => {
               <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
               <p className="text-gray-600">{job.location}</p>
               <p className="text-gray-600">{job.type}</p>
-              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+              <button className="mt-4 bg-[#8dbc50] text-white font-bold px-4 py-2 rounded-lg hover:bg-[#638834]">
                 Apply Now
               </button>
             </div>

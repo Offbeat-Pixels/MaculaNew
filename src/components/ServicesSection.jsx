@@ -332,7 +332,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-6 ">
+        <div className="grid  lg:grid-cols-3 gap-6 ">
           {services.map((service, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...service} />
           ))}

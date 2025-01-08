@@ -209,8 +209,8 @@ const slides = [
     title: (
       <>
         <div className={`${styles.BannerHeadText} w-fit`}>
-          <p className="md:text-white text-black ">GEN AI</p>
-          <p className="md:text-[5.5rem] italic  ">Driven Products</p>
+          <p>Gen AI</p>
+          <p className={`${styles.BannerSubText} italic`}>Driven Products</p>
         </div>
       </>
     ),
@@ -221,12 +221,12 @@ const slides = [
   {
     title: (
       <>
-        <div className={`${styles.BannerHeadText}`}>
-          <p className=" text-black  lg:text-7xl ">The Founder’s Trap </p>
-          <p className="lg:text-6xl italic font-semibold">
-            How Selling Stifles{" "}
-          </p>
-          <p className="lg:text-6xl italic font-semibold ">Startup Growth</p>
+        <div className={`${styles.BannerHeadText} `}>
+          <p className=" lg:text-black   ">The Founder’s Trap </p>
+          <div className={`${styles.BannerSubText} italic`}>
+            <p className="">How Selling Stifles </p>
+            <p className=" ">Startup Growth</p>
+          </div>
         </div>
       </>
     ),
@@ -237,16 +237,12 @@ const slides = [
   {
     title: (
       <>
-        <div className={`${styles.BannerHeadText} space-y-3 `}>
-          <p className="md:text-white text-black lg:text-7xl ">
-            Digital Marketing
-          </p>
-          <p className="lg:text-6xl  text-yellow-500 italic  font-semibold">
-            A Crucial Piece of{" "}
-          </p>
-          <p className="lg:text-6xl text-yellow-500 italic tracking-tighter  font-semibold">
-            the Marketing Puzzle{" "}
-          </p>
+        <div className={`${styles.BannerHeadText} `}>
+          <p className="text-white   ">Digital Marketing</p>
+          <div className={`${styles.BannerSubText} italic`}>
+            <p className="   ">A Crucial Piece of </p>
+            <p className="  ">the Marketing Puzzle </p>
+          </div>
         </div>
       </>
     ),
@@ -294,7 +290,8 @@ export default function Banner() {
             key={index}
             src={slide.mobileImage}
             alt="Mobile Slide"
-            className={`absolute top-0 left-2 w-full h-1/3 object-cover z-0 transition-opacity duration-500 ${
+            // className={`absolute top-0 left-2 w-full h-1/3 object-cover z-0 transition-opacity duration-500 ${
+            className={`absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
               currentSlide === index ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -323,15 +320,16 @@ export default function Banner() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full  w-full  z-10"
+          className="relative h-full  w-full text-nowrap  z-10"
         >
-          <div className="px-5 pt-10  md:pt-0 md:px-24 grid h-full w-full  items-center md:grid-cols-2">
-            <div className="space-y-10  ">
+          <div className="px-5 sm:px-10  lg:px-24 grid h-full w-full  items-center md:grid-cols-2">
+            <div className="space-y-10 ">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl"
+                // className="text-4xl md:text-5xl"
+                // className={`${styles.BannerHeadText} text-white`}
               >
                 {slides[currentSlide].title}
               </motion.h1>
