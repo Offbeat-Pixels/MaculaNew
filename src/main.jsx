@@ -206,8 +206,8 @@ const Main = () => {
         scrollInstance.current = new LocomotiveScroll({
           el: containerRef.current,
           smooth: true,
-          // tablet: { smooth: true },
-          // smartphone: { smooth: true },
+          tablet: { smooth: true },
+          smartphone: { smooth: true },
         });
       }
     };

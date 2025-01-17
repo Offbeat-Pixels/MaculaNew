@@ -1507,9 +1507,9 @@ export default function ImageCarousel() {
       </div>
 
       {/* Content */}
-      <div className="lg:flex w-full md:pr-96">
+      <div className="lg:flex w-full lg:pr-72 2xl:pr-96">
         {/* Left Side Text */}
-        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-40">
+        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-40">
           <AnimatePresence>
             <div key={images[currentIndex].id} className="absolute mt-10">
               <motion.p
@@ -1535,7 +1535,7 @@ export default function ImageCarousel() {
               to="/services"
               onClick={delayAndGo}
               onMouseLeave={() => setIsClicked(false)}
-              className="flex items-center border gap-2 mt-10  lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
+              className="flex items-center border gap-2 mt-10   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
             >
               <motion.div
                 onClick={() => setIsClicked(true)}

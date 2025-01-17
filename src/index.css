@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css';
+/* @import 'https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.css'; */
 
 html,body{
   overflow: hidden;
@@ -20,8 +20,8 @@ html,body{
   position: relative;
 }
 [data-scroll] {
-  /* will-change: scroll-position; */
-  will-change: transform;
+  will-change: scroll-position;
+  /* will-change: transform; */
 }
 
 

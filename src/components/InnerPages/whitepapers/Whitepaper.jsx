@@ -37,7 +37,7 @@ function Whitepaper() {
         ref={ref}
         className={`${styles.sectionHeadText} text-center p-5 motion-preset-slide-down-lg motion-duration-1000 motion-delay-300`}
       >
-        White Papers
+        {/* White Papers */}
       </h3>
       {/* Categories Menu */}
       <div className="text-center mb-10">

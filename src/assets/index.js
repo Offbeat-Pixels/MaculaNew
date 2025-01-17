@@ -22,6 +22,7 @@ import slider6 from "./Slider6.jpg";
 import slider7 from "./Slider7.jpg";
 import slider8 from "./Slider8.jpg";
 import mission from "./mission.png";
+import ValueImg from "./Value.png";
 
 import Papper1 from "./Papper1.png";
 // import Papper11 from "./Papper1.webm";
@@ -70,4 +71,5 @@ export {
   slider8,
   mission,
   MaculaVideo,
+  ValueImg,
 };
