@@ -13,6 +13,16 @@ import WhitePapper4 from "./WhitePapper4.png";
 import WhitePapper5 from "./WhitePapper5.png";
 import WhitePapper6 from "./WhitePapper6.png";
 import WhitePapper7 from "./WhitePapper7.png";
+import slider1 from "./Slider1.jpg";
+import slider2 from "./Slider2.jpg";
+import slider3 from "./Slider3.jpg";
+import slider4 from "./Slider4.jpg";
+import slider5 from "./Slider5.jpg";
+import slider6 from "./Slider6.jpg";
+import slider7 from "./Slider7.jpg";
+import slider8 from "./Slider8.jpg";
+import mission from "./mission.png";
+
 import Papper1 from "./Papper1.png";
 // import Papper11 from "./Papper1.webm";
 import Papper11 from "./Papper1OG.webm";
@@ -20,6 +30,8 @@ import Papper2 from "./Papper2.png";
 import Papper22 from "./Papper2.mp4";
 import Papper3 from "./Papper3.png";
 import Papper33 from "./Papper3.mp4";
+import MaculaVideo from "./MaculaVideo.webm";
+
 
 
 
@@ -48,5 +60,14 @@ export {
   Papper22,
   Papper3,
   Papper33,
- 
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+  slider7,
+  slider8,
+  mission,
+  MaculaVideo,
 };

@@ -141,7 +141,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-5 sm:px-8 md:px-10 xl:px-16 2xl:px-24 py-2 h-14 sm:h-16 md:h-20 xl:h-24">
+    <nav className="flex z-50 items-center justify-between px-5 sm:px-8 md:px-10 xl:px-16 2xl:px-24 py-2 h-14 sm:h-16 md:h-20 xl:h-24">
       <Link to="/" className="flex items-center">
         <img
           src={logo}
@@ -180,7 +180,7 @@ export default function Navbar() {
           </Link>
           <Link
             to="/career"
-            className="bg-[#3dec866c] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            className="bg-[#8ef2b86c] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
           >
             Career
           </Link>

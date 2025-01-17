@@ -5,7 +5,8 @@ import { useLocation } from "react-router-dom";
 import { Transition } from "../../ui/Transition";
 
  function Services() {
-  const [selectedCategory, setSelectedCategory] = useState("GTM + Sales");
+  const [selectedCategory, setSelectedCategory] =
+    useState("Sales as a Service");
   const [playingIndex, setPlayingIndex] = useState(null); // Tracks which video is playing
   const videoRefs = useRef([]);
   const location = useLocation();
@@ -18,8 +19,8 @@ import { Transition } from "../../ui/Transition";
   }, [location]);
 
   const categories = [
-    "GTM + Sales",
-    "Gen AI Driven Products",
+    "Sales as a Service",
+    "Gen AI Enabled Products",
     "Business Consulting",
   ];
 
@@ -102,22 +103,22 @@ import { Transition } from "../../ui/Transition";
         {filteredServiceData.map((service, index) => (
           <div key={service.id} className="relative w-full">
             {/* Service Card */}
-            <div className="relative group w-full h-fit text-left rounded-xl  flex flex-col sm:flex-row justify-between ">
+            <div className="relative group w-full h-fit text-left rounded-xl  flex flex-col lg:flex-row justify-between ">
               {/* Text Section */}
-              <div className="sm:w-1/2 md:pr-24">
+              <div className="lg:w-1/2 lg:pr-24">
                 <p className={`${styles.PageSubHeading} `}>
                   {service.category}
                 </p>
-                <p className="text-md pt-10 text-justify font-semibold text-gray-800">
+                {/* <p className="text-md pt-10 text-justify font-semibold text-gray-800">
                   {service.title}
-                </p>
-                <p className="text-md  py-8 text-justify w-full border-stone-950 text-gray-600">
+                </p> */}
+                <p className="text-md  py- text-justify w-full border-stone-950 text-gray-600">
                   {service.detail}
                 </p>
               </div>
 
               {/* Video Section */}
-              <div className="sm:w-1/2 relative">
+              <div className="lg:w-1/2 h-fit relative">
                 <video
                   ref={(el) => (videoRefs.current[index] = el)}
                   className="w-full h-full object-cover rounded-3xl"

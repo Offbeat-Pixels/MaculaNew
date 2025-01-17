@@ -1,54 +1,3 @@
-// import React from "react";
-// import BlogCard from "./BlogCard";
-// import { styles } from "../../style";
-
-// export default function Blog() {
-//   const blogData = {
-//     title: "5 Principles to Grow Your Business",
-//     description:
-//       "We specialize in providing practical advice and hands-on support to businesses like yours. Our team has years of experience in various industries and brings together skills in strategy, operations, finance, and more.",
-//     imageUrl: BlogImg, // Ensure this path is correct relative to your public directory
-//   };
-
-//   return (
-//     <div className="bg-gradient-to-r from-[#ffe9e5] via-[#fffbe7] to-[#FAF9F5]  px-4 py-12 sm:px-6 lg:px-8">
-//       <h3 className={`${styles.sectionHeadText} text-center pt-5`}>
-//         Our Blogs
-//       </h3>
-//       {/* Latest Blogs Section */}
-//       <section>
-//         <h2 className="text-2xl font-bold text-gray-900  mb-8">Latest Blogs</h2>
-//         <div className="space-y-12">
-//           <BlogCard {...blogData} isLarge />
-//           <div className="grid gap-8 sm:grid-cols-2">
-//             {[...Array(4)].map((_, i) => (
-//               <BlogCard key={i} {...blogData} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Featured Blogs Section */}
-//       <section className="mt-16">
-//         <h2 className="text-2xl font-bold text-gray-900 mb-8">
-//           Featured Blogs
-//         </h2>
-//         <div className="space-y-12">
-//           <BlogCard {...blogData} isLarge />
-//           <div className="grid gap-8 sm:grid-cols-2">
-//             {[...Array(2)].map((_, i) => (
-//               <BlogCard key={i} {...blogData} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-
-
-
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
@@ -201,6 +150,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 
 ];
 
+
 function Blog() {
   const [selectedBlog, setSelectedBlog] = useState(LatestBlogs[0]);
   const [selectedOldBlog, setSelectedOldBlog] = useState(OldBlogs[0]);
@@ -212,6 +162,7 @@ function Blog() {
   const [scrollProgressLatest, setScrollProgressLatest] = useState(0);
   const [scrollProgressOld, setScrollProgressOld] = useState(0);
 
+  // Scroll Content Function
   const scrollContent = (direction, section) => {
     const container =
       section === "latest" ? contentRefLatest.current : contentRefOld.current;
@@ -226,6 +177,7 @@ function Blog() {
     }
   };
 
+  // Handle Scroll Progress
   const handleScroll = (section) => {
     const container =
       section === "latest" ? contentRefLatest.current : contentRefOld.current;
@@ -266,12 +218,8 @@ function Blog() {
 
   return (
     <div className="min-h-screen bg-[#FDF8F7] p-8 text-justify">
-      <div className="md:pl-14 md:pr-28">
-        <h3
-          className={`${styles.sectionHeadText} text-center pt-5 motion-preset-slide-down-lg motion-duration-1000 motion-delay-300`}
-        >
-          Our Blogs
-        </h3>
+      <div className="lg:pl-14 lg:pr-28">
+        <h3 className="text-center pt-5 text-4xl font-bold">Our Blogs</h3>
 
         {/* Latest Blogs Section */}
         <Section
@@ -281,8 +229,7 @@ function Blog() {
           setSelectedBlog={setSelectedBlog}
           contentRef={contentRefLatest}
           scrollProgress={scrollProgressLatest}
-          scrollContent={scrollContent}
-          section="latest"
+          setScrollProgress={setScrollProgressLatest}
         />
 
         {/* Featured Blogs Section for Old Blogs */}
@@ -293,8 +240,7 @@ function Blog() {
           setSelectedBlog={setSelectedOldBlog}
           contentRef={contentRefOld}
           scrollProgress={scrollProgressOld}
-          scrollContent={scrollContent}
-          section="old"
+          setScrollProgress={setScrollProgressOld}
         />
       </div>
     </div>
@@ -307,94 +253,66 @@ const Section = ({
   selectedBlog,
   setSelectedBlog,
   contentRef,
-  scrollProgress,
-  scrollContent,
-  section,
-}) => (
-  <div className="mt-20">
-    <p className="my-5 text-4xl font-bold">{title}</p>
-    <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] md:h-[30rem] bg-white p-2 md:p-10 shadow-sm">
-      <div className="grid md:grid-cols-2">
-        <img
-          src={selectedBlog.image}
-          alt="Featured blog post"
-          className="md:h-[80%] md:w-[85%] rounded-2xl object-cover"
-        />
-        <div className="flex">
-          <div className="flex flex-col justify-start">
-            <h2 className="text-2xl font-bold text-[#538D4E]">
-              {selectedBlog.title}
-            </h2>
-            <div
-              ref={contentRef}
-              className="max-h-[40rem] md:max-h-[25rem] overflow-y-auto p-4 scrollbar-none"
-            >
-              <p className="text-gray-600 whitespace-pre-line">
-                {selectedBlog.description}
-              </p>
+}) => {
+
+
+  return (
+    <div className="mt-20">
+      <p className="my-5 text-4xl font-bold">{title}</p>
+      <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
+        <div className="grid lg:grid-cols-2">
+          <img
+            src={selectedBlog.image}
+            alt="Featured blog post"
+            className="lg:h-[80%] lg:w-[85%] rounded-2xl object-cover"
+          />
+          <div className="flex">
+            <div className="flex flex-col justify-start">
+              <h2 className="text-2xl font-bold text-[#538D4E]">
+                {selectedBlog.title}
+              </h2>
+              <div
+                ref={contentRef}
+                className="max-h-[40rem] lg:max-h-[25rem]  overflow-y-scroll  p-5"
+                onScroll={() => handleScroll("latest")}
+              >
+                <p className="text-gray-600 whitespace-pre-line">
+                  {selectedBlog.description}
+                </p>
+              </div>
             </div>
           </div>
-
-          {/* Custom Scroll Arrows */}
-          <ScrollControls
-            scrollContent={scrollContent}
-            scrollProgress={scrollProgress}
-            section={section}
-          />
         </div>
       </div>
-    </div>
 
-    {/* Blog Grid */}
-    <div className="grid gap-6 sm:grid-cols-2">
-      {blogs.map((post) => (
-        <motion.button
-          key={post.id}
-          onClick={() => setSelectedBlog(post)}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="flex gap-4 rounded-2xl bg-white p-4 text-left shadow-sm transition-all hover:shadow-md"
-        >
-          <img
-            src={post.image}
-            alt={post.title}
-            className="h-24 w-24 rounded-2xl object-cover"
-          />
-          <div>
-            <h3 className="mb-2 font-extrabold text-black">{post.title}</h3>
-            <p className="text-md text-gray-600 line-clamp-2">
-              {post.description}
-            </p>
-          </div>
-        </motion.button>
-      ))}
+      {/* Blog Grid */}
+      <div className="grid gap-6 h-full w-full sm:grid-cols-2">
+        {blogs.map((post) => (
+          <motion.button
+            key={post.id}
+            onClick={() => setSelectedBlog(post)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="flex gap-4 rounded-2xl bg-white p-4 text-left shadow-sm transition-all hover:shadow-md"
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="h-24 w-24 rounded-2xl object-cover"
+            />
+            <div>
+              <h3 className="mb-2 font-extrabold text-black">{post.title}</h3>
+              <p className="text-md text-gray-600 line-clamp-2">
+                {post.description}
+              </p>
+            </div>
+          </motion.button>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-const ScrollControls = ({ scrollContent, scrollProgress, section }) => (
-  <div className="flex flex-col items-center absolute right-1 md:right-20 self-start">
-    <button
-      onClick={() => scrollContent("up", section)}
-      className="rounded-t-md bg-gray-100 p-2 hover:bg-gray-200 active:bg-gray-300"
-      aria-label="Scroll up"
-    >
-      <ChevronUp className="h-4 w-4" />
-    </button>
-    <div className="h-[20rem] w-2 bg-gray-200 relative">
-      <div
-        className="absolute w-full bg-[#686868]"
-        style={{ height: `${scrollProgress}%` }}
-      />
-    </div>
-    <button
-      onClick={() => scrollContent("down", section)}
-      className="rounded-b-md bg-gray-100 p-2 hover:bg-gray-200 active:bg-gray-300"
-      aria-label="Scroll down"
-    >
-      <ChevronDown className="h-4 w-4" />
-    </button>
-  </div>
-);
+
 
 export default Transition(Blog);

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="min-h-fit bg-gradient-to-br from-gray-50 to-white">
+    <div
+      className="min-h-fit bg-gradient-to-br from-gray-50 to-white"
+    >
       {/* Header Section */}
-      <header className="max-w-7xl md:ml-80  px-10 pt-8 pb-4">
+      <header className="max-w-7xl lg:ml-40 2xl:ml-80  px-10 pt-8 pb-4">
         <div className=" mb-8">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-light mb-4">
             Turn Your Vision Into Reality.

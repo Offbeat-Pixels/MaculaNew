@@ -121,8 +121,8 @@ export default function WhySection() {
     <section className=" px-14  py-10  ">
       <div className="grid lg:grid-cols-2 gap-1 items-center">
         {/* Left side - Image */}
-        <div className="relative">
-          <div className="aspect-square max-w-2xl">
+        <div className="relative ">
+          <div className="overflow-visible aspect-square max-w-2xl">
             <motion.div className="relative py-20">
               {pieces.map((piece) => (
                 <motion.img
@@ -168,6 +168,7 @@ export default function WhySection() {
                 ? "motion-preset-slide-down-lg motion-duration-1000"
                 : "opacity-0"
             } transition-all ease-in-out `}
+            
           >
             Why <span className="text-[#588157] italic">Consulting</span> is
             Important?

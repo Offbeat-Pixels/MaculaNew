@@ -236,11 +236,11 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-transparent rounded-3xl overflow-visible border-2 p-5"
+        className="bg-transparent rounded-3xl h-full overflow-visible border-2 p-5"
       >
-        <div className="mt-5">
+        <div className="">
           <h3 className="text-xl font-medium mb-3">{title}</h3>
-          <p className="text-gray-600 mb-6">{description}</p>
+          <p className="text-gray-600  mb-6">{description}</p>
           <Link
             to={{
               pathname: "/services",
@@ -251,7 +251,7 @@ const ProjectCard = ({
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="relative rounded-2xl">
+        <div className="relative  rounded-2xl">
           <img src={image} alt="project_image" className="w-full h-auto" />
         </div>
       </Tilt>
@@ -261,24 +261,24 @@ const ProjectCard = ({
 
 const services = [
   {
-    title: "GTM + Sales",
-    category: "GTM + Sales",
+    title: "Sales as a Service",
+    category: "Sales as a Service",
     description:
-      "We specialize in providing practical advice and hands-on support to businesses like yours.",
+      "A Go-to-Market (GTM) strategy is a comprehensive plan that outlines how a company will sell its products or services to customers. It encompasses various components that are essential for successfully launching and positioning a product in the market. ",
     image: gtmImg,
   },
   {
     title: "Business Consulting",
     category: "Business Consulting",
     description:
-      "We specialize in providing practical advice and hands-on support to businesses like yours.",
+      "We provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
     image: gtmImg,
   },
   {
-    title: "Gen AI Driven Products",
-    category: "Gen AI Driven Products",
+    title: "Gen AI Enabled Products",
+    category: "Gen AI Enabled Products",
     description:
-      "We specialize in providing practical advice and hands-on support to businesses like yours.",
+      "WWe provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
     image: gtmImg,
   },
 ];

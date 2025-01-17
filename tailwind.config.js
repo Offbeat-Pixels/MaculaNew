@@ -11,8 +11,10 @@ export default {
         "unique-pattern": "url('/src/assets/uniqueImg.png')",
         "servicepage-pattern": "url('/src/assets/ServiceImg.png')",
         "WhitePapper2-pattern": "url('/src/assets/WhitePapper2.png')",
+        "mission-pattern": "url('/src/assets/mission.png')",
+        "values-pattern": "url('/src/assets/values.png')",
       },
     },
   },
-  plugins: [require("tailwindcss-motion")],
+  plugins: [require("tailwindcss-motion"), require("@tailwindcss/typography")],
 };

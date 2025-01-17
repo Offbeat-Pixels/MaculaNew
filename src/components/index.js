@@ -14,6 +14,9 @@ import About from "./InnerPages/About";
 import Blog from "./InnerPages/Blogs/Blog";
 import ContactSection from "./InnerPages/ContactSection";
 import Career from "./InnerPages/Career";
+import ImageCarousel from "./ImageCarousel";
+import InnerWhitePaperDetail from "./InnerPages/whitepapers/InnerWhitePaperDetail";
+import WhitepaperCard from "./InnerPages/whitepapers/WhitePapperCard";
 
 export {
   Banner,
@@ -32,4 +35,7 @@ export {
   ContactSection,
   About,
   Career,
+  ImageCarousel,
+  InnerWhitePaperDetail,
+  WhitepaperCard,
 };

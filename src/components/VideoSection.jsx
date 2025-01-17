@@ -35,6 +35,7 @@
 import React, { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { MaculaVideo } from "../assets";
 
 export default function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -54,7 +55,7 @@ export default function VideoSection() {
   }, [inView, isPlaying]);
 
   return (
-    <section className="py-0 bg-black">
+    <section className="py-0  bg-black">
       <div>
         <div
           className="relative h-[40vh]  lg:h-[100vh]  rounded-lg "
@@ -64,14 +65,15 @@ export default function VideoSection() {
             {/* Video element */}
             <video
               ref={videoRef}
-              className="w-full h-full object-contain lg:object-cover"
+              className="w-full h-full object-contain lg:object-fill"
               muted
               loop
               preload="auto"
               style={{ display: isPlaying ? "block" : "none" }} // Hide until it plays
             >
               <source
-                src="https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_hevc.mp4"
+                // src="https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_hevc.mp4"
+                src={MaculaVideo}
                 type="video/mp4"
               />
             </video>

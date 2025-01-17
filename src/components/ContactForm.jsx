@@ -65,7 +65,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full min-h-fit p-4 md:p-8 lg:p-12 bg-contact-pattern bg-cover bg-no-repeat bg-center">
+    <div className="w-full min-h-fit  p-4 md:p-8 lg:p-12 bg-contact-pattern bg-cover bg-no-repeat bg-center">
       <div className="max-w-7xl md:pl-14 shadow-none">
         <div className="p-0">
           <p

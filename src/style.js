@@ -15,7 +15,7 @@ const styles = {
     "sm:text-[18px] text-[1rem] text-secondary uppercase tracking-wider",
 
   PageSubHeading:
-    "font-normal text-[#67883B] lg:text-[4rem] md:text-[3rem] sm:text-[2.5rem] xs:text-[2rem] lg:leading-[1em] leading-[1.2em]",
+    "font-normal text-[#67883B] lg:text-[2rem] md:text-[1.5rem] text-[1rem] lg:leading-[1em] leading-[1.2em]",
 };
 
 export { styles };
