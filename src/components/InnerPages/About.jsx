@@ -466,6 +466,7 @@ import { useRef ,useEffect, useState} from 'react'
 import { Transition } from '../ui/Transition'
 import gsap from "gsap";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { styles } from '../../style';
 gsap.registerPlugin(ScrollTrigger)
 
  function About() {
@@ -570,7 +571,7 @@ gsap.registerPlugin(ScrollTrigger)
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text  bg-gradient-to-r  from-primary to-primary/50"
+              className={` mb-8 bg-clip-text ${styles.sectionHeadText} bg-gradient-to-r  from-primary to-primary/50`}
             >
               Our Vision
             </motion.h1>
@@ -596,12 +597,12 @@ gsap.registerPlugin(ScrollTrigger)
       </section>
 
       {/* Mission Section */}
-      <section className="p-24 container relative overflow-hidden">
+     <section className="p-24  relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
 
-        <div className="container mx-auto px-4 relative">
+        <div className=" mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -609,117 +610,12 @@ gsap.registerPlugin(ScrollTrigger)
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+            <span className="text-sm font-semibold tracking-wider  uppercase">
               Discover Our Purpose
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/50">
-              Our Mission
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto" />
-          </motion.div>
-
-          <div className="relative">
-            {/* Central line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/5 to-transparent hidden lg:block" />
-
-            {missions.map((mission, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="mb-12 lg:mb-24"
-              >
-                <div
-                  className={`flex flex-col lg:flex-row items-center ${
-                    index % 2 === 0 ? "lg:flex-row-reverse" : ""
-                  } gap-8 lg:gap-16`}
-                >
-                  {/* Icon Column */}
-                  <div className="w-full lg:w-1/3">
-                    <div
-                      className={`group relative overflow-hidden border-0 ${
-                        index % 2 === 0
-                          ? "lg:translate-x-12"
-                          : "lg:-translate-x-12"
-                      }`}
-                    >
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${mission.gradient} opacity-20 transition-opacity duration-300 group-hover:opacity-30`}
-                      />
-                      <div className="p-8 flex items-center justify-center">
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl transform group-hover:scale-125 transition-transform duration-300" />
-                          <mission.icon
-                            className={`w-20 h-20 ${mission.accent} transition-all duration-300 relative z-10`}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content Column */}
-                  <div className="w-full lg:w-2/3">
-                    <div className="group relative overflow-hidden border-0 backdrop-blur-sm bg-background/50">
-                      <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background" />
-                      <div className="relative p-8">
-                        <div className="space-y-4">
-                          <div
-                            className={`w-12 h-1 bg-gradient-to-r ${mission.gradient}`}
-                          />
-                          <h3
-                            className={`text-2xl font-bold ${mission.accent} transition-colors duration-300`}
-                          >
-                            {mission.title}
-                          </h3>
-                          <p className="text-muted-foreground text-lg leading-relaxed">
-                            {mission.description}
-                          </p>
-                        </div>
-
-                        {/* Number indicator */}
-                        <div className="absolute top-4 right-4 opacity-10 font-bold text-6xl">
-                          0{index + 1}
-                        </div>
-
-                        {/* Decorative elements */}
-                        <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Connection dot for timeline */}
-                <div
-                  className="hidden lg:block absolute left-1/2 transform -translate-x-1/2"
-                  style={{ top: `${index * 24 + 12}rem` }}
-                >
-                  <div className="w-4 h-4 rounded-full bg-primary/20 border-2 border-primary/50" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="p-24 container relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
-
-        <div className="container mx-auto px-4 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-24"
-          >
-            <span className="text-sm font-semibold tracking-wider text-primary uppercase">
-              Discover Our Purpose
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/50">
+            <h2
+              className={`  ${styles.sectionHeadText} mt-4  mb-6 bg-clip-text text-black bg-gradient-to-r from-primary via-primary/80 to-primary/50`}
+            >
               Our Mission
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto" />
@@ -763,7 +659,7 @@ gsap.registerPlugin(ScrollTrigger)
                   <div className="group relative overflow-hidden border-0 backdrop-blur-sm bg-background/50">
                     <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background" />
                     <div className="relative p-8">
-                      <div className="space-y-4">
+                      <div className="space-y-4 text-justify">
                         <div
                           className={`w-12 h-1 bg-gradient-to-r ${mission.gradient}`}
                         />
@@ -778,9 +674,9 @@ gsap.registerPlugin(ScrollTrigger)
                       </div>
 
                       {/* Number indicator */}
-                      <div className="absolute top-4 right-4 opacity-10 font-bold text-6xl">
+                      {/* <div className="absolute top-4 right-4 opacity-10 font-bold text-6xl">
                         0{index + 1}
-                      </div>
+                      </div> */}
 
                       {/* Decorative elements */}
                       <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

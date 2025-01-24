@@ -3,23 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { styles } from "../style";
 import {
-  
   WhitePapper2,
-  
   WhitePapper4,
-  
   WhitePapper6,
-  Papper1,
   Papper11,
-  Papper2,
   Papper22,
-  Papper3,
   Papper33,
 } from "../assets";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 const slides = [
   {
     title: (
@@ -71,7 +64,7 @@ const slides = [
   },
 ];
 
- function Banner() {
+function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videoRefs = useRef([]);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -205,6 +198,5 @@ const slides = [
     </div>
   );
 }
-
 
 export default Banner;

@@ -47,11 +47,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Banner,
-  WhySection,
+  // WhySection,
   ServicesSection,
   UniqueSection,
   VideoSection,
-  ContactForm,
+  // ContactForm,
   ImageCarousel
 } from "./components";
 import { Transition } from "./components/ui/Transition";

@@ -1497,7 +1497,7 @@ const images = [
 
       {/* Title Section */}
       <div className="text-center">
-        <p className="text-3xl font-bold">
+        <p className={`text-3xl font-bold ${styles.sectionHeadText}`}>
           Why <span className="text-[#588157] italic">Consulting</span> is
           Important?
         </p>
