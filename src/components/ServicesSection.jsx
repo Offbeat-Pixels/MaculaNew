@@ -7,10 +7,6 @@
 // import { ButtonFade } from "./ui/motion";
 // import Tilt from "react-parallax-tilt";
 
-
-
-
-
 // const ProjectCard = ({
 //   index,
 //   name,
@@ -70,14 +66,12 @@
 //   );
 // };
 
-
-
 // const projects = [
 //   {
 //     name: "EXPERIENCED TEAM",
 //     description:
 //       "Our consultants have a proven track record of helping businesses succeed.",
-   
+
 //     image: gtmImg,
 //     source_code_link: "https://github.com/",
 //   },
@@ -96,7 +90,6 @@
 //     source_code_link: "https://github.com/",
 //   },
 // ];
-
 
 // export default function ServicesSection() {
 //   const ref =useRef(null);
@@ -142,7 +135,7 @@
 //               isInView ? "motion-preset-slide-right-md" : "opacity-0"
 //             } transition-all duration-1000 ease-in-out`}
 //           >
-//             Explore Our <span className="text-[#588157] italic">Services</span>
+//             Explore Our <span className=" italic">Services</span>
 //           </h2>
 //           <Link
 //             to="/services"
@@ -161,7 +154,7 @@
 //             <motion.span
 //               onClick={() => setIsClicked(true)}
 //               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-//               className="items-center font-bold bg-amber-400 text-white px-4 py-2 rounded-full transition-colors"
+//               className="items-center font-bold  bg-[#588157] text-white px-4 py-2 rounded-full transition-colors"
 //             >
 //               Explore More
 //             </motion.span>
@@ -199,16 +192,10 @@
 //           ))}
 //         </div> */}
 
-
 //       </div>
 //     </section>
 //   );
 // }
-
-
-
-
-
 
 import { ArrowRight } from "lucide-react";
 import { gtmImg } from "../assets";
@@ -217,18 +204,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { useInView } from 'framer-motion';
-import { ButtonFade } from './ui/motion';
+import { useInView } from "framer-motion";
+import { ButtonFade } from "./ui/motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // ProjectCard component
-const ProjectCard = ({
-  index,
-  title,
-  description,
-  image,
-  category,
-}) => {
+const ProjectCard = ({ index, title, description, image, category }) => {
   return (
     <div>
       <Tilt
@@ -246,14 +227,18 @@ const ProjectCard = ({
             to={{
               pathname: "/services",
             }}
-            state={{ category}} 
-            className="absolute bottom-1 right-1 p-3 bg-[#588157] rounded-full -rotate-45 hover:rotate-0 text-white hover:bg-[#4a6d49]  transition-transform"
+            state={{ category }}
+            className="absolute bottom-1 right-1 p-3 border-2 rounded-full -rotate-45 hover:rotate-0 text-black hover:text-white hover:bg-[#4a6d49]  transition-transform"
           >
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <div className="relative  rounded-2xl">
-          <LazyLoadImage src={image} alt="project_image" className="w-full h-auto" />
+          <LazyLoadImage
+            src={image}
+            alt="project_image"
+            className="w-full h-auto"
+          />
         </div>
       </Tilt>
     </div>
@@ -284,7 +269,7 @@ const services = [
   },
 ];
 
- function ServicesSection() {
+function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.8 });
   const [isClicked, setIsClicked] = useState(false);
@@ -306,7 +291,7 @@ const services = [
               isInView ? "motion-preset-slide-right-md" : "opacity-0"
             } transition-all duration-1000 ease-in-out py-5`}
           >
-            Explore Our <span className="text-[#588157] italic">Services</span>
+            Explore Our <span className=" italic">Services</span>
           </h2>
           <Link
             to="/services"
@@ -325,7 +310,7 @@ const services = [
             <motion.span
               onClick={() => setIsClicked(true)}
               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-              className="items-center font-bold bg-amber-400 text-white px-4 py-2  rounded-full transition-colors"
+              className="items-center font-bold  bg-[#588157] text-white px-4 py-2  rounded-full transition-colors"
             >
               Explore More
             </motion.span>

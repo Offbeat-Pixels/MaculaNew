@@ -2,7 +2,6 @@
 // import { useState, useEffect } from "react";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
 // const slides = [
 //   {
 //     image:
@@ -22,7 +21,6 @@
 //     description:
 //       "Discover the fascinating contrast between nature and urban development, where concrete meets wilderness in unexpected ways.",
 //   },
-  
 
 //   {
 //     image:
@@ -82,14 +80,12 @@
 //     setCurrentIndex(index);
 //   };
 
-
 //   // Reorder slides to make currentIndex the first slide
 //   const reorderedSlides = [
 //     slides[currentIndex],
 //     ...slides.slice(currentIndex + 1),
 //     ...slides.slice(0, currentIndex),
 //   ];
-
 
 // const slideVariants = {
 //     enter: (direction) => ({
@@ -116,8 +112,6 @@
 //       transition: { delay: custom * 0.2 },
 //     }),
 //   };
-
-
 
 //   return (
 //     <div className="relative h-screen overflow-hidden bg-black">
@@ -250,8 +244,6 @@
 // import { motion, AnimatePresence } from "framer-motion";
 // import { useState, useEffect } from "react";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
-
-
 
 // export default function ImageCarousel() {
 //   const [currentIndex, setCurrentIndex] = useState(0);
@@ -421,12 +413,6 @@
 //     </div>
 //   );
 // }
-
-
-
-
-
-
 
 // import { motion, AnimatePresence } from "framer-motion";
 // import { useState, useEffect } from "react";
@@ -645,8 +631,6 @@
 //   );
 // }
 
-
-
 // import React, { useState, useRef, useEffect } from "react";
 // import "./slider.css"; // Include custom animations
 
@@ -697,7 +681,7 @@
 //         }
 //       },
 //       { once: true }
-//     ); 
+//     );
 //   }
 // })
 
@@ -770,7 +754,6 @@
 // };
 
 // export default ImageCarousel;
-
 
 // import React, { useState } from "react";
 // import { motion, AnimatePresence } from "framer-motion";
@@ -1015,7 +998,6 @@
 
 // export default ImageCarousel;
 
-
 // import React, { useState } from "react";
 // import { motion, AnimatePresence, useInView } from "framer-motion";
 //  import {
@@ -1100,7 +1082,7 @@
 //     <div className=" py-20 min-h-fit ">
 //       <div className="text-center">
 //         <p className={`${styles.sectionHeadText} text-center  `}>
-//           Why <span className="text-[#588157] italic">Consulting</span> is
+//           Why <span className=" italic">Consulting</span> is
 //           Important?
 //         </p>
 //         <p className={`${styles.sectionSubText} pt-5  `}>
@@ -1186,7 +1168,6 @@
 //     </div>
 //   );
 // }
-
 
 // import React, { useState } from "react";
 // import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -1287,7 +1268,7 @@
 
 //       <div className="text-center">
 //         <p className={`${styles.sectionHeadText} text-center`}>
-//           Why <span className="text-[#588157] italic">Consulting</span> is
+//           Why <span className=" italic">Consulting</span> is
 //           Important?
 //         </p>
 //         <p className={`${styles.sectionSubText} pt-5`}>
@@ -1336,7 +1317,7 @@
 //                 <motion.span
 //                   onClick={() => setIsClicked(true)}
 //                   animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-//                   className="items-center font-bold bg-amber-400 text-white px-4 py-2  rounded-full transition-colors"
+//                   className="items-center font-bold  bg-[#588157] text-white px-4 py-2  rounded-full transition-colors"
 //                 >
 //                   Explore More
 //                 </motion.span>
@@ -1400,7 +1381,6 @@
 //     </div>
 //   );
 // }
-
 
 import React, { useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -1473,7 +1453,7 @@ const images = [
   },
 ];
 
- function ImageCarousel() {
+function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate(); // Use navigate hook here
@@ -1497,8 +1477,8 @@ const images = [
 
       {/* Title Section */}
       <div className="text-center">
-        <p className={`text-3xl font-bold ${styles.sectionHeadText}`}>
-          Why <span className="text-[#588157] italic">Consulting</span> is
+        <p className={`text-3xl  ${styles.sectionHeadText}`}>
+          Why <span className="text-[#000000] italic">Consulting</span> is
           Important?
         </p>
         <p className="text-lg pt-5">
@@ -1512,13 +1492,13 @@ const images = [
         {/* Left Side Text */}
         <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-40">
           <AnimatePresence>
-            <div key={images[currentIndex].id} className="absolute mt-10">
+            <div key={images[currentIndex].id} className="absolute ">
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl text-[#588157] w-80 md:w-fit font-semibold"
+                className="text-3xl  w-80 md:w-fit font-semibold"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1527,7 +1507,7 @@ const images = [
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-xl w-80 my-5 "
+                className="text-xl  my-4 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1542,14 +1522,14 @@ const images = [
                 onClick={() => setIsClicked(true)}
                 variants={ButtonFade(isClicked)}
                 animate="animate"
-                className="bg-[#588157] rounded-full p-2 shadow-md"
+                className="bg-[#67883B] rounded-full p-2 shadow-md"
               >
                 <ArrowRight className="w-5 h-5 text-white transform transition-transform" />
               </motion.div>
               <motion.span
                 onClick={() => setIsClicked(true)}
                 animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-                className="items-center font-bold bg-amber-400 text-white px-4 py-2 rounded-full transition-colors"
+                className="items-center font-bold bg-[#67883B] text-white px-4 py-2 rounded-full transition-colors"
               >
                 Explore More
               </motion.span>
@@ -1564,7 +1544,7 @@ const images = [
               const isActive = index === currentIndex;
               const offset = (index - currentIndex) % images.length;
               const imageGap = isMobile ? 10 : 20; // Adjust gap for mobile
-              const translateX = isMobile ? 200 : 430; // Movement adjustment for mobile
+              const translateX = isMobile ? 200 : 420; // Movement adjustment for mobile
               const scale = isMobile
                 ? isActive
                   ? 0.9

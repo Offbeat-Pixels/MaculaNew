@@ -71,12 +71,12 @@ export default function ContactForm() {
           <p
             className={`${styles.sectionHeadText} text-[3rem] bg-[#618519] md:bg-transparent bg-opacity-50 rounded-lg`}
           >
-            Let's <span className="md:text-[#6B8E23] italic">Talk</span>
+            Let's <span className="italic">Talk</span>
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 border bg-white rounded-lg mr-auto md:w-1/2 p-5"
+            className="space-y-6 border mt-10 bg-white rounded-lg mr-auto md:w-1/2 p-5"
           >
             <div>
               <label htmlFor="Name">Name</label>

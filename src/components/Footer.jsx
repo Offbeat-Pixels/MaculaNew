@@ -15,7 +15,7 @@ export default function Footer() {
           </h1>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light">
             Let's Reinvent{" "}
-            <span className="text-[#6B8E23] italic">Success Together!</span>
+            <span className=" italic">Success Together!</span>
           </h2>
         </div>
 

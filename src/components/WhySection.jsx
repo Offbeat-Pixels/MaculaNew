@@ -6,14 +6,12 @@ import { ArrowUpRight } from "lucide-react";
 import { whyImg } from "../assets";
 import { styles } from "../style";
 import { Link } from "react-router-dom";
-import { motion,useInView, useScroll,useAnimation } from "framer-motion";
+import { motion, useInView, useScroll, useAnimation } from "framer-motion";
 // export default function WhySection() {
 
 // const ref =React.useRef(null);
 // const isInView=useInView(ref,{once:true,amount:0.5});
 // const scrolling = useScroll()
-
-
 
 //   const pieces = [
 //     { id: 1, src: WhyImg1, x: -200, y: -200 },
@@ -24,14 +22,14 @@ import { motion,useInView, useScroll,useAnimation } from "framer-motion";
 //   return (
 //     <section className=" px-14  py-10 ">
 //       <div
-        
+
 //         className="grid md:grid-cols-2 gap-1 items-center"
 //       >
 //         {/* Left side - Image */}
 //         <div className="relative">
 //           <div className="aspect-square max-w-2xl">
 //             <motion.div className="relative py-20">
-             
+
 //               {pieces.map((piece) => (
 //                 <motion.img
 //                   key={piece.id}
@@ -71,7 +69,7 @@ import { motion,useInView, useScroll,useAnimation } from "framer-motion";
 //               isInView ? "motion-preset-slide-right-md" : "opacity-0"
 //             } transition-all duration-1000 ease-in-out`}
 //           >
-//             Why <span className="text-[#588157] italic">Consulting</span> is
+//             Why <span className=" italic">Consulting</span> is
 //             Important?
 //           </h2>
 
@@ -103,7 +101,6 @@ import { motion,useInView, useScroll,useAnimation } from "framer-motion";
 //     </section>
 //   );
 // }
-
 
 export default function WhySection() {
   const ref = React.useRef(null);
@@ -168,10 +165,8 @@ export default function WhySection() {
                 ? "motion-preset-slide-down-lg motion-duration-1000"
                 : "opacity-0"
             } transition-all ease-in-out `}
-            
           >
-            Why <span className="text-[#588157] italic">Consulting</span> is
-            Important?
+            Why <span className=" italic">Consulting</span> is Important?
           </h2>
 
           <p

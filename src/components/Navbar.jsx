@@ -158,35 +158,35 @@ export default function Navbar() {
           <Link
             to="/whitepaper"
             // className="bg-[#FFF1F1] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
-            className="bg-[#B3BCB5] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="border hover:bg-[#E4E4E3] py-2 px-4 sm:py-3 sm:px- rounded-2xl "
           >
             White Paper
           </Link>
           <Link
             to="/services"
             // className="bg-[#FEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
-            className="bg-[#91A3B1] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="border hover:bg-[#E4E4E3] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             Our Service
           </Link>
           <Link
             to="/blog"
             // className="bg-[#EEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
-            className="bg-[#5E706A] py-2 px-4 text-white  sm:py-3 sm:px-6 rounded-2xl "
+            className=" border hover:bg-[#E4E4E3] py-2 px-4   sm:py-3 sm:px-6 rounded-2xl "
           >
             Blogs
           </Link>
           <Link
             to="/about"
             // className="bg-[#E7FBFF] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
-            className="bg-[#bbcad6] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="border hover:bg-[#E4E4E3] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             About Us
           </Link>
           <Link
             to="/career"
             // className="bg-[#8ef2b86c] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
-            className="bg-[#E4E5E2] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="border hover:bg-[#E4E4E3] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             Career
           </Link>
@@ -202,14 +202,14 @@ export default function Navbar() {
               variants={ButtonFade(isClicked)}
               animate="animate"
               // className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
-              className="bg-[#727165] rounded-full p-2 shadow-md cursor-pointer"
+              className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
             >
               <PhoneCall className="w-5 h-5 text-white" />
             </motion.div>
             <motion.span
               onClick={() => setIsClicked(true)}
               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-              className="hidden md:block bg-[#727165] text-white py-2 px-4 rounded-full text-sm sm:text-base"
+              className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
             >
               Free Consultation
             </motion.span>

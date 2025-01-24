@@ -4,10 +4,10 @@ const styles = {
   padding: "sm:px-16 px-6 sm:py-16 py-10", // Combined padding for both axes
 
   BannerHeadText:
-    "font-normal text-[#67883B] lg:text-[5rem] md:text-[4rem]  text-[2.5rem] leading-[1em] ",
+    "font-normal text-black lg:text-[4rem] md:text-[4rem]  text-[2.5rem] leading-[1em] ",
 
   BannerSubText:
-    "font-normal text-[#fffff] lg:text-[4rem] md:text-[3rem] text-[2rem] leading-[1em]",
+    "font-normal text-[#fffff] lg:text-[3.5rem] md:text-[3rem] text-[2rem] leading-[1em]",
 
   sectionHeadText:
     "text-[#000000] lg:text-[3rem] md:text-[2.5rem]  text-[2rem] leading-[1em] ",
@@ -15,7 +15,7 @@ const styles = {
     "sm:text-[18px] text-[1rem] text-secondary uppercase tracking-wider",
 
   PageSubHeading:
-    "font-normal text-[#67883B] lg:text-[2rem] md:text-[1.5rem] text-[1rem] lg:leading-[1em] leading-[1.2em]",
+    "font-normal text-black lg:text-[2rem] md:text-[1.5rem] text-[1rem] lg:leading-[1em] leading-[1.2em]",
 };
 
 export { styles };

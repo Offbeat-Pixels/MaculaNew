@@ -19,7 +19,7 @@ const slides = [
       <>
         <div className={`${styles.BannerHeadText} text-white w-fit`}>
           <p>Gen AI</p>
-          <p className={`${styles.BannerSubText} italic`}>Driven Products</p>
+          <p className={`${styles.BannerSubText} `}>Driven Products</p>
         </div>
       </>
     ),
@@ -32,8 +32,8 @@ const slides = [
     title: (
       <>
         <div className={`${styles.BannerHeadText} `}>
-          <p className=" lg:text-black   ">The Founder’s Trap </p>
-          <div className={`${styles.BannerSubText} italic`}>
+          <p className=" lg:text-black mb-5   ">The Founder’s Trap </p>
+          <div className={`${styles.BannerSubText} `}>
             <p className="">How Selling Stifles </p>
             <p className=" ">Startup Growth</p>
           </div>
@@ -49,10 +49,10 @@ const slides = [
     title: (
       <>
         <div className={`${styles.BannerHeadText} `}>
-          <p className="text-white   ">Digital Marketing</p>
-          <div className={`${styles.BannerSubText} italic`}>
-            <p className="   ">A Crucial Piece of </p>
-            <p className="  ">the Marketing Puzzle </p>
+          <p className="text-white  mb-5 text-6xl ">Digital Marketing</p>
+          <div className={`${styles.BannerSubText} `}>
+            <p className="  text-white  ">A Crucial Piece of </p>
+            <p className=" text-white  ">the Marketing Puzzle </p>
           </div>
         </div>
       </>

@@ -28,7 +28,7 @@ function Whitepaper() {
     ? WhitepapperData.filter((service) => service.category === selectedCategory)
     : WhitepapperData;
 
-  const colors = ["#FFF1F1", "#FEFFE7", "#EEFFE7"];
+  const colors = ["#f1f1f1"];
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   return (
@@ -49,9 +49,9 @@ function Whitepaper() {
               margin: "5px",
               backgroundColor:
                 selectedCategory === category
-                  ? "#67883B"
+                  ? "#f1f1f1"
                   : colors[index % colors.length],
-              color: selectedCategory === category ? "#fff" : "#000",
+              color: selectedCategory === category ? "#67883B" : "#000",
               border: "1px solid #ddd",
               borderRadius: "10px",
               cursor: "pointer",
@@ -67,12 +67,9 @@ function Whitepaper() {
         {filteredWhitepapperData.map((service, index) => (
           <div key={service.id} className="relative">
             <div className="relative group   h-fit text-justify rounded-xl   justify-between ">
-            
-                <Link to={`/whitepaperDetail/${service.category}`}>
-                 
-                  <WhitepaperCard service={service} />
-                </Link>
-              
+              <Link to={`/whitepaperDetail/${service.category}`}>
+                <WhitepaperCard service={service} />
+              </Link>
             </div>
           </div>
         ))}
