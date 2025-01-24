@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
-export default function ContactSection() {
+function ContactSection() {
   return (
     <section className="py-16 px-4 ">
       <div className="container mx-auto max-w-6xl">
@@ -56,3 +56,5 @@ export default function ContactSection() {
     </section>
   );
 }
+
+export default ContactSection;

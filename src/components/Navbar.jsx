@@ -17,7 +17,7 @@
 //   return (
 //     <nav className="flex  items-center justify-between px-5 md:px-10  2xl:px-24 py-2 h-14 md:h-24 ">
 //       <Link to="/" className="flex items-center">
-//         <img
+//         <LazyLoadImage
 //           src={logo}
 //           alt="Macula Logo"
 //           width={120}
@@ -131,6 +131,7 @@ import { Link } from "react-router-dom";
 import { Menu, PhoneCall, SquareX } from "lucide-react";
 import { motion } from "framer-motion";
 import { ButtonFade } from "./ui/motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Navbar() {
   const [isClicked, setIsClicked] = useState(false);
@@ -143,7 +144,7 @@ export default function Navbar() {
   return (
     <nav className="flex z-50 items-center justify-between px-5 sm:px-8 md:px-10 xl:px-16 2xl:px-24 py-2 h-14 sm:h-16 md:h-20 xl:h-24">
       <Link to="/" className="flex items-center">
-        <img
+        <LazyLoadImage
           src={logo}
           alt="Macula Logo"
           width={120}
@@ -153,34 +154,39 @@ export default function Navbar() {
       </Link>
       <div className="flex items-center gap-4">
         {/* Desktop links */}
-        <div className="hidden lg:flex space-x-4  text-sm  2xl:text-base ">
+        <div className="hidden  lg:flex space-x-4  text-sm  2xl:text-base ">
           <Link
             to="/whitepaper"
-            className="bg-[#FFF1F1] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            // className="bg-[#FFF1F1] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="bg-[#B3BCB5] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             White Paper
           </Link>
           <Link
             to="/services"
-            className="bg-[#FEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            // className="bg-[#FEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="bg-[#91A3B1] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             Our Service
           </Link>
           <Link
             to="/blog"
-            className="bg-[#EEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            // className="bg-[#EEFFE7] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="bg-[#5E706A] py-2 px-4 text-white  sm:py-3 sm:px-6 rounded-2xl "
           >
             Blogs
           </Link>
           <Link
             to="/about"
-            className="bg-[#E7FBFF] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            // className="bg-[#E7FBFF] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="bg-[#bbcad6] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             About Us
           </Link>
           <Link
             to="/career"
-            className="bg-[#8ef2b86c] py-2 px-4 sm:py-3 sm:px-6 rounded-full "
+            // className="bg-[#8ef2b86c] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
+            className="bg-[#E4E5E2] py-2 px-4 sm:py-3 sm:px-6 rounded-2xl "
           >
             Career
           </Link>
@@ -195,14 +201,15 @@ export default function Navbar() {
               }}
               variants={ButtonFade(isClicked)}
               animate="animate"
-              className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
+              // className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
+              className="bg-[#727165] rounded-full p-2 shadow-md cursor-pointer"
             >
               <PhoneCall className="w-5 h-5 text-white" />
             </motion.div>
             <motion.span
               onClick={() => setIsClicked(true)}
               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-              className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
+              className="hidden md:block bg-[#727165] text-white py-2 px-4 rounded-full text-sm sm:text-base"
             >
               Free Consultation
             </motion.span>

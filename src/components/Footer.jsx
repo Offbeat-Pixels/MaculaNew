@@ -1,4 +1,5 @@
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -63,28 +64,28 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row">
             {/* Left Section */}
             <div className=" md:w-5/6  md:flex ">
-              <img
+              <LazyLoadImage
                 src="https://picsum.photos/200"
                 alt=""
                 className=" rounded-2xl w-full md:w-[50%]  md:h-[20rem] object-cover"
               />
               <div className="grid grid-cols-2 px-1 gap-1 rounded-lg ">
-                <img
+                <LazyLoadImage
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
                   className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <img
+                <LazyLoadImage
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
                   className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <img
+                <LazyLoadImage
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
                   className="rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <img
+                <LazyLoadImage
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
                   alt="img1"
                   className=" rounded-2xl md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"

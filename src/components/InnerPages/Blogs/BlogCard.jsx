@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogCard({ title, description, imageUrl, isLarge = false }) {
   return (
@@ -13,7 +14,7 @@ function BlogCard({ title, description, imageUrl, isLarge = false }) {
           isLarge ? "aspect-[16/9]" : "aspect-[4/3]"
         } overflow-hidden rounded-lg`}
       >
-        <img
+        <LazyLoadImage
           src={imageUrl}
           alt={title}
           className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"

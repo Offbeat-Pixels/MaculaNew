@@ -18,6 +18,7 @@ import {
 } from "../assets";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const slides = [
   {
@@ -70,7 +71,7 @@ const slides = [
   },
 ];
 
-export default function Banner() {
+ function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videoRefs = useRef([]);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -104,7 +105,7 @@ export default function Banner() {
       {/* Background Video or Image for the Current Slide */}
       {slides.map((slide, index) =>
         isMobile ? (
-          <img
+          <LazyLoadImage
             key={index}
             src={slide.mobileImage}
             alt="Mobile Slide"
@@ -204,3 +205,6 @@ export default function Banner() {
     </div>
   );
 }
+
+
+export default Banner;

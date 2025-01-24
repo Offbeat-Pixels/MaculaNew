@@ -30,7 +30,7 @@
 //         className="bg-tertiary my- p-5 rounded-2xl sm:w-[360px] w-full"
 //       >
 //         <div className="relative w-full h-[230px]">
-//           <img
+//           <LazyLoadImage
 //             src={image}
 //             alt="project_image"
 //             className="w-full h-full object-cover rounded-2xl"
@@ -41,7 +41,7 @@
 //               onClick={() => window.open(source_code_link, "_blank")}
 //               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
 //             >
-//               <img
+//               <LazyLoadImage
 //                 src={github}
 //                 alt='source code'
 //                 className='w-1/2 h-1/2 object-contain'
@@ -178,7 +178,7 @@
 //               <h3 className="text-xl font-medium mb-3">{service.title}</h3>
 //               <p className="text-gray-600 mb-6">{service.description}</p>
 //               <div className="relative rounded-2xl">
-//                 <img
+//                 <LazyLoadImage
 //                   src={service.image}
 //                   alt={`${service.title} Strategy`}
 //                   width={300}
@@ -219,6 +219,7 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { useInView } from 'framer-motion';
 import { ButtonFade } from './ui/motion';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // ProjectCard component
 const ProjectCard = ({
@@ -252,7 +253,7 @@ const ProjectCard = ({
           </Link>
         </div>
         <div className="relative  rounded-2xl">
-          <img src={image} alt="project_image" className="w-full h-auto" />
+          <LazyLoadImage src={image} alt="project_image" className="w-full h-auto" />
         </div>
       </Tilt>
     </div>
@@ -278,12 +279,12 @@ const services = [
     title: "Gen AI Enabled Products",
     category: "Gen AI Enabled Products",
     description:
-      "WWe provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
+      "We provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
     image: gtmImg,
   },
 ];
 
-export default function ServicesSection() {
+ function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.8 });
   const [isClicked, setIsClicked] = useState(false);
@@ -342,3 +343,4 @@ export default function ServicesSection() {
   );
 }
 
+export default ServicesSection;

@@ -32,7 +32,7 @@ function Whitepaper() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   return (
-    <div className="bg-service-pattern bg-cover bg-no-repeat bg-center pb-20">
+    <div className="bg-service-pattern bg-cover  bg-no-repeat bg-center pb-20">
       <h3
         ref={ref}
         className={`${styles.sectionHeadText} text-center p-5 motion-preset-slide-down-lg motion-duration-1000 motion-delay-300`}
@@ -63,19 +63,16 @@ function Whitepaper() {
         ))}
       </div>
       {/* Display WhitepapperData */}
-      <div className=" mt-10  mx-5 md:mx-24 place-items-center ">
+      <div className=" mt-10 grid grid-cols-3 gap-3 w-full px-5   place-items-center ">
         {filteredWhitepapperData.map((service, index) => (
-          <div key={service.id} className="relative w-full">
-            <div className="relative group  w-full h-fit text-justify rounded-xl  flex flex-col sm:flex-row justify-between ">
-              <div className=" w-full   ">
+          <div key={service.id} className="relative">
+            <div className="relative group   h-fit text-justify rounded-xl   justify-between ">
+            
                 <Link to={`/whitepaperDetail/${service.category}`}>
-                  {/* <Markdown data={service.title}  />
-                  
-                  
-                  <img src={service.imageUrl} alt="" /> */}
+                 
                   <WhitepaperCard service={service} />
                 </Link>
-              </div>
+              
             </div>
           </div>
         ))}

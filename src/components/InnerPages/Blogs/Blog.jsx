@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../../../style.js";
 import { BlogImg, BlogImg2 } from "../../../assets";
 import { Transition } from "../../ui/Transition.jsx";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const LatestBlogs = [
   {
@@ -261,7 +262,7 @@ const Section = ({
       <p className="my-5 text-4xl font-bold">{title}</p>
       <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
         <div className="grid lg:grid-cols-2">
-          <img
+          <LazyLoadImage
             src={selectedBlog.image}
             alt="Featured blog post"
             className="lg:h-[80%] lg:w-[85%] rounded-2xl object-cover"
@@ -295,7 +296,7 @@ const Section = ({
             whileTap={{ scale: 0.98 }}
             className="flex gap-4 rounded-2xl bg-white p-4 text-left shadow-sm transition-all hover:shadow-md"
           >
-            <img
+            <LazyLoadImage
               src={post.image}
               alt={post.title}
               className="h-24 w-24 rounded-2xl object-cover"

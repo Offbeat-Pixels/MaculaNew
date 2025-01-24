@@ -107,7 +107,7 @@ import { Transition } from "../../ui/Transition";
               {/* Text Section */}
               <div className="lg:w-1/2 lg:pr-24">
                 <p className={`${styles.PageSubHeading} `}>
-                  {service.category}
+                  {/* {service.category} */}
                 </p>
                 {/* <p className="text-md pt-10 text-justify font-semibold text-gray-800">
                   {service.title}

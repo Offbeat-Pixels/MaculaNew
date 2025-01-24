@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { styles } from '../style';
 
-export default function UniqueSection() {
+ function UniqueSection() {
 const ref = useRef(null);
 const isInView = useInView(ref, { once: true, amount: 0.8 });
   return (
@@ -105,3 +105,4 @@ const isInView = useInView(ref, { once: true, amount: 0.8 });
   );
 }
 
+export default UniqueSection;

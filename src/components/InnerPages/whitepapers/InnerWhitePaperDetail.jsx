@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { WhitepapperData } from "../.."; // Assuming your whitepaper data is imported here
 import Markdown from "./Markdown"
-export default function InnerWhitePaperDetail() {
+function InnerWhitePaperDetail() {
   const { category } = useParams(); // Retrieve the category from the URL params
 
   // Filter the data based on the category from the URL
@@ -16,7 +16,7 @@ export default function InnerWhitePaperDetail() {
   }
 
   return (
-    <div className="">
+    <div className="text-justify">
       {/* Whitepaper Title */}
       <div className="mt-10">
        
@@ -45,3 +45,4 @@ export default function InnerWhitePaperDetail() {
     </div>
   );
 }
+export default InnerWhitePaperDetail;

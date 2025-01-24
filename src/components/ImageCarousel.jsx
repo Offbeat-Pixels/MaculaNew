@@ -136,7 +136,7 @@
 //           className="absolute w-full h-full"
 //         >
 //           <div className="relative w-full h-full">
-//             <img
+//             <LazyLoadImage
 //               src={slides[currentIndex].image}
 //               alt={slides[currentIndex].title}
 //               className="w-full h-full opacity-20 object-cover"
@@ -229,7 +229,7 @@
 //               height: "300px",
 //             }}
 //           >
-//             <img
+//             <LazyLoadImage
 //               src={slide.image}
 //               alt={slide.title}
 //               className="w-full h-full object-cover rounded-3xl"
@@ -325,7 +325,7 @@
 //           className="absolute w-full h-full"
 //         >
 //           <div className="relative w-full h-full">
-//             <img
+//             <LazyLoadImage
 //               src={slides[currentIndex].image}
 //               alt={slides[currentIndex].title}
 //               className="w-full h-full opacity-20 object-cover"
@@ -405,7 +405,7 @@
 //                 height: "300px",
 //               }}
 //             >
-//               <img
+//               <LazyLoadImage
 //                 src={slide.image}
 //                 alt={slide.title}
 //                 className="w-full h-full object-cover rounded-3xl"
@@ -534,7 +534,7 @@
 //           className="absolute w-full h-full"
 //         >
 //           <div className="relative w-full h-full">
-//             <img
+//             <LazyLoadImage
 //               src={slides[currentIndex].image}
 //               alt={slides[currentIndex].title}
 //               className="w-full h-full object-cover"
@@ -608,7 +608,7 @@
 //             whileHover={{ scale: 1.05 }}
 //             whileTap={{ scale: 0.95 }}
 //           >
-//             <img
+//             <LazyLoadImage
 //               src={slide.image}
 //               alt={slide.title}
 //               className="w-full h-full object-cover rounded-[20px]"
@@ -705,7 +705,7 @@
 //     <div class="slider">
 //       <div class="list">
 //         <div class="item">
-//           <img
+//           <LazyLoadImage
 //             src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=2072&auto=format&fit=crop"
 //             alt=""
 //           />
@@ -725,7 +725,7 @@
 //           </div>
 //         </div>
 //         <div class="item">
-//           <img
+//           <LazyLoadImage
 //             src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2070&auto=format&fit=crop"
 //             alt=""
 //           />
@@ -748,13 +748,13 @@
 
 //       <div class="thumbnail">
 //         <div class="item">
-//           <img
+//           <LazyLoadImage
 //             src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=2072&auto=format&fit=crop"
 //             alt=""
 //           />
 //         </div>
 //         <div class="item">
-//           <img
+//           <LazyLoadImage
 //             src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2070&auto=format&fit=crop"
 //             alt=""
 //           />
@@ -856,7 +856,7 @@
 //                       type: "spring",
 //                     }}
 //                   >
-//                     <img
+//                     <LazyLoadImage
 //                       src={image.src}
 //                       alt={image.text}
 //                       className={`w-[550px] min-h-[500px] bg-center`}
@@ -986,7 +986,7 @@
 //                 }}
 //                 transition={{ duration: 0.5, ease: "easeInOut" }}
 //               >
-//                 <img
+//                 <LazyLoadImage
 //                   src={slide.imageUrl}
 //                   alt={`Slide ${slide.id}`}
 //                   className="w-full h-full object-cover"
@@ -1158,7 +1158,7 @@
 //                     type: "ease",
 //                   }}
 //                 >
-//                   <img
+//                   <LazyLoadImage
 //                     src={image.src}
 //                     alt={image.text}
 //                     className="w-[400px] h-[300px] object-cover"
@@ -1371,7 +1371,7 @@
 //                     type: "ease",
 //                   }}
 //                 >
-//                   <img
+//                   <LazyLoadImage
 //                     src={image.src}
 //                     alt={image.text}
 //                     className="w-[30rem] h-[30rem] rounded-2xl object-cover"
@@ -1419,6 +1419,7 @@ import {
 } from "../assets/index.js";
 import { styles } from "../style.js";
 import { useMediaQuery } from "react-responsive";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const images = [
   {
@@ -1472,7 +1473,7 @@ const images = [
   },
 ];
 
-export default function ImageCarousel() {
+ function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate(); // Use navigate hook here
@@ -1526,7 +1527,7 @@ export default function ImageCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-xl w-80 my-5 lg:my-10"
+                className="text-xl w-80 my-5 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1593,7 +1594,7 @@ export default function ImageCarousel() {
                   }}
                   onClick={() => setCurrentIndex(index)}
                 >
-                  <img
+                  <LazyLoadImage
                     src={image.src}
                     alt={image.text}
                     className={`rounded-2xl cursor-pointer object-cover ${
@@ -1627,3 +1628,4 @@ export default function ImageCarousel() {
   );
 }
 
+export default ImageCarousel;

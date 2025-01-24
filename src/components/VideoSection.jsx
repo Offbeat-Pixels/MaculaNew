@@ -37,7 +37,7 @@ import { Play } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import { MaculaVideo } from "../assets";
 
-export default function VideoSection() {
+ function VideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -90,3 +90,4 @@ export default function VideoSection() {
     </section>
   );
 }
+export default VideoSection;

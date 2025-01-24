@@ -2,9 +2,9 @@ import React from "react";
 
 const Career = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <header className="bg-blue-200 text-black py-12">
+      <header className="bg-[#ffffff] text-black py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
           <p className="text-lg">
@@ -38,7 +38,7 @@ const Career = () => {
           ].map((job, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300"
+              className="bg-white shadow-lg stroke-slate-200 border rounded-lg p-6 hover:shadow-xl transition duration-300"
             >
               <h3 className="text-xl font-semibold mb-2">{job.title}</h3>
               <p className="text-gray-600">{job.location}</p>
@@ -82,7 +82,7 @@ const Career = () => {
       </section>
 
       {/* Contact Section */}
-      <footer className="bg-blue-200 text-black py-12">
+      <footer className="bg-gray-100 text-black py-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">Have Questions?</h2>
           <p>
