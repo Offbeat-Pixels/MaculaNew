@@ -59,7 +59,7 @@ import { Transition } from "../../ui/Transition";
     }
   };
 
-  const colors = ["#FFF1F1", "#FEFFE7", "#EEFFE7"];
+ const colors = ["#f1f1f1"];
 
   return (
     <div className="bg-servicepage-pattern bg-cover bg-no-repeat bg-center pb-20">
@@ -84,14 +84,14 @@ import { Transition } from "../../ui/Transition";
               margin: "5px",
               backgroundColor:
                 selectedCategory === category
-                  ? "#67883B"
+                  ? "#f1f1f1"
                   : colors[index % colors.length],
-              color: selectedCategory === category ? "#fff" : "#000",
+              color: selectedCategory === category ? "#67883B" : "#000",
               border: "1px solid #ddd",
               borderRadius: "10px",
               cursor: "pointer",
             }}
-            className="px-10 md:px-4  h-10"
+            className="px-10 md:px-4 h-10 "
           >
             {category}
           </button>

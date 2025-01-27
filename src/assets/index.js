@@ -19,7 +19,7 @@ import slider3 from "./Slider3.jpg";
 import slider4 from "./Slider4.jpg";
 import slider5 from "./Slider5.jpg";
 import slider6 from "./Slider6.jpg";
-import slider7 from "./Slider7.jpg";
+import slider7 from "./slider81 (6).png";
 import slider8 from "./Slider8.jpg";
 import mission from "./mission.png";
 import ValueImg from "./Value.png";

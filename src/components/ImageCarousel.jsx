@@ -1544,7 +1544,7 @@ function ImageCarousel() {
               const isActive = index === currentIndex;
               const offset = (index - currentIndex) % images.length;
               const imageGap = isMobile ? 10 : 20; // Adjust gap for mobile
-              const translateX = isMobile ? 200 : 420; // Movement adjustment for mobile
+              const translateX = isMobile ? 200 : 380; // Movement adjustment for mobile
               const scale = isMobile
                 ? isActive
                   ? 0.9
@@ -1557,19 +1557,24 @@ function ImageCarousel() {
                 <motion.div
                   key={image.id}
                   className="absolute mt-56 rounded-lg  md:mt-0 shadow-lg"
-                  style={{
-                    transform: `translateX(${offset * (100 + imageGap)}px)`,
-                    zIndex: images.length - Math.abs(offset),
-                  }}
+                  style={
+                    {
+                      // transform: `translateX(${offset * (100 + imageGap)}px)`,
+                      // zIndex: images.length - Math.abs(offset),
+                    }
+                  }
                   animate={{
                     scale: scale,
-                    x: offset * (translateX + imageGap),
+                    // x: offset * (translateX + imageGap),
+                    x: isActive ? 0 : offset * translateX + 100,
                     y: isActive ? 0 : isMobile ? 50 : 100,
                     opacity: offset < 0 ? 0 : 1,
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: isMobile ? 100 : 150,
+                    delay: 0.1,
+                    duration: 1,
+                    stiffness: isMobile ? 100 : 100,
                     damping: isMobile ? 15 : 20,
                   }}
                   onClick={() => setCurrentIndex(index)}
@@ -1577,7 +1582,8 @@ function ImageCarousel() {
                   <LazyLoadImage
                     src={image.src}
                     alt={image.text}
-                    className={`rounded-2xl cursor-pointer object-cover ${
+                    // @red Images are correct just need to upload same rounded image
+                    className={`roundedxl cursor-pointer object-center object-cover ${
                       isMobile
                         ? "w-[18rem] h-[18rem]"
                         : "md:w-[30rem] md:h-[30rem]"

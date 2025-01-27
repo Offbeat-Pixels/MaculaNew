@@ -55,7 +55,7 @@ import { MaculaVideo } from "../assets";
   }, [inView, isPlaying]);
 
   return (
-    <section className="py-0  bg-black">
+    <section className="  bg-black">
       <div>
         <div
           className="relative h-[40vh]  lg:h-[100vh]  rounded-lg "

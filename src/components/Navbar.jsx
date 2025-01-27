@@ -4,7 +4,7 @@
 // import { Menu, PhoneCall, SquareX } from "lucide-react";
 // import { motion } from 'framer-motion';
 // import { ButtonFade } from './ui/motion';
-
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // export default function Navbar() {
 //   const [isClicked, setIsClicked] = useState(false);
@@ -142,14 +142,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex z-50 items-center justify-between px-5 sm:px-8 md:px-10 xl:px-16 2xl:px-24 py-2 h-14 sm:h-16 md:h-20 xl:h-24">
+    <nav className="flex bg-transparent bg-opacity-10 -z-10 items-center justify-between px-5 sm:px-8 md:px-10 xl:px-16 2xl:px-24 py-2 h-14 sm:h-16 md:h-1/2">
       <Link to="/" className="flex items-center">
         <LazyLoadImage
           src={logo}
           alt="Macula Logo"
           width={120}
           height={60}
-          className="h-10 sm:h-12 md:h-14 xl:h-20 object-cover w-auto"
+          className="h-10  md:h-14  object-contain w-44"
         />
       </Link>
       <div className="flex items-center gap-4">
@@ -194,7 +194,7 @@ export default function Navbar() {
 
         {/* Contact button */}
         <Link to="/contact" onMouseLeave={() => setIsClicked(false)}>
-          <div className="flex items-center border gap-2 py-1 px-3 sm:py-2 sm:px-4 bg-white rounded-full hover:bg-slate-300 transition-colors">
+          <div className="flex items-center border gap-2 py-1 px-3 sm:py-1 sm:px-2 bg-white rounded-full hover:bg-slate-300 transition-colors">
             <motion.div
               onClick={() => {
                 setIsClicked(true);
@@ -209,9 +209,10 @@ export default function Navbar() {
             <motion.span
               onClick={() => setIsClicked(true)}
               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-              className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
+              // className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
+              className="hidden md:block bg-[#67883B] text-white py-2 px-2 rounded-full text-sm sm:text-base"
             >
-              Free Consultation
+              Book Your Session
             </motion.span>
           </div>
         </Link>

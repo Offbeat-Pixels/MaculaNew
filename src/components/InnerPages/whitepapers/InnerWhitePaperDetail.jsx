@@ -18,7 +18,7 @@ function InnerWhitePaperDetail() {
   return (
     <div className="text-justify">
       {/* Whitepaper Title */}
-      <div className="mt-10">
+      <div className="mt-10 text-center">
        
           <Markdown data={whitepaper.title} />
      

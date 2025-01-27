@@ -281,7 +281,7 @@ function ServicesSection() {
   }
 
   return (
-    <section className="py-16">
+    <section className="py-16 ">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="md:flex justify-between items-center mb-12">
