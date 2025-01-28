@@ -1,740 +1,482 @@
 
-// import React from "react";
-// import {
-//   Target,
-//   ArrowRight,
-//   Lightbulb,
-//   Puzzle,
-//   Heart,
-//   Users,
-// } from "lucide-react";
+// import { motion, useScroll, useTransform } from 'framer-motion'
+// import { Brain, Lightbulb, Settings, Users, ChevronDown } from 'lucide-react'
+// import { useRef ,useEffect, useState} from 'react'
+// import { Transition } from '../ui/Transition'
+// import gsap from "gsap";
+// import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+// import { styles } from '../../style';
+// gsap.registerPlugin(ScrollTrigger)
 
-// import { whyImg, mission } from "../../assets";
-// import { styles } from "../../style";
-// import { Transition } from "../ui/Transition";
+//  function About() {
+//   const containerRef = useRef(null)
+//   const { scrollYProgress } = useScroll({
+//     target: containerRef,
+//     offset: ["start start", "end end"]
+//   })
 
-// function About() {
-//   return (
-//     <div className="min-h-fit bg-gradient-to-b from-white to-[#e1e1e1] mt-20 text-black ">
+//   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+//   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+
+
+
+
+
+//   const missions = [
+//   {
+//     title: "Empowering Businesses",
+//     description:
+//       "To empower businesses of all scales/sizes with insights, strategies, and tools.",
+//     icon: Brain,
+//     gradient: "from-blue-500/20 to-violet-500/20",
+//     accent: "group-hover:text-blue-500",
+//   },
+//   {
+//     title: "Expert Consultancy",
+//     description:
+//       "To provide expert consultancy fostering long-term value for our clients.",
+//     icon: Settings,
+//     gradient: "from-violet-500/20 to-fuchsia-500/20",
+//     accent: "group-hover:text-violet-500",
+//   },
+//   {
+//     title: "Client-First Approach",
+//     description:
+//       "To create a client-first approach where every service is personalized, impactful, and results-driven.",
+//     icon: Users,
+//     gradient: "from-fuchsia-500/20 to-rose-500/20",
+//     accent: "group-hover:text-fuchsia-500",
+//   },
+//   {
+//     title: "AI Innovation",
+//     description:
+//       "To pioneer Gen AI-enabled products that enhance efficiency, innovation, and decision-making for businesses of all sizes.",
+//     icon: Lightbulb,
+//     gradient: "from-rose-500/20 to-orange-500/20",
+//     accent: "group-hover:text-rose-500",
+//   },
+// ];
+
+
+//   const values = [
+//     {
+//       title: "Ethics",
+//       description: "We like doing things ethically",
+//       gradient: "from-[#F4BD20] to-[#67883B]",
+//     },
+//     {
+//       title: "Creativity",
+//       description: "Being creative is our way of life",
+//       gradient: "from-[#F4BD20] to-[#67883B]",
+//     },
+//     {
+//       title: "Adaptability",
+//       description: "We tailor to the needs of customers",
+//       gradient: "from-[#F4BD20] to-[#67883B]",
+//     },
+//     {
+//       title: "Individuality",
+//       description: "We celebrate diverse perspective",
+//       gradient: "from-[#F4BD20] to-[#67883B]",
+//     },
+//   ];
+
+
+
+
+// return (
+//     <div className="min-h-screen  bg-background" ref={containerRef}>
 //       {/* Vision Section */}
-//       <div className="max-w-7xl md:flex mx-auto gap-10 my-10 px-4 sm:px-6 lg:px-8">
-//         <h2 className="text-black text-2xl sm:text-3xl lg:text-4xl   md:pl-0 sm:mb-10 lg:mb-12 font-bold mb-4">
-//           VISION:
-//         </h2>
-//         <p className="text-xl leading-relaxed lg:w-1/2">
-//           Enabling businesses to achieve growth and operational excellence by
-//           providing them results-driven business & strategic consulting.
-//         </p>
-//       </div>
+//       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+//         <div className="absolute inset-0 z-0">
+//           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+//         </div>
+//         <motion.div
+//           style={{ opacity, scale }}
+//           className="container relative z-10 mx-auto px-4"
+//         >
+//           <div className="text-center max-w-4xl mx-auto">
+//             <motion.div
+//               initial={{ opacity: 0, y: -20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.2 }}
+//               className="mb-6"
+//             >
+//               <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+//                 Welcome to Our Story
+//               </span>
+//             </motion.div>
+//             <motion.h1
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.4 }}
+//               className={` mb-8 bg-clip-text ${styles.sectionHeadText} bg-gradient-to-r  from-primary to-primary/50`}
+//             >
+//               Our Vision
+//             </motion.h1>
+//             <motion.p
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8, delay: 0.6 }}
+//               className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
+//             >
+//               Enabling businesses to achieve growth and operational excellence
+//               by providing them results-driven business & strategic consulting.
+//             </motion.p>
+//           </div>
+//         </motion.div>
+//         <motion.div
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 1, delay: 1 }}
+//           className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce"
+//         >
+//           <ChevronDown className="w-6 h-6 text-primary" />
+//         </motion.div>
+//       </section>
 
 //       {/* Mission Section */}
-//       <div className="max-w-7xl 3xl:w-screen  lg:h-[20vh]  mx-auto  px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ">
-//         <h2 className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 pl-5 md:pl-0 sm:mb-14 lg:mb-12 z-50">
-//           MISSION:
-//         </h2>
-//         <div className="relative z-50 ">
-//           {/* Mission Points */}
-//           {/* <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 md:mt-20 lg:mt-0 lg:gap0"> */}
-//           {/* <div className="relative  font-bold grid grid-cols-1 lg:grid-cols-2 mx-10 gap-10 lg:gap-56 3xl:absolute">
-//             <p className="text-base sm:text-lg italic md:mb-4 lg:pr-32 4xl:pr-0 3xl:absolute left-[26rem] 3xl:w-96 ">
-//               To empower businesses of all scales/sizes with insights,
-//               strategies, and tools.
-//             </p>
-//             <p className="text-base sm:text-lg 3xl:absolute italic w-80 left-[52rem] 3xl:w-96">
-//               To provide expert consultancy fostering long-term value for our
-//               clients.
-//             </p>
-//             <p className="text-base sm:text-lg italic md:mb-4 3xl:absolute top-[28rem] pt-10  left-[24rem] w-80 3xl:w-96">
-//               To create a client-first approach where every service is
-//               personalized, impactful, and results-driven.
-//             </p>
-//             <p className="text-base sm:text-lg lg:pl-32 lg:mt-10 italic md:mb-4 3xl:absolute 3xl:w-96 top-[25rem] left-[45rem]">
-//               To pioneer Gen AI-enabled products that enhance efficiency,
-//               innovation, and decision-making for businesses of all sizes.
-//             </p>
-//           </div> */}
+//      <section className="p-24  relative overflow-hidden">
+//         {/* Background decorative elements */}
+//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+//         <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
 
-//           <div className="font-bold grid grid-col-1 gap-8 md:absolute">
-//             <p className="text-base sm:text-lg pl-8 md:pl-0 md:w-80   md:absolute left-48 -top-10  ">
-//               To empower businesses of all scales/sizes with insights,
-//               strategies, and tools.
-//             </p>
-//             <p className="text-base sm:text-lg pl-8 md:pl-0 md:w-80  md:absolute left-[40rem] -top-10  ">
-//               To provide expert consultancy fostering long-term value for our
-//               clients.
-//             </p>
-//             <p className="text-base sm:text-lg pl-8 md:pl-0 md:w-80  md:absolute left-72  top-[35rem] 2xl:top-[29rem]">
-//               To create a client-first approach where every service is
-//               personalized, impactful, and results-driven.
-//             </p>
-//             <p className="text-base sm:text-lg pl-8 md:pl-0 md:w-80 md:absolute left-[42rem] top-[35rem] 2xl:top-[29rem]">
-//               To pioneer Gen AI-enabled products that enhance efficiency,
-//               innovation, and decision-making for businesses of all sizes.
-//             </p>
+//         <div className=" mx-auto px-4 relative">
+//           <motion.div
+//             initial={{ opacity: 0, y: 20 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             viewport={{ once: true }}
+//             className="text-center mb-24"
+//           >
+//             <span className="text-sm font-semibold tracking-wider  uppercase">
+//               Discover Our Purpose
+//             </span>
+//             <h2
+//               className={`  ${styles.sectionHeadText} mt-4  mb-6 bg-clip-text text-black bg-gradient-to-r from-primary via-primary/80 to-primary/50`}
+//             >
+//               Our Mission
+//             </h2>
+//             <div className="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto" />
+//           </motion.div>
+
+//           <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
+//             {missions.map((mission, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, y: 50 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.8, delay: index * 0.2 }}
+//                 viewport={{ once: true }}
+//                 className={`flex flex-col lg:flex-row items-center gap-8`}
+//               >
+//                 {/* Icon Column */}
+//                 <div className="w-full lg:w-1/3">
+//                   <div
+//                     className={`group relative overflow-hidden border-0 ${
+//                       index % 2 === 0
+//                         ? "lg:translate-x-12"
+//                         : "lg:-translate-x-12"
+//                     }`}
+//                   >
+//                     <div
+//                       className={`absolute inset-0 bg-gradient-to-br ${mission.gradient} opacity-20 transition-opacity duration-300 group-hover:opacity-30`}
+//                     />
+//                     <div className="p-8 flex items-center justify-center">
+//                       <div className="relative">
+//                         <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl transform group-hover:scale-125 transition-transform duration-300" />
+//                         <mission.icon
+//                           className={`w-20 h-20 ${mission.accent} transition-all duration-300 relative z-10`}
+//                         />
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Content Column */}
+//                 <div className="w-full lg:w-2/3">
+//                   <div className="group relative overflow-hidden border-0 backdrop-blur-sm bg-background/50">
+//                     <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background" />
+//                     <div className="relative p-8">
+//                       <div className="space-y-4 text-justify">
+//                         <div
+//                           className={`w-12 h-1 bg-gradient-to-r ${mission.gradient}`}
+//                         />
+//                         <h3
+//                           className={`text-2xl font-bold ${mission.accent} transition-colors duration-300`}
+//                         >
+//                           {mission.title}
+//                         </h3>
+//                         <p className="text-muted-foreground text-lg leading-relaxed">
+//                           {mission.description}
+//                         </p>
+//                       </div>
+
+//                       {/* Number indicator */}
+//                       {/* <div className="absolute top-4 right-4 opacity-10 font-bold text-6xl">
+//                         0{index + 1}
+//                       </div> */}
+
+//                       {/* Decorative elements */}
+//                       <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+//                     </div>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             ))}
 //           </div>
 //         </div>
-//         {/* Background or Centered Image */}
+//       </section>
 
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           fill="none"
-//           viewBox="0 0 868 436"
-//           // transform="translate(202 ,-450)"
-//           // transform="translate(202 ,50)"
-//           // className="hidden lg:block -z-20 2xl:h-[50vh] 3xl:h-[35vh] 3xl:mt-[28rem]  "
-//           className="hidden lg:block -z-20 2xl:h-[50vh] 3xl:h-[35vh] ml-40 mt-20 "
-//         >
-//           <path
-//             stroke="#000"
-//             strokeWidth="5"
-//             d="M196.806 20.708h-38.087v58.055l224.456 228.894v109.084h-61.383M448.256 23.666h-38.087v58.055l224.456 228.894v109.084h-61.384"
-//           ></path>
-//           <path
-//             fill="#587535"
-//             d="M305.889 218.006c-.003 4.659.057 8.97-.032 13.278-.055 2.691-.94 5.085-4.154 4.991-3.162-.093-3.941-2.413-3.927-5.174.023-4.802.063-9.605-.017-14.407-.049-2.975.449-5.851 3.961-5.918 3.521-.068 4.173 2.822 4.167 5.773-.001.369.001.739.002 1.457M651.279 247.764c1.386-40.962 16.257-75.877 44.778-104.722 14.998-15.169 32.776-26.101 53.934-30.489 36.661-7.603 69.497 10.051 83.944 44.936 11.059 26.703 11.099 54.061 3.627 81.505-9.367 34.402-27.67 62.991-57.242 83.601-15.671 10.922-32.924 17.688-52.37 17.706-28.063.027-48.739-12.84-62.902-36.55-10.2-17.075-13.7-35.962-13.769-55.987m155.999 9.151c9.778-20.596 14.187-42.146 11.107-64.905-2.327-17.195-8.631-32.682-21.932-44.349-17.897-15.699-38.536-17.639-60.154-9.673-24.514 9.034-41.587 26.772-53.545 49.467-13.995 26.562-19.024 54.537-9.937 83.81 6.174 19.886 18.437 34.686 38.966 41.129 16.389 5.144 32.197 2.39 47.249-5.048 21.949-10.845 37.093-28.395 48.246-50.431"
-//           ></path>
-//           <path
-//             fill="#000"
-//             d="M632.776 253.286c1.617-45.673 18.962-84.603 52.228-116.765 17.493-16.913 38.23-29.103 62.907-33.996 42.761-8.478 81.061 11.207 97.911 50.104 12.899 29.775 12.946 60.278 4.23 90.879-10.925 38.359-32.273 70.235-66.766 93.216-18.278 12.178-38.401 19.722-61.082 19.743-32.732.029-56.848-14.317-73.368-40.754-11.897-19.039-15.979-40.098-16.06-62.427M814.73 263.49c11.405-22.964 16.548-46.993 12.955-72.37-2.714-19.172-10.067-36.44-25.582-49.449-20.874-17.504-44.947-19.668-70.161-10.786-28.593 10.073-48.507 29.851-62.454 55.157-16.323 29.616-22.189 60.809-11.59 93.448 7.201 22.174 21.505 38.676 45.449 45.86 19.115 5.735 37.554 2.664 55.11-5.629 25.601-12.093 43.264-31.661 56.273-56.231"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             d="M35.143 221.855c-.87-1.013-1.69-2.076-2.62-3.032-10.211-10.487-20.442-20.957-30.657-31.44-.498-.51-.91-1.105-1.773-2.167 1.514-.138 2.527-.31 3.54-.311 13.926-.018 27.853-.078 41.777.078 1.603.018 3.587.883 4.725 2.023 8.513 8.526 16.906 17.174 25.225 25.891 2.521 2.642 4.69 5.62 6.697 8.693-15.854.254-31.384.26-46.914.265"
-//           ></path>
-//           <path
-//             fill="#587535"
-//             d="M34.924 221.962c15.749-.112 31.279-.117 47.145-.124-.279 1.039-.718 2.249-1.536 3.093a4499 4499 0 0 1-30.697 31.423c-.855.867-2.27 1.663-3.43 1.672-15.031.111-30.063.073-46.406.073 12.038-12.498 23.372-24.264 34.924-36.137"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             d="M214.526 0c3.55 2.335 7.791 2.77 10.39 6.665 3.928 5.887 4.394 13.697-.095 19.23-7.464 9.198-21.201 7.521-26.28-1.503-4.566-8.112-1.546-20.118 7.537-23.06 2.601-.844 5.449-.924 8.448-1.332m-.86 21.506c2.053-2.417 2.154-5.14.996-7.904-1.19-2.841-5.566-3.728-6.781-1.143-1.061 2.257-1.197 5.446-.525 7.888.755 2.74 3.514 2.463 6.31 1.16m6.768.64.534-10.74-.953-.517c-.987 1.284-3.955-1.451-3.615 2.275.207 2.27.843 4.534 1.558 6.71.318.968 1.305 1.714 2.476 2.273M291.173 409.427c2.613-5.247 6.26-8.909 12.126-9.274 7.854-.489 14.096 2.45 17.224 9.973 2.353 5.66 1.027 10.962-2.845 15.745-4.007 4.949-8.928 7.032-15.237 5.68-8.005-1.715-12.623-7.714-12.029-15.773.151-2.052.408-4.097.761-6.351m14.024 8.748c-.224-5.417-3.288-8.132-6.746-5.852-2.679 1.767-2.648 4.774-1.792 7.273.5 1.46 2.45 3.083 3.991 3.383 2.798.545 4.017-1.67 4.547-4.804m3.766 1.463-2.413.128c1.038 3.487 3.421 4.006 5.901 3.166 2.369-.802 3.001-2.694 1.391-4.978-.251-.355-.255-1.129-.039-1.528 1.314-2.418.585-4.17-1.902-4.825-2.511-.661-4.46.229-5.099 3.404l4.849-.756.091.796-2.174 2.001 2.204 3.27c-.788-.106-1.576-.211-2.809-.678"
-//           ></path>
-//           <path
-//             fill="#F3BE1E"
-//             d="M472.342 11.002c6.502 2.531 9.251 7.556 9.682 13.928.445 6.595-2.877 11.477-8.305 14.643-6.501 3.791-15.885 1.889-19.752-3.63-6.155-8.785-5.035-15.14 1.133-21.895 4.53-4.963 10.887-4.306 17.242-3.046m-6.735 11.768c-2.529-3.3-6.424-3.658-7.395-.394-.715 2.403-.148 5.404.625 7.898.223.717 4.18 1.346 4.636.718 1.348-1.859 1.823-4.359 2.579-6.628.096-.288-.167-.697-.445-1.594m4.072-2.257-2.489 2.956.857.957 3.747-2.033c1.413 4.473-4.046 5.086-4.618 8.718 2.844.33 5.485.831 9.07-.722-1.907-.873-2.868-1.313-3.033-1.39.557-2.663 1.355-4.914 1.269-7.131-.022-.58-2.791-1.053-4.803-1.355M565.915 434.359c-4.259 1.768-8.352 2.384-12.436.447-6.189-2.934-10.993-8.979-10.078-16.409 1.036-8.417 6.831-14.25 14.916-13.838 11.344.577 14.638 4.044 16.936 13.734 1.137 4.798-3.42 14.63-9.338 16.066m-1.21-10.272c.958.556 1.09 8.773 1.479 8.504.956-.66 1.23-8.635 1.109-9.614-.3-2.426-.545-4.807-.702-7.285-3.018.056-6.327 4.532-6.324 8.764 1.174.058 2.63-.532 4.438-.369m-12.272-8.495c-3.259 1.469-3.585 4.216-3.04 6.969.297 1.505 1.686 3.382 3.06 3.963 2.693 1.141 4.812-.62 5.383-3.803.808-4.5-.689-6.74-5.403-7.129"
-//           ></path>
-//           <path
-//             fill="#F1BA19"
-//             d="M554.664 229.374c-.025 1.455.356 2.831-.164 3.598-.859 1.268-2.364 3.038-3.475 2.955-1.375-.103-3.689-1.817-3.755-2.943a167 167 0 0 1-.019-19.106c.067-1.181 2.54-3.264 3.611-3.094 1.412.224 3.488 2.176 3.612 3.537.444 4.866.184 9.796.19 15.053"
-//           ></path>
-//           <path
-//             fill="#FDFEFD"
-//             d="M807.161 257.166c-11.035 21.785-26.179 39.335-48.128 50.181-15.052 7.437-30.861 10.191-47.249 5.047-20.529-6.442-32.792-21.242-38.966-41.129-9.087-29.272-4.058-57.248 9.937-83.81 11.958-22.695 29.03-40.433 53.545-49.467 21.618-7.966 42.257-6.026 60.153 9.673 13.301 11.668 19.606 27.155 21.933 44.349 3.08 22.759-1.329 44.31-11.225 65.156m-106.285-69.59c-11.722 18.034-17.508 37.584-14.829 59.194 1.556 12.551 5.995 23.987 15.47 32.67 14.434 13.227 31.056 14.274 48.469 6.986 35.629-14.914 56.821-63.091 44.105-99.748-8.865-25.556-32.426-36.961-57.884-27.854-14.93 5.341-26.038 15.549-35.331 28.752"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             d="M701.033 187.361c9.135-12.988 20.243-23.196 35.173-28.537 25.458-9.107 49.019 2.297 57.884 27.854 12.716 36.656-8.475 84.834-44.105 99.748-17.413 7.288-34.034 6.241-48.469-6.986-9.474-8.683-13.914-20.119-15.47-32.671-2.679-21.61 3.108-41.159 14.987-59.408m45.251-7.29c-5.178 1.343-10.805 1.807-15.455 4.183-18.783 9.597-30.242 34.395-26.054 55.031 4.5 22.174 24.188 31.237 43.714 20.123 18.873-10.741 29.699-36.695 24.051-57.655-3.536-13.123-12.875-21.027-26.256-21.682M209.032 17.558c-.006-1.282-.114-2.306.195-3.183.176-.5 1.261-1.19 1.537-1.042.623.331 1.413 1.148 1.388 1.734-.059 1.354-.564 2.689-.888 4.031-.72-.407-1.44-.813-2.232-1.54"
-//           ></path>
-//           <path
-//             fill="#F3BE1E"
-//             d="M459.972 24.703c.87-.735 1.67-1.178 2.47-1.622.311 1.332.851 2.668.83 3.995-.01.61-1.12 1.203-1.731 1.804-.556-.814-1.185-1.591-1.633-2.461-.194-.376-.015-.944.064-1.716M551.425 421.641c.679-1.117 1.727-2.223 2.402-3.051.513 1.114 1.418 2.228 1.42 3.343.002.94-1.047 1.881-1.631 2.821-.607-1.035-1.587-1.791-2.191-3.113"
-//           ></path>
-//           <path
-//             fill="#FDFEFD"
-//             d="M746.603 180.072c13.062.654 22.401 8.558 25.937 21.681 5.649 20.961-5.178 46.914-24.051 57.656-19.526 11.114-39.213 2.051-43.714-20.123-4.188-20.636 7.271-45.435 26.054-55.032 4.651-2.375 10.278-2.84 15.774-4.182m-4.943 57.33c7.723-4.786 11.284-11.806 10.891-20.79-.21-4.81-2.078-8.879-6.57-11.229-4.422-2.312-8.706-1.364-12.566 1.266-6.841 4.66-10.021 11.33-9.775 19.565.309 10.288 7.912 15.212 18.02 11.188"
-//           ></path>
-//           <path
-//             fill="#F3BE1E"
-//             d="M741.401 237.522c-9.849 3.904-17.452-1.02-17.76-11.308-.247-8.235 2.933-14.905 9.774-19.565 3.861-2.63 8.144-3.578 12.566-1.266 4.493 2.35 6.36 6.419 6.57 11.229.393 8.984-3.168 16.004-11.15 20.91"
-//           ></path>
-//           <path
-//             fill="#F1BA19"
-//             d="M804.723 109.085c10.182 2.879 19.761 7.125 27.706 13.232 9.061 6.964 15.973 15.514 21.422 24.863 5.788 9.93 9.477 20.548 11.863 31.585 2.189 10.13 2.312 20.291 2.22 30.504-.115 12.898-2.502 25.549-6.827 37.78-3.595 10.166-7.77 20.277-12.964 29.87-6.502 12.009-14.839 23.097-24.696 33.316-19.022 19.72-41.545 34.692-69.861 42.264-11.784 3.15-23.851 4.553-36.099 3.742-11.272-.746-22.144-2.142-32.203-7.17 4.053.72 8.079.549 12.164 1.07 21.812 2.781 42.481-.777 62.073-9.368 35.558-15.59 60.06-40.655 77.071-71.818 12.677-23.223 19.219-47.802 18.481-73.699-.715-25.103-7.85-48.007-25.779-68.056-6.661-7.448-15.734-12.83-24.571-18.115"
-//           ></path>
-//           <path
-//             stroke="#000"
-//             strokeWidth="5"
-//             d="M118.043 224.086h526.566"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             d="m90.189 221.835-3.584-3.675c-10.036-10.286-20.075-20.569-30.1-30.866-.48-.493-.84-1.103-1.81-2.401h4.523c12.06 0 24.135.349 36.174-.152 5.76-.239 9.613 1.716 13.296 5.829 6.218 6.942 12.933 13.436 19.316 20.234 3.175 3.381 6.077 7.018 8.779 10.787-15.747.247-31.171.245-46.594.244"
-//           ></path>
-//           <path
-//             fill="#587535"
-//             d="M90.014 222.029c15.599-.193 31.022-.191 46.783-.191-.278 1.038-.717 2.247-1.534 3.091a4562 4562 0 0 1-30.665 31.395c-.858.869-2.261 1.691-3.416 1.699-14.898.101-29.798.051-44.697.022-.194 0-.388-.211-.792-.445 1.788-2.163 3.42-4.409 5.325-6.394 8.254-8.601 16.573-17.139 24.908-25.66 1.191-1.218 2.603-2.221 4.088-3.517"
-//           ></path>
-//         </svg>
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="36"
-//           height="405"
-//           fill="none"
-//           viewBox="0 0 36 405"
-//           transform="translate(-10 ,-400)"
-//           className="block lg:hidden z-0"
-//         >
-//           <path
-//             fill="#587535"
-//             stroke="#000"
-//             d="M23.734 86.482c-1.545-.001-3.053.004-4.535.009-3.435.012-6.733.023-10.033-.044-1.442-.03-2.72-.285-3.613-.898-.855-.587-1.424-1.547-1.376-3.175.046-1.607.642-2.529 1.508-3.076.907-.573 2.184-.784 3.67-.776l1.877.01c4.646.024 9.3.049 13.95-.029 1.625-.027 3.123.103 4.212.658.533.272.96.642 1.263 1.146.303.506.498 1.178.516 2.08l.5-.01-.5.01c.017.903-.155 1.587-.442 2.11-.287.52-.705.912-1.23 1.206-1.07.599-2.563.78-4.166.776h-.771zm0 0v.5-.5ZM24.06 261.481c-1.545-.001-3.052.005-4.534.01-3.436.012-6.734.023-10.034-.045-1.442-.029-2.72-.284-3.613-.897-.855-.587-1.424-1.547-1.376-3.175.047-1.607.642-2.529 1.509-3.076.906-.573 2.183-.784 3.669-.776l1.877.009c4.646.025 9.3.05 13.95-.028 1.626-.027 3.123.103 4.212.658.533.272.96.642 1.263 1.146.303.506.499 1.178.516 2.08l.5-.01-.5.01c.017.903-.155 1.587-.442 2.11-.287.521-.704.912-1.23 1.206-1.07.599-2.563.779-4.166.776-.233-.001-.466 0-.771.001zm0 0v.5-.5Z"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             stroke="#000"
-//             d="M18.335 39.021c-.108-7.294-.112-14.452-.115-21.614l.274-.227c.348-.29.716-.595 1.047-.917q4.357-4.244 8.71-8.493 3.274-3.196 6.55-6.387a4 4 0 0 1 .3-.261c.031.282.053.517.053.762l.006 3.337c.01 5.647.02 11.29-.044 16.933-.007.642-.37 1.48-.835 1.945-4.135 4.128-8.33 8.2-12.558 12.235-1.035.988-2.185 1.866-3.388 2.687Z"
-//           ></path>
-//           <path
-//             fill="#587535"
-//             stroke="#000"
-//             d="M17.288 17.163c.051 7.34.055 14.585.058 21.974a2.1 2.1 0 0 1-.652-.41l-.348.36.348-.36A2178 2178 0 0 1 1.446 23.833c-.17-.168-.341-.4-.468-.648-.129-.253-.193-.487-.195-.665C.74 16.717.743 10.914.746 4.79l.001-3.613a4614 4614 0 0 1 16.541 15.987Z"
-//           ></path>
-//           <path
-//             fill="#F1BA19"
-//             stroke="#000"
-//             d="M31.495 173.403c-.103.673-.633 1.591-1.366 2.38a6 6 0 0 1-1.128.966c-.386.247-.728.38-.996.406-3.882.367-7.79.314-11.875.258-1.58-.022-3.187-.044-4.83-.042a17 17 0 0 0-1.61.073c-.255.02-.494.038-.705.048-.694.031-1.13-.026-1.405-.219-.688-.484-1.502-1.143-2.127-1.827a5.2 5.2 0 0 1-.733-.988c-.17-.315-.232-.566-.218-.756.047-.658.49-1.632 1.114-2.476.306-.413.636-.77.951-1.022.328-.263.582-.368.742-.378a179 179 0 0 1 21.207-.022c.18.011.474.132.85.412.36.269.738.642 1.079 1.058.34.415.629.857.82 1.256.2.419.254.716.23.873ZM31.495 363.403c-.103.673-.633 1.591-1.366 2.38a6 6 0 0 1-1.128.966c-.386.247-.728.38-.996.406-3.882.367-7.79.314-11.875.258-1.58-.022-3.187-.044-4.83-.042a17 17 0 0 0-1.61.073c-.255.02-.494.038-.705.048-.694.031-1.13-.026-1.405-.219-.688-.484-1.502-1.143-2.127-1.827a5.2 5.2 0 0 1-.733-.988c-.17-.315-.232-.566-.218-.756.047-.658.49-1.632 1.114-2.476.306-.413.636-.77.951-1.022.328-.263.582-.368.742-.378a179 179 0 0 1 21.207-.022c.18.011.474.132.85.412.36.269.738.642 1.079 1.058.34.415.629.857.82 1.256.2.419.254.716.23.873Z"
-//           ></path>
-//           <path
-//             stroke="#000"
-//             strokeWidth="5"
-//             d="M17.833 57.431 17.62 405"
-//           ></path>
-//           <path
-//             fill="#69883D"
-//             stroke="#000"
-//             d="M34.699 26.799c.08-.078.173-.152.317-.257v1.216c0 1.695-.015 3.394-.03 5.097-.034 4.155-.07 8.326.104 12.48.055 1.335-.144 2.42-.579 3.378-.435.96-1.121 1.82-2.084 2.683-2.019 1.807-3.974 3.716-5.92 5.616-1.302 1.27-2.6 2.537-3.91 3.767a49 49 0 0 1-4.408 3.653c-.104-7.233-.104-14.33-.103-21.432l.444-.432 1.189-1.16 2.597-2.534q6.188-6.041 12.383-12.075Z"
-//           ></path>
-//           <path
-//             fill="#587535"
-//             stroke="#000"
-//             d="m16.44 64.205-.32.33.32-.33c-5.1-4.938-10.184-9.893-15.235-14.88a2.7 2.7 0 0 1-.477-.65c-.132-.253-.198-.483-.199-.655-.043-6.312-.03-12.623-.016-18.937l.004-2.265.432.344c.713.567 1.4 1.112 2.043 1.728 4.172 4.005 8.315 8.04 12.45 12.086.276.27.531.568.803.899l.205.251c.174.213.356.438.551.665.088 7.276.09 14.476.09 21.823a2.1 2.1 0 0 1-.652-.409Z"
-//           ></path>
-//         </svg>
-//       </div>
-
-//       {/* Values for small devices */}
-//       <div className="relative lg:hidden  md:h-[30vh] ">
-//         <h2 className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 pl-5 sm:mb-10 lg:mb-12 ">
-//           VALUES :
-//         </h2>
-//         {/* Values Points */}
-//         <div className="relative grid grid-cols-1 sm:grid-cols-2 sm:gap-10  ">
-//           <div className="relative  ">
-//             <div className="pl-14 ">
-//               <p className="text-xl font-semibold mb-1">CREATIVITY</p>
-//               <p className="text-base  italic ">
-//                 Being creative is our way of life
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="relative ">
-//             <div className="pl-14 ">
-//               <p className="text-lg font-semibold ">ADAPTABILITY</p>
-//               <p className="text-base  italic ">
-//                 We tailor to the needs of customers
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="relative">
-//             <div className="pl-14 ">
-//               <p className="text-lg font-semibold ">ETHICS</p>
-//               <p className="text-base italic ">
-//                 We like doing things ethically.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="relative">
-//             <div className="pl-14 ">
-//               <p className="text-lg font-semibold ">INDIVIDUALITY</p>
-//               <p className="text-base italic ">
-//                 We celebrate diverse perspective
-//               </p>
-//             </div>
+//       {/* Values Section */}
+//       <section className="py-32 bg-muted/50 relative">
+//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+//         <div className="container mx-auto px-4 relative">
+//           <motion.h2
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             transition={{ duration: 0.5 }}
+//             className="text-4xl md:text-5xl font-bold text-center mb-16"
+//           >
+//             Our Values
+//           </motion.h2>
+//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+//             {values.map((value, index) => (
+//               <motion.div
+//                 key={index}
+//                 initial={{ opacity: 0, scale: 0.9 }}
+//                 whileInView={{ opacity: 1, scale: 1 }}
+//                 whileHover={{ scale: 1.05 }}
+//                 transition={{ duration: 0.3 }}
+//               >
+//                 <div className="h-full backdrop-blur-sm bg-background/50">
+//                   <div className="p-8">
+//                     <div
+//                       className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${value.gradient} animate-pulse mb-6 flex items-center justify-center transform rotate-3 hover:rotate-6 transition-transform duration-300`}
+//                     >
+//                       <span className="text-2xl font-bold text-primary-foreground">
+//                         {value.title[0]}
+//                       </span>
+//                     </div>
+//                     <h3 className="text-2xl font-semibold mb-4">
+//                       {value.title}
+//                     </h3>
+//                     <p className="text-muted-foreground text-lg">
+//                       {value.description}
+//                     </p>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             ))}
 //           </div>
 //         </div>
-//       </div>
-
-//       {/* Values for large devices */}
-//       <div className="hidden lg:block mt-[30rem] 2xl:mt-96 h-[100vh] 2xl:h-[80vh] relative">
-//         <h2 className="absolute   bottom-[50%] left-[8%]  text-black text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 sm:mb-10 lg:mb-12">
-//           VALUES :
-//         </h2>
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="588"
-//           height="313"
-//           fill="none"
-//           viewBox="0 0 588 313"
-//           // transform="translate(500 ,200)"
-//           // className="absolute bottom-40 2xl:translate-x-[97%] 2xl:translate-y-[102%] translate-x-[70%] translate-y-[70%] "
-//           className="absolute left-[30%] bottom-1 2xl:bottom-10 2xl:left-[35%] 3xl:left-[35%] "
-//         >
-//           <path
-//             fill="#fff"
-//             d="M242.053 230.259c5.095-2.611 9.944-5.329 14.911-7.767 7.632-3.746 15.818-5.654 24.05-6.523 7.404-.783 14.939-.32 22.41-.132 8.491.213 16.633 2.468 24.617 5.492 10.925 4.137 20.784 10.182 29.687 18.221 10.178 9.188 17.898 20.324 23.389 33.244 3.61 8.493 6.003 17.435 6.847 26.791.399 4.421.772 8.844 1.17 13.415H199.019c-.425-27.823 11.092-61.879 43.034-82.741"
-//           ></path>
-//           <path
-//             fill="#FBAE17"
-//             d="M486.18 184.938c-3.93 3.29-7.975 6.22-11.345 9.874-6.247 6.776-9.092 15.329-10.382 24.735-1.72 12.541 2.581 23.08 9.19 32.592 5.607 8.068 13.518 12.869 22.947 13.941 6.245.71 12.55.824 18.83 1.147.804.042 1.623-.261 2.695-.449l4.174 43.3H399.338c-5.368 0-6.553-1.131-6.988-6.82-1.317-17.218-6.825-32.854-15.536-47.212-2.342-3.861-5.2-7.364-7.893-10.969-1.546-2.068-1.464-3.391.367-4.938a47 47 0 0 0 4.005-3.804c7.188-7.707 14.311-15.485 21.517-23.173 10.178-10.86 20.406-21.664 30.616-32.489 9.597-10.174 19.187-20.359 28.813-30.501 1.515-1.596 3.21-2.992 5.085-4.725 2.558 3.458 5.176 6.965 7.762 10.497 4.851 6.625 9.674 13.273 14.531 19.892 1.571 2.141 3.307 4.15 4.76 6.378.39.599.015 1.778-.197 2.724M274.204 210.5c-6.225 1.905-12.364 3.398-18.193 5.774-8.093 3.298-15.532 8.062-22.441 13.721-2.146 1.758-4.232 3.601-6.265 5.337l-91.978-97.521 31.568-27.478c4.826 8.801 11.188 15.577 19.658 19.693 6.813 3.312 13.878 4.904 21.55 3.863 10.683-1.45 19.675-5.993 26.806-14.678 4.4-5.359 6.903-11.837 7.807-18.774.861-6.602.831-13.342 1.124-20.025.073-1.683-.708-3.813-.002-4.931.558-.883 2.798-.523 4.289-.729q7.764-1.076 15.527-2.161c5.009-.7 10.013-1.431 15.026-2.097 3.249-.431 6.509-.77 9.919-1.168.213 3.128.602 6.219.605 9.31.04 41.235.021 82.472.034 123.708.002 5.305-1.018 6.103-5.882 6.559-2.996.281-5.953 1.037-9.152 1.597"
-//           ></path>
-//           <path
-//             fill="#5D7B36"
-//             d="M200.07 277.893c-1.924 9.107-3.915 17.973-5.654 26.896-.661 3.394-1.645 4.729-4.81 4.73-39.948.007-79.895-.01-119.842.04-2.474.003-3.483-1.005-3.261-3.615.52-6.117 1.03-12.234 1.512-18.354.382-4.848.695-9.701 1.082-14.548.131-1.635.398-3.256.647-5.231 3.26.188 6.464.585 9.66.518 12.403-.261 23.527-4.085 31.814-14.623 5.88-7.476 9.659-16.025 10.501-26.015 1.066-12.624-2.58-23.467-10.232-32.782-3.01-3.663-6.594-6.778-10.209-10.439 7.473-13.671 17.09-26.281 27.94-38.042.464.359.835.572 1.12.878 28.872 30.947 57.742 61.897 86.597 92.862 2.347 2.519 2.34 4.049-.441 7.329-7.469 8.811-12.611 19.056-16.424 30.396M355.638 127.802c7.427 4.501 15.152 7.201 23.565 6.481 9.379-.804 17.839-4.176 24.888-11.205 4.747-4.733 8.503-10.214 11.254-16.687 6.197 5.234 12.191 10.314 18.202 15.37 6.02 5.063 12.057 10.101 18.528 15.52-1.136 1.291-2.117 2.481-3.17 3.592-6.926 7.308-13.889 14.575-20.798 21.902-12.298 13.045-24.56 26.13-36.85 39.183-9.537 10.128-19.12 20.204-28.617 30.374-1.56 1.671-2.6 2.022-4.71.595-8.125-5.492-16.295-10.957-24.759-15.803-7.922-4.536-16.66-6.624-25.568-7.709-1.941-.237-3.893-.376-5.839-.567-2.839-.28-3.718-1.306-3.767-4.386-.006-.37-.001-.741-.001-1.112V74.355c.011-4.456.937-5.114 5.088-4.533 6.31.884 12.655 1.474 18.982 2.218 5.31.624 10.616 1.29 16.036 1.952-5.046 21.971-.948 40.525 17.536 53.81"
-//           ></path>
-//           <path
-//             fill="#FFFEFC"
-//             d="M166.525 84.228c.611-7.011 2.913-13.081 6.641-18.49 5.992-8.692 13.859-14.186 23.868-15.963 9.548-1.696 18.556-.117 26.665 5.617 9.133 6.456 14.789 15.504 16.586 27.303 1.813 11.914-.741 22.72-7.543 32.029-5.455 7.467-12.803 12.121-21.648 14.127-9.114 2.067-17.639.622-25.649-4.058-9.934-5.804-16.102-14.881-18.364-26.861-.617-3.27-.799-6.645-1.031-9.984-.079-1.136.303-2.31.475-3.72m49.63-26.033c-3.563-.944-7.089-2.481-10.693-2.733-19.806-1.384-35.26 16.908-33.407 37.386 1.856 20.523 21.018 35.036 39.459 29.52 13.099-3.918 22.164-15.52 23.503-30.082 1.28-13.923-6.043-27.351-18.862-34.09"
-//           ></path>
-//           <path
-//             fill="#FDFDFD"
-//             d="M98.799 259.894c-4.77 2.245-9.44 3.766-14.55 4.11-12.361.832-22.692-3.594-30.827-13.471-5.931-7.2-8.954-15.805-9.128-25.601-.217-12.209 3.656-22.544 11.92-30.742 6.495-6.442 14.214-10.098 23.24-10.423 6.33-.229 12.438.654 18.14 3.509 5.492 2.75 9.984 7.032 13.775 12.142 3.706 4.994 6.087 10.741 7.023 16.943 1.875 12.421-.53 23.769-8.223 33.614-3.184 4.075-7.027 7.123-11.37 9.919M51.013 215.34c-5.738 24.714 13.91 46.863 37.172 41.907 15.167-3.232 26.081-18.936 24.899-35.83-1.186-16.964-14.043-30.717-29.456-31.51-15.315-.787-27.418 8.509-32.615 25.433M340.257 81.456c3.379-16.309 13.014-26.343 27.288-30.329 14.07-3.928 26.709.513 36.787 11.972 5.189 5.9 8.083 13.126 9.219 21.3 1.549 11.153-.878 21.244-6.921 30.089-5.71 8.356-13.521 13.678-23.236 15.414-8.007 1.43-15.784.671-23.06-3.194-9.109-4.839-15.552-12.492-19.003-22.877-2.319-6.977-2.652-14.158-1.491-21.436.04-.25.266-.466.417-.939m50.301-21.7c-6.623-3.597-13.578-4.379-20.782-2.745-16.385 3.715-27.158 21.183-24.287 39.323 2.752 17.388 18.582 30.088 34.729 27.862 13.807-1.903 25.02-13.159 27.494-27.597 2.551-14.888-4.081-29.372-17.154-36.844"
-//           ></path>
-//           <path
-//             fill="#FFFEFC"
-//             d="M534.007 250.418c-6.033 7.293-13.517 11.707-22.179 12.799-11.633 1.467-22.317-1.439-31.154-10.466-6.316-6.453-10.374-14.307-11.374-23.443-1.373-12.547 1.33-24.07 9.689-33.613 5.979-6.828 13.268-11.188 21.73-12.274 11.628-1.491 22.311 1.428 31.161 10.441 6.332 6.448 10.389 14.31 11.372 23.44 1.165 10.826-.342 21.343-7.074 30.221-.69.91-1.363 1.834-2.171 2.895m-41.425-57.777c-13.697 7.639-20.591 23.322-17.002 38.754 3.853 16.572 17.883 26.35 31.606 26.014 18.559-.454 33.571-19.519 30.379-39.221-3.692-22.786-25.022-35.081-44.983-25.547"
-//           ></path>
-//           <path
-//             fill="#F9AE1A"
-//             d="M216.336 58.278c12.638 6.657 19.961 20.085 18.681 34.008-1.339 14.562-10.404 26.165-23.503 30.083-18.441 5.515-37.603-8.997-39.459-29.52-1.853-20.478 13.601-38.77 33.407-37.387 3.604.252 7.13 1.79 10.874 2.816m-14.747 14.627v-2.22c-.001-3.728-2.139-5.352-5.474-3.895-1.196.523-2.154 1.72-3.168 2.676-.49.461-.763 1.24-1.295 1.593-4.883 3.243-5.549 5.61-2.948 10.798-2.596 5.226-1.93 7.63 2.954 10.766.343.22.7.55.873.924 1.9 4.118 5.263 4.103 9.058 3.793zm2.485 22.101.179 2.315c5.176.402 5.621.19 8.952-4.03.211-.268.493-.49.776-.669 4.816-3.038 5.477-5.473 3.449-9.734.28-3.148 1.233-5.658.506-7.302-1.871-4.23-5.36-7.238-9.312-8.956-2.966-1.288-4.549.482-4.55 3.958zm2.776 4.503h-10.735c-.276 2.661.015 4.964 2.43 5.335 2.769.425 5.649.295 8.455.052 1.922-.167 2.534-1.917 2.63-3.84.104-2.065-1.311-1.433-2.78-1.547m-8.324 8.353c-.335 1.718.155 2.651 1.939 2.563a48 48 0 0 1 4.595-.001c1.825.086 2.461-.764 2.021-2.832-2.733 0-5.44 0-8.555.27m19.52-13.652 2.553 1.098c.145-.404.52-1.022.396-1.176-.583-.733-1.303-1.338-1.975-1.989-.382.572-.763 1.143-.974 2.067m2.558-11.173 2.578-1.035c-.22-.454-.39-1.25-.668-1.298-.783-.131-1.611.046-2.421.101.044.686.088 1.373.511 2.232m-2.615-12.079c1.395 1.344 2.179.075 2.813-.935.208-.332-.289-1.179-.464-1.79-.805.524-1.626 1.023-2.4 1.596-.141.105-.091.512.051 1.13m-32.268 11.753c.7-1.612-.274-2.095-1.396-1.988-.643.061-1.227.845-1.838 1.303.65.409 1.275.878 1.961 1.195.258.118.655-.116 1.273-.51m.04-11.532 1.917-.378c-.338-.753-.537-1.666-1.066-2.199-.312-.315-1.146-.028-1.745-.011.195.766.391 1.533.894 2.588m-.695 24.137c.614-.129 1.49-.036 1.779-.437.419-.582.415-1.52.591-2.306-.722.17-1.575.146-2.121.576-.394.31-.378 1.224-.249 2.167"
-//           ></path>
-//           <path
-//             fill="#5F7C38"
-//             d="M51.054 215.117c5.156-16.701 17.259-25.997 32.574-25.209 15.413.792 28.27 14.546 29.456 31.509 1.182 16.894-9.732 32.598-24.9 35.83-23.262 4.956-42.91-17.193-37.13-42.13m36.647 16.192c2.377.333 4.745.809 7.132.96 2.69.17 3.992-.957 3.904-3.13-.102-2.504-1.584-3.127-3.681-3.17-4.261-.089-8.355-1.012-11.875-3.81-3.818-3.036-7.844-3.127-12.19-1.496-2.183.819-3.267 1.946-2.9 4.575.226 1.629.041 3.325.041 4.991 0 5.064.012 5.025 4.328 6.559 1.457.517 2.823 1.326 4.258 1.925 2.232.932 4.434 2.028 6.743 2.647 5.035 1.35 10.789-1.259 13.352-5.841-.368-.022-.708-.012-1.038-.068-3.798-.642-7.606-1.227-11.378-2.013-.577-.12-.987-1.178-1.475-1.802.696-.304 1.377-.792 2.092-.861.735-.071 1.504.267 2.687.534m-9.881-27.101c-.2.607-.44 1.202-.594 1.822-1.076 4.349-.018 8.147 3.019 11.082 3.222 3.113 7.057 3.72 11.019 1.775 3.754-1.843 5.754-5.145 5.943-9.606.205-4.858-2.746-9.397-6.957-10.858-4.747-1.646-9.285.346-12.43 5.785M61.083 238.65c1.553-.382 4.115 1.124 4.3-1.916.278-4.551.073-9.137.073-13.889-2.438 0-4.562.057-6.682-.019-1.72-.061-2.21.834-2.17 2.543.074 3.039.02 6.083.021 9.124 0 4.147.001 4.147 4.458 4.157m38.164-15.368 2.754 6.46c.75-1.015 1.768-2.131 2.481-3.439.58-1.064.797-2.359 1.174-3.552-1.355-.26-2.706-.671-4.068-.718-.678-.023-1.375.619-2.341 1.249M390.736 59.833c12.895 7.393 19.526 21.878 16.976 36.766-2.474 14.438-13.688 25.694-27.495 27.597-16.146 2.225-31.976-10.474-34.728-27.863-2.871-18.14 7.901-35.607 24.286-39.323 7.205-1.633 14.159-.852 20.961 2.823m-2.985 37.855c.83 2.314 2.288 2.396 3.815.986a48 48 0 0 0 4.742-5.088c1.366-1.689 1.3-3.593-.106-5.279-1.204-1.445-2.515-2.785-3.777-4.174-2.508-2.762-2.207-3.927 1.269-4.912 2.35-.666 3.53-2.601 3.015-4.932-.529-2.398-2.051-3.69-4.21-3.777-2.209-.088-3.333 1.44-3.811 3.711-.682 3.242-1.933 3.633-4.165 1.376-1.376-1.39-2.657-2.893-4.052-4.26-1.743-1.707-3.556-1.66-5.267.084-1.31 1.335-2.548 2.752-3.843 4.106-2.295 2.4-3.53 2.014-4.319-1.322-.721-3.05-2.676-4.354-5.117-3.403-2.003.78-3.115 2.358-3.053 4.624.062 2.253 1.42 3.39 3.391 3.899 3.141.812 3.483 2.157 1.245 4.668-1.13 1.269-2.331 2.465-3.448 3.747-2.057 2.36-2.056 4.194-.009 6.513 1.124 1.274 2.327 2.468 3.45 3.744 2.209 2.513 1.851 3.783-1.268 4.634-2.729.744-3.975 3.011-3.041 5.584.773 2.133 2.281 3.302 4.37 3.169 2.077-.133 3.08-1.658 3.52-3.784.634-3.059 1.916-3.486 4.04-1.376 1.325 1.317 2.534 2.769 3.841 4.109 2.044 2.097 3.737 2.114 5.845.036 1.139-1.123 2.206-2.334 3.286-3.527 2.641-2.916 2.267-4.069-1.32-5.471-1.123-.439-2.5-1.722-2.713-2.85-.24-1.267.34-3.174 1.203-4.139 2.446-2.736 5.413-1.31 6.487 3.304"
-//           ></path>
-//           <path
-//             fill="#F9AE1A"
-//             d="M492.758 192.551c19.785-9.444 41.115 2.85 44.807 25.637 3.192 19.701-11.821 38.767-30.38 39.221-13.722.335-27.752-9.442-31.606-26.015-3.588-15.431 3.305-31.114 17.179-38.843m-2.158 31.788c.496 1.083.877 2.255 1.518 3.227.742 1.125 1.712 2.075 2.583 3.1l-.751.798c-1.264-1.351-2.569-2.66-3.78-4.064-1.297-1.505-1.232-3.085-.161-4.784.486-.77.839-1.771.899-2.694.133-2.028.002-4.075.053-6.112.045-1.809-.161-3.61-2.191-3.675-2.138-.068-2.544 1.714-2.529 3.677.031 4.262.103 8.528-.026 12.786-.076 2.518.754 4.417 2.321 6.205 1.61 1.837 2.993 3.905 4.606 6.045 1.725-.494 3.79-1.1 5.863-1.676 3.437-.956 4.311-4.338 1.788-7.219-1.828-2.086-3.76-4.066-5.664-6.074-1.469-1.551-2.943-1.796-4.529.46m20.896 6.722c-.602 2.049-1.156 4.461.991 5.5 2.517 1.218 5.366 1.638 7.47 2.234 1.866-2.415 3.496-4.383 4.965-6.482.796-1.139 1.824-2.475 1.877-3.764a189 189 0 0 0-.006-15.804c-.039-.929-1.521-1.786-2.336-2.677-.76.94-2.046 1.804-2.175 2.836-.318 2.543-.13 5.164-.083 7.752.01.505.217 1.067.481 1.496 2.073 3.366-.055 8.038-4.559 8.815 1.268-1.447 2.217-2.56 3.198-3.64.994-1.092 2.127-2.26.796-3.757-1.315-1.478-2.79-1.093-4.058.265a312 312 0 0 0-6.561 7.226m-15.052-9.672c4.531 5.051 10.473 6.109 15.613 2.778 4.886-3.165 7.164-9.534 5.34-15.382-1.661-5.326-5.217-8.466-10.357-9.064-5.039-.586-9.138 1.599-11.731 6.318-2.816 5.127-2.39 10.234 1.135 15.35m13.839 16.298-1.289 3.018 12.407 3.529.782-3.343c-4.046-1.131-7.755-2.167-11.9-3.204m-8.158 3.568c1.373-.13 2.202-.869 1.469-2.313-.302-.595-1.457-1.159-2.076-1.012a89 89 0 0 0-8.885 2.614c-.572.201-1.207 1.301-1.225 2.005-.041 1.576 1.026 1.607 2.163 1.265 2.714-.814 5.434-1.602 8.554-2.559"
-//           ></path>
-//           <path
-//             fill="#060401"
-//             d="M201.589 73.178V97.34c-3.795.31-7.158.325-9.058-3.793-.173-.374-.53-.703-.873-.924-4.884-3.136-5.551-5.54-2.954-10.766-2.601-5.188-1.935-7.555 2.948-10.798.532-.354.805-1.132 1.294-1.593 1.014-.956 1.972-2.153 3.169-2.676 3.335-1.457 5.473.167 5.474 3.895zm-2.73 3.1c.06-.27.215-.564.162-.804-.177-.805-.429-1.59-.652-2.383-.514.541-1.023 1.09-1.545 1.623-.598.61-1.267 1.15-1.8 1.819-.633.796-1.236 1.651-1.671 2.58-.119.252.323 1.002.675 1.256.256.185.916.088 1.171-.156 1.183-1.137 2.288-2.37 3.66-3.936m-4.862 12.033c1.064.126 2.832.716 3.07.296 1.051-1.85-.983-1.769-1.754-2.505-.446-.426-.868-.946-1.395-1.187-.402-.185-1.109-.192-1.389.076-.277.264-.391 1.086-.212 1.463.294.623.881 1.086 1.68 1.857M204.074 94.739V70.588c.001-3.477 1.584-5.247 4.549-3.958 3.953 1.718 7.441 4.726 9.312 8.956.728 1.644-.226 4.153-.505 7.302 2.028 4.26 1.367 6.695-3.449 9.734-.284.179-.566.4-.777.668-3.33 4.22-3.776 4.432-8.952 4.03-.057-.74-.118-1.527-.178-2.581m3.786-16.963c.758.7 1.462 1.49 2.294 2.064.481.331 1.232.536 1.738.367.276-.093.573-1.258.371-1.634-.446-.833-1.196-1.478-1.832-2.19a85 85 0 0 0-1.562-1.697c-.522-.552-1.055-1.09-1.583-1.634-.235.85-.662 1.706-.643 2.55.015.646.591 1.278 1.217 2.174m2.372 8.392-1.942 2.139c.457.319 1.132 1.026 1.335.893a31 31 0 0 0 3.846-2.995c.188-.17.035-1.144-.242-1.436-.255-.27-.968-.304-1.336-.116-.518.265-.904.83-1.661 1.515"
-//           ></path>
-//           <path
-//             fill="#110C02"
-//             d="M207.084 99.51c1.235.113 2.65-.52 2.546 1.546-.097 1.923-.708 3.673-2.63 3.84-2.806.243-5.686.373-8.456-.052-2.414-.371-2.705-2.674-2.43-5.335z"
-//           ></path>
-//           <path
-//             fill="#000"
-//             d="M198.73 107.727c2.911-.135 5.617-.135 8.35-.135.44 2.067-.195 2.918-2.021 2.832a48 48 0 0 0-4.595.001c-1.783.088-2.273-.846-1.734-2.698"
-//           ></path>
-//           <path
-//             fill="#110C02"
-//             d="M217.96 94.033c.296-.748.678-1.32 1.06-1.89.671.65 1.391 1.256 1.975 1.988.123.155-.251.772-.397 1.177-.851-.367-1.702-.733-2.638-1.275M220.414 82.95c-.234-.773-.277-1.459-.321-2.145.81-.056 1.637-.233 2.42-.101.279.047.449.843.668 1.297-.859.345-1.718.69-2.767.949M217.899 70.783c-.052-.443-.103-.85.039-.955.774-.573 1.595-1.071 2.4-1.596.174.612.672 1.459.464 1.79-.634 1.01-1.418 2.279-2.903.761"
-//           ></path>
-//           <path
-//             fill="#090601"
-//             d="M185.578 82.87c-.475.233-.873.468-1.13.349-.686-.317-1.312-.786-1.961-1.194.611-.459 1.195-1.243 1.838-1.304 1.122-.107 2.096.377 1.253 2.148"
-//           ></path>
-//           <path
-//             fill="#110C02"
-//             d="M185.607 71.035c-.349-.911-.545-1.678-.74-2.444.599-.017 1.432-.304 1.745.01.529.533.728 1.446 1.066 2.2-.64.126-1.279.252-2.071.233"
-//           ></path>
-//           <path
-//             fill="#090601"
-//             d="M184.918 95.167c.019-.793.003-1.708.396-2.017.547-.43 1.4-.406 2.122-.576-.176.786-.172 1.724-.591 2.306-.289.4-1.165.308-1.927.287"
-//           ></path>
-//           <path
-//             fill="#FBFCFB"
-//             d="M87.486 231.255c-.969-.213-1.737-.55-2.472-.479-.715.069-1.396.556-2.092.86.488.624.898 1.682 1.475 1.802 3.772.786 7.58 1.372 11.378 2.013.33.056.67.046 1.038.068-2.563 4.582-8.317 7.191-13.352 5.841-2.309-.619-4.511-1.715-6.743-2.647-1.435-.599-2.801-1.408-4.258-1.925-4.316-1.534-4.328-1.495-4.328-6.559 0-1.666.185-3.362-.042-4.991-.366-2.629.718-3.755 2.901-4.575 4.346-1.631 8.372-1.54 12.19 1.496 3.52 2.799 7.614 3.721 11.875 3.81 2.097.044 3.579.667 3.68 3.17.089 2.173-1.214 3.3-3.903 3.13-2.387-.151-4.755-.627-7.347-1.014M77.893 204.011c3.072-5.242 7.61-7.235 12.357-5.588 4.211 1.461 7.162 5.999 6.957 10.857-.19 4.462-2.189 7.763-5.943 9.606-3.962 1.945-7.797 1.338-11.02-1.775-3.036-2.935-4.093-6.732-3.018-11.081.153-.621.394-1.216.667-2.019m11.265 7.349c.785-1.207 1.682-2.351 2.305-3.649.276-.575 0-1.459-.024-2.203-.712.212-1.628.197-2.092.684-.94.987-1.636 2.246-2.474 3.453-.776-.737-1.305-1.633-1.937-1.727-.63-.094-1.365.615-2.054.972 1.224 1.474 2.373 3.041 3.752 4.319.204.189 1.494-.986 2.524-1.849M60.848 238.651c-4.222-.01-4.222-.01-4.223-4.157 0-3.042.053-6.085-.02-9.125-.042-1.709.45-2.603 2.17-2.542 2.12.076 4.243.018 6.68.018 0 4.753.206 9.338-.071 13.89-.186 3.04-2.748 1.533-4.536 1.916M99.386 223.138c.827-.486 1.524-1.128 2.202-1.104 1.362.047 2.713.457 4.068.717-.378 1.193-.594 2.489-1.174 3.553-.714 1.308-1.731 2.423-2.481 3.439-.949-2.227-1.852-4.344-2.615-6.605"
-//           ></path>
-//           <path
-//             fill="#FDFDFD"
-//             d="M387.724 97.482c-1.047-4.407-4.014-5.833-6.46-3.096-.862.964-1.443 2.871-1.203 4.14.213 1.126 1.59 2.409 2.713 2.848 3.588 1.402 3.961 2.555 1.32 5.472-1.08 1.192-2.146 2.403-3.286 3.527-2.108 2.077-3.801 2.06-5.845-.037-1.307-1.34-2.515-2.792-3.841-4.108-2.124-2.111-3.406-1.684-4.04 1.376-.44 2.125-1.443 3.651-3.52 3.783-2.089.133-3.596-1.035-4.37-3.169-.933-2.573.312-4.84 3.041-5.584 3.119-.851 3.477-2.121 1.268-4.633-1.123-1.277-2.326-2.47-3.45-3.745-2.047-2.32-2.048-4.152.01-6.513 1.116-1.281 2.317-2.478 3.447-3.746 2.238-2.512 1.896-3.857-1.244-4.669-1.972-.51-3.33-1.646-3.392-3.898-.062-2.267 1.05-3.845 3.054-4.625 2.44-.95 4.395.354 5.116 3.403.789 3.337 2.024 3.722 4.319 1.322 1.295-1.354 2.533-2.77 3.843-4.106 1.711-1.743 3.524-1.791 5.267-.083 1.395 1.367 2.676 2.869 4.052 4.26 2.233 2.256 3.483 1.866 4.166-1.376.478-2.272 1.601-3.8 3.81-3.711 2.159.086 3.681 1.378 4.21 3.776.515 2.331-.665 4.267-3.015 4.933-3.476.984-3.777 2.15-1.269 4.912 1.262 1.389 2.573 2.729 3.777 4.173 1.406 1.687 1.472 3.59.107 5.279a48 48 0 0 1-4.743 5.088c-1.527 1.41-2.985 1.329-3.842-1.193"
-//           ></path>
-//           <path
-//             fill="#090601"
-//             d="M490.681 224.153c1.505-2.068 2.979-1.824 4.449-.273 1.903 2.008 3.836 3.988 5.663 6.074 2.523 2.881 1.649 6.263-1.788 7.219-2.072.576-4.137 1.182-5.863 1.676-1.613-2.14-2.996-4.208-4.606-6.045-1.566-1.788-2.397-3.687-2.321-6.205.129-4.258.058-8.524.026-12.786-.014-1.963.391-3.744 2.529-3.676 2.03.064 2.237 1.865 2.191 3.674-.051 2.037.08 4.084-.052 6.112-.061.923-.414 1.924-.899 2.694-1.072 1.699-1.137 3.279.16 4.784 1.211 1.404 2.516 2.713 3.78 4.064l.751-.798c-.871-1.025-1.841-1.975-2.583-3.1-.641-.972-1.022-2.143-1.437-3.414"
-//           ></path>
-//           <path
-//             fill="#070501"
-//             d="M511.6 230.885a498 498 0 0 1 6.457-7.05c1.269-1.357 2.743-1.743 4.058-.265 1.331 1.497.199 2.665-.795 3.758-.982 1.079-1.931 2.193-3.199 3.639 4.504-.777 6.632-5.448 4.559-8.814-.264-.43-.471-.991-.481-1.497-.047-2.588-.235-5.209.083-7.752.129-1.032 1.415-1.896 2.175-2.836.815.891 2.297 1.749 2.336 2.677a189 189 0 0 1 .006 15.804c-.053 1.289-1.081 2.626-1.877 3.764-1.469 2.099-3.099 4.067-4.965 6.483-2.104-.597-4.953-1.017-7.47-2.235-2.147-1.039-1.593-3.451-.887-5.676"
-//           ></path>
-//           <path
-//             fill="#110C02"
-//             d="M496.322 221.235c-3.403-4.962-3.829-10.07-1.013-15.197 2.593-4.719 6.692-6.904 11.731-6.318 5.14.598 8.696 3.739 10.357 9.065 1.824 5.847-.454 12.216-5.34 15.382-5.14 3.33-11.082 2.272-15.735-2.932m17.686-14.804c-3.814-4.771-9.031-5.916-13.522-2.967-4.187 2.749-5.97 8.403-4.193 13.297 2.174 5.987 8.419 8.704 13.776 5.994 5.598-2.833 7.359-9.6 3.939-16.324"
-//           ></path>
-//           <path
-//             fill="#090601"
-//             d="M510.501 237.688c3.928 1.036 7.637 2.073 11.683 3.204l-.783 3.342-12.406-3.529c.503-1.18.896-2.098 1.506-3.017M501.924 241.336c-2.918.878-5.639 1.665-8.353 2.48-1.137.341-2.203.31-2.163-1.266.019-.703.653-1.804 1.225-2.004a89 89 0 0 1 8.885-2.614c.619-.147 1.774.417 2.076 1.011.733 1.445-.096 2.183-1.67 2.393"
-//           ></path>
-//           <path
-//             fill="#F9AE1A"
-//             d="M198.739 76.46c-1.253 1.383-2.357 2.615-3.541 3.752-.254.244-.914.341-1.171.156-.351-.253-.793-1.004-.674-1.256.435-.929 1.037-1.784 1.671-2.58.532-.669 1.201-1.21 1.8-1.82.522-.532 1.031-1.08 1.545-1.622.223.793.475 1.578.652 2.383.053.24-.102.534-.282.988"
-//           ></path>
-//           <path
-//             fill="#E39E17"
-//             d="M193.83 88.19c-.632-.651-1.219-1.114-1.513-1.737-.179-.377-.065-1.198.212-1.463.28-.268.987-.26 1.389-.076.527.242.95.761 1.396 1.187.77.736 2.804.655 1.753 2.505-.238.42-2.006-.17-3.237-.416M207.71 77.646c-.476-.767-1.052-1.4-1.067-2.046-.019-.843.408-1.699.643-2.55.528.545 1.061 1.083 1.583 1.635a84 84 0 0 1 1.562 1.697c.636.712 1.386 1.357 1.832 2.19.202.376-.095 1.54-.371 1.634-.506.17-1.257-.036-1.738-.367-.832-.574-1.537-1.364-2.444-2.193M210.39 86.045c.599-.56.985-1.127 1.503-1.392.368-.188 1.081-.153 1.336.117.277.292.43 1.266.242 1.436a31 31 0 0 1-3.846 2.994c-.203.133-.878-.574-1.334-.892a100 100 0 0 1 2.099-2.263"
-//           ></path>
-//           <path
-//             fill="#5F7C38"
-//             d="M89.037 211.521c-.909.703-2.2 1.878-2.403 1.689-1.379-1.278-2.528-2.845-3.752-4.318.69-.357 1.423-1.067 2.054-.973.632.094 1.16.991 1.937 1.727.838-1.207 1.533-2.466 2.474-3.453.464-.487 1.38-.471 2.092-.683.025.744.3 1.627.024 2.203-.623 1.297-1.52 2.442-2.426 3.808"
-//           ></path>
-//           <path
-//             fill="#E39E17"
-//             d="M514.119 206.6c3.309 6.555 1.548 13.323-4.05 16.155-5.357 2.711-11.602-.006-13.776-5.993-1.777-4.894.006-10.548 4.193-13.297 4.491-2.949 9.708-1.804 13.633 3.135m-11.227 9.969c-1.957-2.881-1.999-5.265-.128-7.175 1.622-1.655 4.177-1.716 5.866-.14 1.931 1.803 1.974 4.33.122 7.155-.099.151-.178.317-.263.48l3.466 2.582c3.586-4.394 3.414-10.133-.305-13.703-3.667-3.52-9.195-3.181-12.477.766-3.173 3.817-2.941 9.473.526 12.861 1.122-.826 2.244-1.652 3.193-2.826m1.214-6.484c-.398 1.292-1.286 2.684-1.083 3.855.324 1.871 1.96 2.559 3.64 1.986 1.657-.565 2.589-2.022 2.033-3.884-.644-2.154-2.124-3.046-4.59-1.957m4.056 11.913 2.471-1.244c-3.19-3.694-7.336-3.551-9.894.731 2.582.238 4.795.442 7.423.513"
-//           ></path>
-//           <path
-//             fill="#070501"
-//             d="M502.978 216.743c-1.036 1-2.157 1.826-3.278 2.654-3.468-3.39-3.701-9.046-.527-12.862 3.281-3.947 8.809-4.287 12.477-.767 3.719 3.57 3.89 9.309.305 13.703l-3.468-2.584c.087-.161.166-.327.265-.477 1.851-2.826 1.809-5.353-.123-7.156-1.688-1.576-4.243-1.515-5.865.14-1.872 1.91-1.829 4.294.214 7.349"
-//           ></path>
-//           <path
-//             fill="#090601"
-//             d="M504.281 209.987c2.291-.991 3.771-.099 4.415 2.055.556 1.862-.376 3.319-2.033 3.884-1.68.573-3.316-.114-3.64-1.986-.203-1.171.685-2.562 1.258-3.953M507.955 222.064c-2.421-.137-4.634-.341-7.216-.579 2.557-4.283 6.704-4.425 9.894-.731-.89.447-1.68.845-2.678 1.31"
-//           ></path>
-//           <path
-//             stroke="#000"
-//             strokeWidth="5"
-//             d="M40.987 200.513 2.062 173.816M547.012 203.292l38.926-26.696M177.056 49.955l-22.48-43.45M395.894 45.873l22.465-43.459"
-//           ></path>
-//           <ellipse
-//             cx="3.867"
-//             cy="174.65"
-//             fill="#000"
-//             rx="3.867"
-//             ry="4.171"
-//           ></ellipse>
-//           <ellipse
-//             cx="3.867"
-//             cy="4.171"
-//             fill="#000"
-//             rx="3.867"
-//             ry="4.171"
-//             transform="matrix(-1 0 0 1 588 173.26)"
-//           ></ellipse>
-//           <ellipse
-//             cx="3.938"
-//             cy="4.104"
-//             fill="#000"
-//             rx="3.938"
-//             ry="4.104"
-//             transform="matrix(.86393 .50361 -.44786 .8941 154.232 2.512)"
-//           ></ellipse>
-//           <ellipse
-//             cx="4.17"
-//             cy="3.868"
-//             fill="#000"
-//             rx="4.17"
-//             ry="3.868"
-//             transform="matrix(.05339 .99857 -.99807 .0621 421.328 0)"
-//           ></ellipse>
-//         </svg>
-//         {/* Center Circle with "OUR VALUES" */}
-//         <div className="absolute bottom-[-10%] 2xl:bottom-[0%] mt-12 right-[43%]  2xl:right-[43%] 3xl:right-[40%] w-48 h-48 flex flex-col items-center justify-center z-10">
-//           <p className="text-black text-2xl 2xl:text-3xl font-medium">OUR</p>
-//           <p className="text-black text-3xl 2xl:text-4xl font-bold">VALUES</p>
-//         </div>
-//         {/* Creativity */}
-//         <div className="absolute bottom-[50%]  left-[28%] 2xl:left-[33%] 3xl:left-[45%] text-center">
-//           <h3 className="text-2xl font-bold mb-1">CREATIVITY</h3>
-//           <p className="text-lg italic font-bold ">
-//             Being creative is our
-//             <br />
-//             way of life
-//           </p>
-//         </div>
-//         {/* Adaptability */}
-//         <div className="absolute bottom-[50%] right-[30%]   text-center">
-//           <h3 className="text-2xl font-bold mb-1">ADAPTABILITY</h3>
-//           <p className="text-lg italic font-bold">
-//             We tailor to the needs of
-//             <br />
-//             customers
-//           </p>
-//         </div>
-//         {/* Ethics */}
-//         <div className="absolute left-[25%] bottom-[22%] 3xl:left-[37%] text-center">
-//           <h3 className="text-2xl font-bold mb-1">ETHICS</h3>
-//           <p className="text-lg italic font-bold">
-//             We like doing things
-//             <br />
-//             ethically.
-//           </p>
-//         </div>
-//         {/* Individuality */}
-//         <div className="absolute bottom-[18%] right-[20%] 3xl:right-[25%] text-center">
-//           <h3 className="text-2xl font-bold mb-1">INDIVIDUALITY</h3>
-//           <p className="text-lg italic font-bold">
-//             We celebrate diverse
-//             <br />
-//             perspective
-//           </p>
-//         </div>
-//       </div>
+//       </section>
 //     </div>
 //   );
 // }
 
 
-
-
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { Brain, Lightbulb, Settings, Users, ChevronDown } from 'lucide-react'
-import { useRef ,useEffect, useState} from 'react'
-import { Transition } from '../ui/Transition'
-import gsap from "gsap";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { styles } from '../../style';
-gsap.registerPlugin(ScrollTrigger)
-
- function About() {
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  })
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+// export default Transition(About);
 
 
 
+import { ArrowRight, Award, BarChart, Building2, Globe, PhoneCall, Users } from "lucide-react"
+import {Link} from "react-router-dom"
+import { AdaptabilityIcon, AIInnovationIcon, ClientFirstApproachIcon, ConsultancyIcon, CreativityIcon, EmpoweringBusinessesIcon, EthicsIcon, IndividualityIcon } from "../../assets";
+import { motion } from 'framer-motion';
+import { useState } from "react";
+import { ButtonFade } from "../ui/motion";
 
-
-  const missions = [
-  {
-    title: "Empowering Businesses",
-    description:
-      "To empower businesses of all scales/sizes with insights, strategies, and tools.",
-    icon: Brain,
-    gradient: "from-blue-500/20 to-violet-500/20",
-    accent: "group-hover:text-blue-500",
-  },
-  {
-    title: "Expert Consultancy",
-    description:
-      "To provide expert consultancy fostering long-term value for our clients.",
-    icon: Settings,
-    gradient: "from-violet-500/20 to-fuchsia-500/20",
-    accent: "group-hover:text-violet-500",
-  },
-  {
-    title: "Client-First Approach",
-    description:
-      "To create a client-first approach where every service is personalized, impactful, and results-driven.",
-    icon: Users,
-    gradient: "from-fuchsia-500/20 to-rose-500/20",
-    accent: "group-hover:text-fuchsia-500",
-  },
-  {
-    title: "AI Innovation",
-    description:
-      "To pioneer Gen AI-enabled products that enhance efficiency, innovation, and decision-making for businesses of all sizes.",
-    icon: Lightbulb,
-    gradient: "from-rose-500/20 to-orange-500/20",
-    accent: "group-hover:text-rose-500",
-  },
-];
-
-
-  const values = [
-    {
-      title: "Ethics",
-      description: "We like doing things ethically",
-      gradient: "from-[#F4BD20] to-[#67883B]",
-    },
-    {
-      title: "Creativity",
-      description: "Being creative is our way of life",
-      gradient: "from-[#F4BD20] to-[#67883B]",
-    },
-    {
-      title: "Adaptability",
-      description: "We tailor to the needs of customers",
-      gradient: "from-[#F4BD20] to-[#67883B]",
-    },
-    {
-      title: "Individuality",
-      description: "We celebrate diverse perspective",
-      gradient: "from-[#F4BD20] to-[#67883B]",
-    },
-  ];
-
-
-
-
+export default function AboutPage() {
+  const [isClicked, setIsClicked] = useState(false); 
+  
   return (
-    <div className="min-h-screen  bg-background" ref={containerRef}>
-      {/* Vision Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+    <div className="min-h-screen">
+      <div className="relative h-[500px] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/50">
+          <div className="max-w-7xl mx-auto h-full flex flex-col justify-center px-6">
+            <h1 className="text-5xl font-bold text-white mb-4">
+              About Macula Consultant
+            </h1>
+            <p className="text-xl text-white mb-8">
+              We're centered on what's best for you and your business.
+            </p>
+
+            {/* Contact button */}
+            <Link to="/contact" onMouseLeave={() => setIsClicked(false)}>
+              <div className="flex items-center border gap-2 py-1 px-3 sm:py-1 sm:px-2 bg-white rounded-full hover:bg-slate-300 transition-colors w-fit">
+                <motion.div
+                  onClick={() => {
+                    setIsClicked(true);
+                  }}
+                  variants={ButtonFade(isClicked)}
+                  animate="animate"
+                  // className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
+                  className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
+                >
+                  <PhoneCall className="w-5 h-5 text-white" />
+                </motion.div>
+                <motion.span
+                  onClick={() => setIsClicked(true)}
+                  animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
+                  // className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
+                  className="hidden md:block bg-[#67883B] text-white py-2 px-2 rounded-full text-sm sm:text-base"
+                >
+                  Book Your Session
+                </motion.span>
+              </div>
+            </Link>
+          </div>
         </div>
-        <motion.div
-          style={{ opacity, scale }}
-          className="container relative z-10 mx-auto px-4"
-        >
-          <div className="text-center max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6"
-            >
-              <span className="text-sm font-semibold tracking-wider text-primary uppercase">
-                Welcome to Our Story
-              </span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className={` mb-8 bg-clip-text ${styles.sectionHeadText} bg-gradient-to-r  from-primary to-primary/50`}
-            >
-              Our Vision
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
-            >
+      </div>
+
+      {/* Breadcrumb */}
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-6 py-16">
+        {/* Introduction */}
+        <div className="max-w-3xl mb-20">
+          <h2 className="text-3xl font-bold text-purple-900 mb-8">
+            Our Vision
+          </h2>
+          <div className="space-y-6 text-gray-600">
+            <p>
               Enabling businesses to achieve growth and operational excellence
               by providing them results-driven business & strategic consulting.
-            </motion.p>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <ChevronDown className="w-6 h-6 text-primary" />
-        </motion.div>
-      </section>
-
-      {/* Mission Section */}
-     <section className="p-24  relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-grid-primary/[0.02] [mask-image:radial-gradient(white,transparent_85%)]" />
-
-        <div className=" mx-auto px-4 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-24"
-          >
-            <span className="text-sm font-semibold tracking-wider  uppercase">
-              Discover Our Purpose
-            </span>
-            <h2
-              className={`  ${styles.sectionHeadText} mt-4  mb-6 bg-clip-text text-black bg-gradient-to-r from-primary via-primary/80 to-primary/50`}
-            >
-              Our Mission
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto" />
-          </motion.div>
-
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
-            {missions.map((mission, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`flex flex-col lg:flex-row items-center gap-8`}
-              >
-                {/* Icon Column */}
-                <div className="w-full lg:w-1/3">
-                  <div
-                    className={`group relative overflow-hidden border-0 ${
-                      index % 2 === 0
-                        ? "lg:translate-x-12"
-                        : "lg:-translate-x-12"
-                    }`}
-                  >
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${mission.gradient} opacity-20 transition-opacity duration-300 group-hover:opacity-30`}
-                    />
-                    <div className="p-8 flex items-center justify-center">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl transform group-hover:scale-125 transition-transform duration-300" />
-                        <mission.icon
-                          className={`w-20 h-20 ${mission.accent} transition-all duration-300 relative z-10`}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Column */}
-                <div className="w-full lg:w-2/3">
-                  <div className="group relative overflow-hidden border-0 backdrop-blur-sm bg-background/50">
-                    <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background" />
-                    <div className="relative p-8">
-                      <div className="space-y-4 text-justify">
-                        <div
-                          className={`w-12 h-1 bg-gradient-to-r ${mission.gradient}`}
-                        />
-                        <h3
-                          className={`text-2xl font-bold ${mission.accent} transition-colors duration-300`}
-                        >
-                          {mission.title}
-                        </h3>
-                        <p className="text-muted-foreground text-lg leading-relaxed">
-                          {mission.description}
-                        </p>
-                      </div>
-
-                      {/* Number indicator */}
-                      {/* <div className="absolute top-4 right-4 opacity-10 font-bold text-6xl">
-                        0{index + 1}
-                      </div> */}
-
-                      {/* Decorative elements */}
-                      <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            </p>
           </div>
         </div>
-      </section>
 
-      {/* Values Section */}
-      <section className="py-32 bg-muted/50 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
-        <div className="container mx-auto px-4 relative">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-center mb-16"
-          >
-            Our Values
-          </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="h-full backdrop-blur-sm bg-background/50">
-                  <div className="p-8">
-                    <div
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${value.gradient} animate-pulse mb-6 flex items-center justify-center transform rotate-3 hover:rotate-6 transition-transform duration-300`}
-                    >
-                      <span className="text-2xl font-bold text-primary-foreground">
-                        {value.title[0]}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-semibold mb-4">
-                      {value.title}
-                    </h3>
-                    <p className="text-muted-foreground text-lg">
-                      {value.description}
+        <div className="w-full  px-4 py-16 ">
+          <div className="relative">
+            <div className="space-y-12 ">
+              <div className="w-full mx-auto  ">
+                <h2 className="text-3xl font-bold text-purple-900 mb-8">
+                  Our Mission
+                </h2>
+              </div>
+
+              <div className="relative grid md:grid-cols-2 gap-8 mx-auto">
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gray-200 -translate-y-1/2 hidden md:block"></div>
+
+                <div className="absolute top-0 left-1/2 h-full w-px bg-gray-200 -translate-x-1/2 hidden md:block"></div>
+
+                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
+                  <div className="w-40 h-40 rounded-full  items-center justify-center">
+                    <img src={EmpoweringBusinessesIcon} alt="" srcset="" />
+                  </div>
+                  <div>
+                    {" "}
+                    <h2 className="text-3xl  font-bold ">
+                      Empowering Businesses{" "}
+                    </h2>
+                    <p className="text-gray-600 text-lg">
+                      To empower businesses of all scales/sizes with insights,
+                      strategies, and tools.
                     </p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+
+                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
+                  <div className="w-40 h-40  rounded-full  flex items-center justify-center">
+                    <img src={ConsultancyIcon} alt="" srcset="" />
+                  </div>
+                  <div>
+                    {" "}
+                    <h2 className="text-3xl  font-bold ">
+                      {" "}
+                      Expert Consultancy{" "}
+                    </h2>
+                    <p className="text-gray-600 text-lg">
+                      To provide expert consultancy fostering long-term value
+                      for our clients.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
+                  <div className="w-40 h-40 rounded-full  flex items-center justify-center">
+                    <img src={ClientFirstApproachIcon} alt="" srcset="" />
+                  </div>
+                  <div>
+                    {" "}
+                    <h2 className="text-3xl  font-bold ">
+                      {" "}
+                      Client-First Approach{" "}
+                    </h2>
+                    <p className="text-gray-600 text-lg">
+                      To create a client-first approach where every service is
+                      personalized, impactful, and results-driven.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
+                  <div className="w-52 h-40  rounded-full  flex items-center justify-center">
+                    <img src={AIInnovationIcon} alt="" srcset="" />
+                  </div>
+                  <div>
+                    {" "}
+                    <h2 className="text-3xl  font-bold "> AI Innovation </h2>
+                    <p className="text-gray-600 text-lg">
+                      To pioneer Gen AI-enabled products that enhance
+                      efficiency, innovation, and decision-making for businesses
+                      of all sizes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </main>
+      <div className="bg-gray-100 h-[25rem]">
+        <div className="mx-auto -translate-y-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] w-fit  bg-white ">
+          {/* Our Approach Section */}
+          <section className="py-20 ">
+            <div className="w-fit mx-auto ">
+              <h2 className="text-4xl font-bold text-purple-900 text-center mb-10">
+                Our Values
+              </h2>
+              <div className="grid md:grid-cols-4 gap-2 text-center border-t   border-gray-200">
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
+                    Ethics
+                  </h3>
+                  <p className="text-gray-600">
+                    We like doing things ethically
+                  </p>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
+                    Creativity
+                  </h3>
+                  <p className="text-gray-600">
+                    Being creative is our way of life
+                  </p>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
+                    Adaptability
+                  </h3>
+                  <p className="text-gray-600">
+                    We tailor to the needs of customers
+                  </p>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
+                    Individuality
+                  </h3>
+                  <p className="text-gray-600">
+                    We celebrate diverse perspective
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
 
-
-export default Transition(About);

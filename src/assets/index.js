@@ -24,6 +24,21 @@ import slider8 from "./Slider8.jpg";
 import mission from "./mission.png";
 import ValueImg from "./Value.png";
 
+
+//@red Icons
+import ConsultancyIcon from "./ConsultancyIcon.png";
+import AIInnovationIcon from "./AIInnovationIcon.png";
+import ClientFirstApproachIcon from "./ClientFirstApproachIcon.png";
+import EmpoweringBusinessesIcon from "./EmpoweringBusinessesIcon.png";
+import EthicsIcon from "./EthicsIcon.png";
+import CreativityIcon from "./CreativityIcon.png";
+import IndividualityIcon from "./IndividualityIcon.png";
+import AdaptabilityIcon from "./AdaptabilityIcon.png";
+
+
+
+
+//@red BannerImage
 import Papper1 from "./Papper1.png";
 // import Papper11 from "./Papper1.webm";
 import Papper11 from "./Papper1OG.webm";
@@ -72,4 +87,12 @@ export {
   mission,
   MaculaVideo,
   ValueImg,
+  ConsultancyIcon,
+  AIInnovationIcon,
+  ClientFirstApproachIcon,
+  EmpoweringBusinessesIcon,
+  EthicsIcon,
+  CreativityIcon,
+  AdaptabilityIcon,
+  IndividualityIcon
 };

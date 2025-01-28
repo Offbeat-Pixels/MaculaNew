@@ -24,7 +24,7 @@ const isInView = useInView(ref, { once: true, amount: 0.8 });
           {/* Step 1 */}
           <div className="flex  flex-col items-center text-center relative">
             <div className="w-16 h-16  bg-[#e7e7e7]  rounded-full flex items-center justify-center text-black mb-4 relative">
-              <Users className="w-8 h-8" />
+              <Users className="w-8 h-8 text-[#588157]  " />
               <span className="absolute top-5 -right-5 border-2 border-[#e7e7e7] w-10 h-10 rounded-full bg-white  flex items-center justify-center text-lg font-bold">
                 01
               </span>
