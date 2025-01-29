@@ -2,7 +2,15 @@ import logo from "./logo.png";
 import whitePaperImg from "./whitePaperImg.png";
 import BannerImg from "./BannerImg.png";
 import whyImg from "./whyImg.png";
+
+
+
+//@red Service section Images 
 import gtmImg from "./gtm.png";
+import genAiImg from "./genAi.png";
+import salesImg from "./sales.png";
+
+
 import contactImg from "./contactImg.png";
 import BlogImg from "./BlogImg.png";
 import BlogImg2 from "./BlogImg2.png";
@@ -21,8 +29,7 @@ import slider5 from "./Slider5.jpg";
 import slider6 from "./Slider6.jpg";
 import slider7 from "./slider81 (6).png";
 import slider8 from "./Slider8.jpg";
-import mission from "./mission.png";
-import ValueImg from "./Value.png";
+
 
 
 //@red Icons
@@ -84,15 +91,19 @@ export {
   slider6,
   slider7,
   slider8,
-  mission,
+ 
   MaculaVideo,
-  ValueImg,
+
   ConsultancyIcon,
   AIInnovationIcon,
   ClientFirstApproachIcon,
   EmpoweringBusinessesIcon,
   EthicsIcon,
   CreativityIcon,
+  IndividualityIcon,
   AdaptabilityIcon,
-  IndividualityIcon
+genAiImg ,
+salesImg
+ 
+ 
 };

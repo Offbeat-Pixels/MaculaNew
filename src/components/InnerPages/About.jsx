@@ -1,4 +1,3 @@
-
 // import { motion, useScroll, useTransform } from 'framer-motion'
 // import { Brain, Lightbulb, Settings, Users, ChevronDown } from 'lucide-react'
 // import { useRef ,useEffect, useState} from 'react'
@@ -17,10 +16,6 @@
 
 //   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 //   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
-
-
-
-
 
 //   const missions = [
 //   {
@@ -57,7 +52,6 @@
 //   },
 // ];
 
-
 //   const values = [
 //     {
 //       title: "Ethics",
@@ -80,9 +74,6 @@
 //       gradient: "from-[#F4BD20] to-[#67883B]",
 //     },
 //   ];
-
-
-
 
 // return (
 //     <div className="min-h-screen  bg-background" ref={containerRef}>
@@ -275,99 +266,78 @@
 //   );
 // }
 
-
 // export default Transition(About);
 
-
-
-import { ArrowRight, Award, BarChart, Building2, Globe, PhoneCall, Users } from "lucide-react"
-import {Link} from "react-router-dom"
-import { AdaptabilityIcon, AIInnovationIcon, ClientFirstApproachIcon, ConsultancyIcon, CreativityIcon, EmpoweringBusinessesIcon, EthicsIcon, IndividualityIcon } from "../../assets";
-import { motion } from 'framer-motion';
-import { useState } from "react";
-import { ButtonFade } from "../ui/motion";
-
-export default function AboutPage() {
-  const [isClicked, setIsClicked] = useState(false); 
-  
+import {
+  ArrowRight,
+  Award,
+  BarChart,
+  Building2,
+  Globe,
+  PhoneCall,
+  Users,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  AIInnovationIcon,
+  ClientFirstApproachIcon,
+  ConsultancyIcon,
+  EmpoweringBusinessesIcon,
+  EthicsIcon,
+  CreativityIcon,
+  IndividualityIcon,
+  AdaptabilityIcon,
+} from "../../assets";
+ 
+import { Transition } from "./../ui/Transition";
+import { styles } from "../../style";
+function AboutPage() {
   return (
-    <div className="min-h-screen">
-      <div className="relative h-[500px] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/50">
-          <div className="max-w-7xl mx-auto h-full flex flex-col justify-center px-6">
-            <h1 className="text-5xl font-bold text-white mb-4">
-              About Macula Consultant
-            </h1>
-            <p className="text-xl text-white mb-8">
-              We're centered on what's best for you and your business.
-            </p>
-
-            {/* Contact button */}
-            <Link to="/contact" onMouseLeave={() => setIsClicked(false)}>
-              <div className="flex items-center border gap-2 py-1 px-3 sm:py-1 sm:px-2 bg-white rounded-full hover:bg-slate-300 transition-colors w-fit">
-                <motion.div
-                  onClick={() => {
-                    setIsClicked(true);
-                  }}
-                  variants={ButtonFade(isClicked)}
-                  animate="animate"
-                  // className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
-                  className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
-                >
-                  <PhoneCall className="w-5 h-5 text-white" />
-                </motion.div>
-                <motion.span
-                  onClick={() => setIsClicked(true)}
-                  animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-                  // className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
-                  className="hidden md:block bg-[#67883B] text-white py-2 px-2 rounded-full text-sm sm:text-base"
-                >
-                  Book Your Session
-                </motion.span>
-              </div>
-            </Link>
-          </div>
-        </div>
+    <div className="min-h-screen  bg-gray-100">
+      <div className=" mx-auto  h-full  flex flex-col justify-center px-6">
+        {/* <h1 className="text-5xl font-bold text-black mb-4"> */}
+        <p
+          className={`${styles.sectionHeadText} text-center py-10 motion-preset-slide-down-lg motion-duration-1000 motion-delay-300`}
+        >
+          About Us
+        </p>
+       
       </div>
-
-      {/* Breadcrumb */}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-16">
         {/* Introduction */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-3xl font-bold text-purple-900 mb-8">
-            Our Vision
-          </h2>
+        <div className="max-w-7xl text-center  mb-20">
+          <h2 className="text-3xl font-bold  mb-2">Our Vision</h2>
           <div className="space-y-6 text-gray-600">
-            <p>
+            <p className="font-medium">
               Enabling businesses to achieve growth and operational excellence
-              by providing them results-driven business & strategic consulting.
+              by providing them results-driven business <br /> & strategic
+              consulting.
             </p>
           </div>
         </div>
-
+        <div className="absolute top- left-[47.5%] w-24 rotate-90 h-px bg-gray-400 -translate-y-1/2 hidden md:block"></div>
         <div className="w-full  px-4 py-16 ">
           <div className="relative">
             <div className="space-y-12 ">
-              <div className="w-full mx-auto  ">
-                <h2 className="text-3xl font-bold text-purple-900 mb-8">
-                  Our Mission
-                </h2>
+              <div className="w-full text-center   ">
+                <h2 className="text-3xl font-bold  mb-8">Our Mission</h2>
               </div>
 
               <div className="relative grid md:grid-cols-2 gap-8 mx-auto">
-                <div className="absolute top-1/2 left-0 w-full h-px bg-gray-200 -translate-y-1/2 hidden md:block"></div>
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gray-400 -translate-y-1/2 hidden md:block"></div>
+                <div className="absolute top-1/2 rounded-full left-[49.2%] z-10 w-5 h-5 border-2 border-gray-400 bg-gray-100 -translate-y-1/2 hidden md:block"></div>
 
-                <div className="absolute top-0 left-1/2 h-full w-px bg-gray-200 -translate-x-1/2 hidden md:block"></div>
+                <div className="absolute top-0 left-1/2 h-full w-px bg-gray-400 -translate-x-1/2 hidden md:block"></div>
 
-                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
-                  <div className="w-40 h-40 rounded-full  items-center justify-center">
+                <div className="relative flex gap-10 m-10 space-y-4  p-4">
+                  <div className="w-60 h-40 mt-5 rounded-full  items-center justify-center">
                     <img src={EmpoweringBusinessesIcon} alt="" srcset="" />
                   </div>
                   <div>
                     {" "}
-                    <h2 className="text-3xl  font-bold ">
+                    <h2 className="text-2xl  font-bold ">
                       Empowering Businesses{" "}
                     </h2>
                     <p className="text-gray-600 text-lg">
@@ -377,13 +347,13 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
-                  <div className="w-40 h-40  rounded-full  flex items-center justify-center">
+                <div className="relative flex gap-10 m-10 space-y-4  p-4">
+                  <div className="w-60 h-40  rounded-full  flex items-center justify-center">
                     <img src={ConsultancyIcon} alt="" srcset="" />
                   </div>
                   <div>
                     {" "}
-                    <h2 className="text-3xl  font-bold ">
+                    <h2 className="text-2xl  font-bold ">
                       {" "}
                       Expert Consultancy{" "}
                     </h2>
@@ -394,13 +364,13 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
-                  <div className="w-40 h-40 rounded-full  flex items-center justify-center">
+                <div className="relative flex gap-10 m-10 space-y-4  p-4">
+                  <div className="w-60 h-40 rounded-full  flex items-center justify-center">
                     <img src={ClientFirstApproachIcon} alt="" srcset="" />
                   </div>
                   <div>
                     {" "}
-                    <h2 className="text-3xl  font-bold ">
+                    <h2 className="text-2xl  font-bold ">
                       {" "}
                       Client-First Approach{" "}
                     </h2>
@@ -411,13 +381,13 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4 bg-white p-4">
-                  <div className="w-52 h-40  rounded-full  flex items-center justify-center">
+                <div className="relative flex gap-10 m-10 space-y-4  p-4">
+                  <div className="w-64 h-40  rounded-full  flex items-center justify-center">
                     <img src={AIInnovationIcon} alt="" srcset="" />
                   </div>
                   <div>
                     {" "}
-                    <h2 className="text-3xl  font-bold "> AI Innovation </h2>
+                    <h2 className="text-2xl  font-bold "> AI Innovation </h2>
                     <p className="text-gray-600 text-lg">
                       To pioneer Gen AI-enabled products that enhance
                       efficiency, innovation, and decision-making for businesses
@@ -430,43 +400,60 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
-      <div className="bg-gray-100 h-[25rem]">
-        <div className="mx-auto -translate-y-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] w-fit  bg-white ">
+      <div className=" bg-white ">
+        <div className="mx-auto -translate-y-32  border w-fit bg-white border-gray-400    ">
           {/* Our Approach Section */}
-          <section className="py-20 ">
+          <section className="py-10 ">
             <div className="w-fit mx-auto ">
-              <h2 className="text-4xl font-bold text-purple-900 text-center mb-10">
+              <h2 className="text-4xl font-bold  text-center mb-10">
                 Our Values
               </h2>
-              <div className="grid md:grid-cols-4 gap-2 text-center border-t   border-gray-200">
+              <div className="grid md:grid-cols-4 gap-2 text-center    ">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
-                    Ethics
-                  </h3>
+                  <img
+                    src={EthicsIcon}
+                    alt=""
+                    srcset=""
+                    className="h-10  mx-auto mb-4"
+                  />
+
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Ethics</h3>
                   <p className="text-gray-600">
                     We like doing things ethically
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
-                    Creativity
-                  </h3>
+                  <img
+                    src={CreativityIcon}
+                    alt=""
+                    srcset=""
+                    className="h-10  mx-auto mb-4"
+                  />
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Creativity</h3>
                   <p className="text-gray-600">
                     Being creative is our way of life
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
-                    Adaptability
-                  </h3>
+                  <img
+                    src={AdaptabilityIcon}
+                    alt=""
+                    srcset=""
+                    className="h-10  mx-auto mb-4"
+                  />
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Adaptability</h3>
                   <p className="text-gray-600">
                     We tailor to the needs of customers
                   </p>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-purple-900 mb-4">
-                    Individuality
-                  </h3>
+                  <img
+                    src={IndividualityIcon}
+                    alt=""
+                    srcset=""
+                    className="h-10  mx-auto mb-4"
+                  />
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Individuality</h3>
                   <p className="text-gray-600">
                     We celebrate diverse perspective
                   </p>
@@ -480,3 +467,4 @@ export default function AboutPage() {
   );
 }
 
+export default Transition(AboutPage);

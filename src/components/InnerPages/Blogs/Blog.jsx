@@ -220,7 +220,7 @@ function Blog() {
   return (
     <div className="min-h-screen bg-[#FDF8F7] p-8 text-justify">
       <div className="lg:pl-14 lg:pr-28">
-        <h3 className="text-center pt-5 text-4xl font-bold">Our Blogs</h3>
+        <h3 className={`text-center pt-5 ${styles.sectionHeadText}`}>Our Blogs</h3>
 
         {/* Latest Blogs Section */}
         <Section

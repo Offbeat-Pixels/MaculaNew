@@ -1,4 +1,5 @@
 import React from "react";
+import { styles } from "../../style";
 
 const Career = () => {
   return (
@@ -6,7 +7,9 @@ const Career = () => {
       {/* Hero Section */}
       <header className="bg-[#ffffff] text-black py-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">Join Our Team</h1>
+          <h1 className={`text-center pt-5 ${styles.sectionHeadText}`}>
+            Join Our Team
+          </h1>
           <p className="text-lg">
             Be a part of a team that values innovation, collaboration, and
             growth.

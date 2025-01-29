@@ -1405,7 +1405,11 @@ const images = [
   {
     id: 1,
     src: slider1,
-    text: "Strategic Support and Accountability",
+    text: (
+      <p>
+        Strategic Support and <br /> Accountability
+      </p>
+    ),
     subtext: "Develop actionable strategies and ensure accountability.",
   },
   {
@@ -1432,21 +1436,16 @@ const images = [
     text: "Training and Development",
     subtext: "Enhance workforce skills and growth.",
   },
+
   {
     id: 6,
-    src: slider6,
-    text: "Efficiency and Effectiveness",
-    subtext: "Streamline operations and enhance performance.",
-  },
-  {
-    id: 7,
     src: slider7,
-    text: "Expertise and Specialized Knowledge",
+    text: <p>Expertise and Specialized <br /> Knowledge</p>,
     subtext:
       "Provide advanced expertise and addresses internal capability gaps.",
   },
   {
-    id: 8,
+    id: 7,
     src: slider8,
     text: "Networking Opportunities",
     subtext: "Connect to networks for partnerships and growth.",
@@ -1465,7 +1464,7 @@ function ImageCarousel() {
   }
 
   return (
-    <div className="py-20 bg-white/95  min-h-fit relative">
+    <div className="py-20 bg-white/90 min-h-fit relative">
       {/* Background image with blur */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
@@ -1490,7 +1489,7 @@ function ImageCarousel() {
       {/* Content */}
       <div className="lg:flex w-full lg:pr-72 2xl:pr-96">
         {/* Left Side Text */}
-        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-40">
+        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32">
           <AnimatePresence>
             <div key={images[currentIndex].id} className="absolute ">
               <motion.p
@@ -1498,7 +1497,7 @@ function ImageCarousel() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl  w-80 md:w-fit font-semibold"
+                className="text-4xl  w-80 md:w-fit font-semibold"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1538,7 +1537,7 @@ function ImageCarousel() {
         </div>
 
         {/* Right Side Slider */}
-        <div className="w-full pr-20 2xl:pr-40">
+        <div className="w-full pr-20 2xl:pr-32">
           <div className="relative flex justify-center items-center w-full h-[70vh] lg:h-[80vh]">
             {images.map((image, index) => {
               const isActive = index === currentIndex;
@@ -1551,12 +1550,12 @@ function ImageCarousel() {
                   : 0.5
                 : isActive
                 ? 1
-                : 0.6;
+                : 0.7;
 
               return (
                 <motion.div
                   key={image.id}
-                  className="absolute mt-56 rounded-lg  md:mt-0 shadow-lg"
+                  className="absolute mt-56   md:mt-0 "
                   style={
                     {
                       // transform: `translateX(${offset * (100 + imageGap)}px)`,
@@ -1566,8 +1565,8 @@ function ImageCarousel() {
                   animate={{
                     scale: scale,
                     // x: offset * (translateX + imageGap),
-                    x: isActive ? 0 : offset * translateX + 100,
-                    y: isActive ? 0 : isMobile ? 50 : 100,
+                    x: isActive ? 0 : offset * translateX + 70,
+                    y: isActive ? 0 : isMobile ? 50 : 70,
                     opacity: offset < 0 ? 0 : 1,
                   }}
                   transition={{
@@ -1583,10 +1582,10 @@ function ImageCarousel() {
                     src={image.src}
                     alt={image.text}
                     // @red Images are correct just need to upload same rounded image
-                    className={`roundedxl cursor-pointer object-center object-cover ${
+                    className={` rounded-[3rem]  cursor-pointer object-center object-cover ${
                       isMobile
                         ? "w-[18rem] h-[18rem]"
-                        : "md:w-[30rem] md:h-[30rem]"
+                        : "md:w-[30rem] md:h-[30rem]  "
                     } `}
                   />
                 </motion.div>
@@ -1597,7 +1596,7 @@ function ImageCarousel() {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center ">
         {images.map((_, index) => (
           <button
             key={index}

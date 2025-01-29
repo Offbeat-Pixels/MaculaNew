@@ -198,7 +198,7 @@
 // }
 
 import { ArrowRight } from "lucide-react";
-import { gtmImg } from "../assets";
+import { gtmImg, genAiImg, salesImg } from "../assets";
 import { styles } from "../style";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
@@ -222,7 +222,7 @@ const ProjectCard = ({ index, title, description, image, category }) => {
       >
         <div className="">
           <h3 className="text-xl font-medium mb-3">{title}</h3>
-          <p className="text-gray-600  mb-6">{description}</p>
+          <p className="text-gray-600   mb-10">{description}</p>
           <Link
             to={{
               pathname: "/services",
@@ -233,11 +233,11 @@ const ProjectCard = ({ index, title, description, image, category }) => {
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-        <div className="relative  rounded-2xl">
+        <div className="relative   rounded-2xl">
           <LazyLoadImage
             src={image}
             alt="project_image"
-            className="w-full h-auto"
+            className="w-full h-auto "
           />
         </div>
       </Tilt>
@@ -258,14 +258,14 @@ const services = [
     category: "Business Consulting",
     description:
       "We provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
-    image: gtmImg,
+    image: salesImg,
   },
   {
     title: "Gen AI Enabled Products",
     category: "Gen AI Enabled Products",
     description:
       "We provide expert advice and guidance to organizations aiming to improve their operations, achieve specific goals, and resolve complex challenges. Our Start-up incubation service involves supporting new businesses through various stages of development by providing resources, mentorship, and networking opportunities.",
-    image: gtmImg,
+    image: genAiImg,
   },
 ];
 
