@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Markdown from "./Markdown";
 
 export default function WhitepaperCard({ service }) {
   return (
 
-      <div className="group  w-full relative block">
+      <div className="group  w-[35rem] relative block">
         <motion.div
           className="bg-white shadow-lg rounded-lg  overflow-hidden hover:shadow-xl transition-shadow"
           whileHover={{ scale: 1.05 }}

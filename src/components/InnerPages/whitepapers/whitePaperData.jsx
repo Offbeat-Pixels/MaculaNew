@@ -87,7 +87,7 @@ While founder-led sales can drive initial success, it often becomes a limiting f
     `,
     title: `## Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
     titleWp:
-      "Lorem ipsum dolor sit amet, consectetur ansectetur adi amet, consectetur ansectetur adi amet, consectetur ansectetur adi amet, consectetur ansectetur adipiscetur ansectetur adipiscing elit, ",
+      "Lorem ipsum dolor sit amet, consectetur ansectetur adi  ",
     videoLink:
       "https://videos.pexels.com/video-files/6567877/6567877-uhd_2732_1440_25fps.mp4",
   },
@@ -161,146 +161,8 @@ In today's complex marketing landscape, success lies in the ability to see the b
     videoLink:
       "https://media.istockphoto.com/id/1585668662/video/interior-designer-working-on-new-house-design-project-in-office-choosing-flooring-and.mp4?s=mp4-640x640-is&k=20&c=Zqvnple6V8UYUDe9lxRNo2Wv9l5VgaWbyVG_C8zwPow=",
   },
-  {
-    id: 4,
-    name: "Mastering AI",
-    category: "Business Consulting",
-    imageUrl: Papper3,
-    vid: Papper33,
-    detail: `
-In today's interconnected world, digital marketing has become an indispensable component of any comprehensive marketing strategy. However, it's essential to recognize that digital marketing is just one part of a broader marketing approach. Let's explore how digital marketing fits into the bigger picture and why a holistic strategy is crucial for business success.
 
-### The Role of Digital Marketing
-
-Digital marketing encompasses a wide range of online activities designed to promote products, services, or brands. It leverages digital channels such as websites, social media, email, and search engines to connect with target audiences and achieve specific business objectives.
-
-### Key Components of Digital Marketing:
-- **Search Engine Optimization (SEO)**
-- **Content Marketing**
-- **Social Media Marketing**
-- **Email Marketing**
-- **Pay-Per-Click Advertising (PPC)**
-- **Analytics and Data Analysis**
-
-While these elements are powerful tools in their own right, they work best when integrated into a comprehensive marketing strategy.
-
----
-
-## The Bigger Picture: Integrated Marketing Strategy
-
-An effective marketing strategy goes beyond just digital channels. It incorporates both traditional and digital methods to create a cohesive brand experience for customers. Here's why an integrated approach is crucial:
-
-1. **Holistic Brand Presence**: By combining digital and traditional marketing efforts, businesses can create a consistent brand image across all touchpoints.  
-2. **Diverse Audience Reach**: Not all customers are online all the time. An integrated strategy ensures you reach your audience through their preferred channels.  
-3. **Synergy Between Channels**: Digital and traditional marketing efforts can complement and reinforce each other, creating a more powerful overall impact.  
-4. **Balanced Resource Allocation**: An integrated strategy allows for more efficient use of marketing resources, preventing over-investment in any single channel.
-
----
-
-## Aligning Digital with Overall Marketing Goals
-
-To effectively incorporate digital marketing into your overall strategy, consider the following steps:
-
-1. **Define Clear Objectives**: Establish specific, measurable goals that align with your broader business objectives.  
-2. **Understand Your Audience**: Gain deep insights into your target market to tailor your messaging effectively.  
-3. **Choose the Right Channels**: Identify which digital and traditional channels will best reach your audience and achieve your goals.  
-4. **Create Consistent Messaging**: Ensure that your brand voice and key messages are uniform across all marketing efforts.  
-5. **Measure and Adapt**: Regularly analyze the performance of your marketing initiatives and adjust your strategy accordingly.
-
----
-
-## The Power of Integration
-
-By viewing digital marketing as part of a larger, integrated marketing strategy, businesses can create more impactful campaigns that resonate with their audience across multiple touchpoints. This approach allows for:
-
-- **Improved Customer Experience**: A seamless brand experience across all channels enhances customer satisfaction and loyalty.  
-- **Better Data Insights**: Combining data from various marketing efforts provides a more comprehensive understanding of customer behavior.  
-- **Increased ROI**: An integrated strategy often leads to more efficient use of marketing resources and better overall results.
-
----
-
-## Conclusion
-
-While digital marketing is undoubtedly a critical component of modern marketing, it's essential to remember that it's just one piece of the puzzle. By integrating digital efforts with traditional marketing techniques and aligning them with overall business objectives, companies can create powerful, cohesive strategies that drive real results. 
-
-In today's complex marketing landscape, success lies in the ability to see the bigger picture and create harmonious campaigns that engage customers across all channels.
-
-    `,
-    title: `## Digital Marketing: A Crucial Piece of the Marketing Puzzle`,
-    titleWp: "Digital Marketing: A Crucial Piece of the Marketing Puzzle",
-    videoLink:
-      "https://media.istockphoto.com/id/1585668662/video/interior-designer-working-on-new-house-design-project-in-office-choosing-flooring-and.mp4?s=mp4-640x640-is&k=20&c=Zqvnple6V8UYUDe9lxRNo2Wv9l5VgaWbyVG_C8zwPow=",
-  },
-  {
-    id: 5,
-    name: "Mastering AI",
-    category: "Business Consulting",
-    imageUrl: Papper3,
-    vid: Papper33,
-    detail: `
-In today's interconnected world, digital marketing has become an indispensable component of any comprehensive marketing strategy. However, it's essential to recognize that digital marketing is just one part of a broader marketing approach. Let's explore how digital marketing fits into the bigger picture and why a holistic strategy is crucial for business success.
-
-### The Role of Digital Marketing
-
-Digital marketing encompasses a wide range of online activities designed to promote products, services, or brands. It leverages digital channels such as websites, social media, email, and search engines to connect with target audiences and achieve specific business objectives.
-
-### Key Components of Digital Marketing:
-- **Search Engine Optimization (SEO)**
-- **Content Marketing**
-- **Social Media Marketing**
-- **Email Marketing**
-- **Pay-Per-Click Advertising (PPC)**
-- **Analytics and Data Analysis**
-
-While these elements are powerful tools in their own right, they work best when integrated into a comprehensive marketing strategy.
-
----
-
-## The Bigger Picture: Integrated Marketing Strategy
-
-An effective marketing strategy goes beyond just digital channels. It incorporates both traditional and digital methods to create a cohesive brand experience for customers. Here's why an integrated approach is crucial:
-
-1. **Holistic Brand Presence**: By combining digital and traditional marketing efforts, businesses can create a consistent brand image across all touchpoints.  
-2. **Diverse Audience Reach**: Not all customers are online all the time. An integrated strategy ensures you reach your audience through their preferred channels.  
-3. **Synergy Between Channels**: Digital and traditional marketing efforts can complement and reinforce each other, creating a more powerful overall impact.  
-4. **Balanced Resource Allocation**: An integrated strategy allows for more efficient use of marketing resources, preventing over-investment in any single channel.
-
----
-
-## Aligning Digital with Overall Marketing Goals
-
-To effectively incorporate digital marketing into your overall strategy, consider the following steps:
-
-1. **Define Clear Objectives**: Establish specific, measurable goals that align with your broader business objectives.  
-2. **Understand Your Audience**: Gain deep insights into your target market to tailor your messaging effectively.  
-3. **Choose the Right Channels**: Identify which digital and traditional channels will best reach your audience and achieve your goals.  
-4. **Create Consistent Messaging**: Ensure that your brand voice and key messages are uniform across all marketing efforts.  
-5. **Measure and Adapt**: Regularly analyze the performance of your marketing initiatives and adjust your strategy accordingly.
-
----
-
-## The Power of Integration
-
-By viewing digital marketing as part of a larger, integrated marketing strategy, businesses can create more impactful campaigns that resonate with their audience across multiple touchpoints. This approach allows for:
-
-- **Improved Customer Experience**: A seamless brand experience across all channels enhances customer satisfaction and loyalty.  
-- **Better Data Insights**: Combining data from various marketing efforts provides a more comprehensive understanding of customer behavior.  
-- **Increased ROI**: An integrated strategy often leads to more efficient use of marketing resources and better overall results.
-
----
-
-## Conclusion
-
-While digital marketing is undoubtedly a critical component of modern marketing, it's essential to remember that it's just one piece of the puzzle. By integrating digital efforts with traditional marketing techniques and aligning them with overall business objectives, companies can create powerful, cohesive strategies that drive real results. 
-
-In today's complex marketing landscape, success lies in the ability to see the bigger picture and create harmonious campaigns that engage customers across all channels.
-
-    `,
-    title: `## Digital Marketing: A Crucial Piece of the Marketing Puzzle`,
-    titleWp: "Digital Marketing: A Crucial Piece of the Marketing Puzzle",
-    videoLink:
-      "https://media.istockphoto.com/id/1585668662/video/interior-designer-working-on-new-house-design-project-in-office-choosing-flooring-and.mp4?s=mp4-640x640-is&k=20&c=Zqvnple6V8UYUDe9lxRNo2Wv9l5VgaWbyVG_C8zwPow=",
-  },
+  
 ];
 
 export default paperData;

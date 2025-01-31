@@ -301,11 +301,10 @@ function AboutPage() {
         >
           About Us
         </p>
-       
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-16">
+      <main className="max-w-7xl mx-auto px-6 h-fit py-16">
         {/* Introduction */}
         <div className="max-w-7xl text-center  mb-20">
           <h2 className="text-3xl font-bold  mb-2">Our Vision</h2>
@@ -318,21 +317,21 @@ function AboutPage() {
           </div>
         </div>
         <div className="absolute top- left-[47.5%] w-24 rotate-90 h-px bg-gray-400 -translate-y-1/2 hidden md:block"></div>
-        <div className="w-full  px-4 py-16 ">
+        <div className="w-full  px-4 md:py-16 ">
           <div className="relative">
             <div className="space-y-12 ">
               <div className="w-full text-center   ">
                 <h2 className="text-3xl font-bold  mb-8">Our Mission</h2>
               </div>
 
-              <div className="relative grid md:grid-cols-2 gap-8 mx-auto">
+              <div className="relative grid md:grid-cols-2 gap-8  mx-auto">
                 <div className="absolute top-1/2 left-0 w-full h-px bg-gray-400 -translate-y-1/2 hidden md:block"></div>
                 <div className="absolute top-1/2 rounded-full left-[49.2%] z-10 w-5 h-5 border-2 border-gray-400 bg-gray-100 -translate-y-1/2 hidden md:block"></div>
 
                 <div className="absolute top-0 left-1/2 h-full w-px bg-gray-400 -translate-x-1/2 hidden md:block"></div>
 
-                <div className="relative flex gap-10 m-10 space-y-4  p-4">
-                  <div className="w-60 h-40 mt-5 rounded-full  items-center justify-center">
+                <div className="relative  md:flex gap-10 md:m-10 space-y-4  p-4">
+                  <div className="w-40 h-40 md:w-60 md:h-40 mx-auto md:mt-5 rounded-full  items-center justify-center">
                     <img src={EmpoweringBusinessesIcon} alt="" srcset="" />
                   </div>
                   <div>
@@ -340,15 +339,15 @@ function AboutPage() {
                     <h2 className="text-2xl  font-bold ">
                       Empowering Businesses{" "}
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="  text-gray-600 text-lg">
                       To empower businesses of all scales/sizes with insights,
                       strategies, and tools.
                     </p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4  p-4">
-                  <div className="w-60 h-40  rounded-full  flex items-center justify-center">
+                <div className="relative md:flex gap-10 md:m-10 space-y-4  p-4">
+                  <div className="w-40 h-40 md:w-60 md:h-40 mx-auto  rounded-full   items-center justify-center">
                     <img src={ConsultancyIcon} alt="" srcset="" />
                   </div>
                   <div>
@@ -357,15 +356,15 @@ function AboutPage() {
                       {" "}
                       Expert Consultancy{" "}
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="  text-gray-600 text-lg">
                       To provide expert consultancy fostering long-term value
                       for our clients.
                     </p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4  p-4">
-                  <div className="w-60 h-40 rounded-full  flex items-center justify-center">
+                <div className="relative md:flex gap-10 md:m-10 space-y-4  p-4">
+                  <div className="w-40 h-40 md:w-60 md:h-40 mx-auto rounded-full  flex items-center justify-center">
                     <img src={ClientFirstApproachIcon} alt="" srcset="" />
                   </div>
                   <div>
@@ -374,21 +373,21 @@ function AboutPage() {
                       {" "}
                       Client-First Approach{" "}
                     </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="  text-gray-600 text-lg">
                       To create a client-first approach where every service is
                       personalized, impactful, and results-driven.
                     </p>
                   </div>
                 </div>
 
-                <div className="relative flex gap-10 m-10 space-y-4  p-4">
-                  <div className="w-64 h-40  rounded-full  flex items-center justify-center">
+                <div className="relative md:flex gap-10 md:m-10 space-y-4  md:p-4">
+                  <div className="w-40 h-40 md:w-60 md:h-40 mx-auto rounded-full  flex items-center justify-center">
                     <img src={AIInnovationIcon} alt="" srcset="" />
                   </div>
                   <div>
                     {" "}
                     <h2 className="text-2xl  font-bold "> AI Innovation </h2>
-                    <p className="text-gray-600 text-lg">
+                    <p className="  text-gray-600 text-lg">
                       To pioneer Gen AI-enabled products that enhance
                       efficiency, innovation, and decision-making for businesses
                       of all sizes.
@@ -401,7 +400,7 @@ function AboutPage() {
         </div>
       </main>
       <div className=" bg-white ">
-        <div className="mx-auto -translate-y-32  border w-fit bg-white border-gray-400    ">
+        <div className="mx-auto md:-translate-y-32  border w-fit bg-white border-gray-400    ">
           {/* Our Approach Section */}
           <section className="py-10 ">
             <div className="w-fit mx-auto ">
@@ -417,7 +416,9 @@ function AboutPage() {
                     className="h-10  mx-auto mb-4"
                   />
 
-                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Ethics</h3>
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">
+                    Ethics
+                  </h3>
                   <p className="text-gray-600">
                     We like doing things ethically
                   </p>
@@ -429,7 +430,9 @@ function AboutPage() {
                     srcset=""
                     className="h-10  mx-auto mb-4"
                   />
-                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Creativity</h3>
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">
+                    Creativity
+                  </h3>
                   <p className="text-gray-600">
                     Being creative is our way of life
                   </p>
@@ -441,7 +444,9 @@ function AboutPage() {
                     srcset=""
                     className="h-10  mx-auto mb-4"
                   />
-                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Adaptability</h3>
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">
+                    Adaptability
+                  </h3>
                   <p className="text-gray-600">
                     We tailor to the needs of customers
                   </p>
@@ -453,7 +458,9 @@ function AboutPage() {
                     srcset=""
                     className="h-10  mx-auto mb-4"
                   />
-                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">Individuality</h3>
+                  <h3 className="text-2xl font-bold text-[#67883B] mb-1">
+                    Individuality
+                  </h3>
                   <p className="text-gray-600">
                     We celebrate diverse perspective
                   </p>

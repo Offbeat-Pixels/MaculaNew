@@ -63,8 +63,19 @@ function Whitepaper() {
         ))}
       </div>
       {/* Display WhitepapperData */}
-      <div className=" mt-10 grid grid-cols-3 gap-3 w-full px-5   place-items-center ">
-        {filteredWhitepapperData.map((service, index) => (
+      {/* <div className=" mt-10 grid grid-cols-3 gap-3 w-full px-5   place-items-center ">
+        {filteredWhitepapperData.map((service) => (
+          <div key={service.id} className="relative">
+            <div className="relative group   h-fit text-justify rounded-xl   justify-between ">
+              <Link to={`/whitepaperDetail/${service.category}`}>
+                <WhitepaperCard service={service} />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div> */}
+      <div className="   py-10 gap-3 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm w-full mx-auto   place-items-center ">
+        {filteredWhitepapperData.map((service) => (
           <div key={service.id} className="relative">
             <div className="relative group   h-fit text-justify rounded-xl   justify-between ">
               <Link to={`/whitepaperDetail/${service.category}`}>

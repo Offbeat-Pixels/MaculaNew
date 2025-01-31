@@ -66,8 +66,8 @@ import { MaculaVideo } from "../assets";
             <video
               ref={videoRef}
               className="w-full h-full object-contain lg:object-fill"
-              muted
-              loop
+              
+              controls
               preload="auto"
               style={{ display: isPlaying ? "block" : "none" }} // Hide until it plays
             >
