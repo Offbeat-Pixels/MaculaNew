@@ -327,8 +327,7 @@ const Main = () => {
       duration: 0.3, // Adjust duration for smoother scrolling speed
       easing: (t) => t, // You can customize the easing function here
       smoothWheel: true, // Enable smooth scroll with the mouse wheel
-      smoothTouch: true, // Disable for touch-based devices if needed
-      mobile: true, // Enable\
+     
     });
 
     // Update the scroll on each animation frame

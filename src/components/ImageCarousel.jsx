@@ -1464,7 +1464,7 @@ function ImageCarousel() {
   }
 
   return (
-    <div className="py-20 bg-white/90 min-h-fit relative">
+    <div className="py-5 md:py-20 bg-white/90 min-h-fit relative">
       {/* Background image with blur */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
@@ -1491,13 +1491,13 @@ function ImageCarousel() {
         {/* Left Side Text */}
         <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32">
           <AnimatePresence>
-            <div key={images[currentIndex].id} className="absolute ">
+            <div key={images[currentIndex].id} className="mt-14 md:mt-0 md:absolute">
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl  w-80 md:w-fit font-semibold"
+                className="text-4xl px-2 md:px-0 w-fit font-semibold"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1506,7 +1506,7 @@ function ImageCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-xl  my-4 "
+                className="text-xl  px-5 md:px-0 my-4 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1515,7 +1515,7 @@ function ImageCarousel() {
               to="/services"
               onClick={delayAndGo}
               onMouseLeave={() => setIsClicked(false)}
-              className="flex items-center border gap-2 mt-10   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
+              className="flex items-center border gap-2  lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
             >
               <motion.div
                 onClick={() => setIsClicked(true)}
@@ -1538,7 +1538,7 @@ function ImageCarousel() {
 
         {/* Right Side Slider */}
         <div className="w-full pr-20 2xl:pr-32">
-          <div className="relative flex justify-center items-center w-full h-[70vh] lg:h-[80vh]">
+          <div className="relative flex justify-center items-center w-full h-[50vh] lg:h-[80vh]">
             {images.map((image, index) => {
               const isActive = index === currentIndex;
               const offset = (index - currentIndex) % images.length;
@@ -1555,7 +1555,7 @@ function ImageCarousel() {
               return (
                 <motion.div
                   key={image.id}
-                  className="absolute mt-56   md:mt-0 "
+                  className="absolute mt-0 "
                   style={
                     {
                       // transform: `translateX(${offset * (100 + imageGap)}px)`,
