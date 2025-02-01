@@ -27,8 +27,8 @@ export default function ContactForm() {
 
     try {
       // Replace YOUR_WEB_APP_URL with the Web App URL from Google Apps Script
-      const webAppUrl =
-        "https://script.google.com/macros/s/AKfycbwZBsD1EhM44T2qs8kIGEXC6w6FSzydy1H2OXAbTdtyY8_pMPKjDRy666W0HeWGWC0X/exec";
+      const webAppUrl = import.meta.env.VITE_WEB_APP_URL;
+       
 
       const params = new URLSearchParams(formData);
      

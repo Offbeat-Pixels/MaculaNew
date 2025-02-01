@@ -32,8 +32,10 @@ const slides = [
     title: (
       <>
         <div className={`${styles.BannerHeadText} `}>
-          <p className=" lg:text-black mb-5   ">The Founder’s Trap </p>
-          <div className={`${styles.BannerSubText} `}>
+          <p className="  text-white lg:text-black mb-5   ">
+            The Founder’s Trap{" "}
+          </p>
+          <div className={`${styles.BannerSubText} text-white lg:text-black l`}>
             <p className="">How Selling Stifles </p>
             <p className=" ">Startup Growth</p>
           </div>
@@ -49,7 +51,7 @@ const slides = [
     title: (
       <>
         <div className={`${styles.BannerHeadText} `}>
-          <p className="text-white  mb-5 text-6xl ">Digital Marketing</p>
+          <p className="text-white  mb-5  ">Digital Marketing</p>
           <div className={`${styles.BannerSubText} `}>
             <p className="  text-white  ">A Crucial Piece of </p>
             <p className=" text-white  ">the Marketing Puzzle </p>
@@ -94,7 +96,7 @@ function Banner() {
   }, [currentSlide, isMobile]);
 
   return (
-    <div className="h-screen  md:h-[92vh] w-full overflow-hidden relative">
+    <div className="h-[50vh] md:h-[92vh] w-full overflow-hidden relative">
       {/* Background Video or Image for the Current Slide */}
       {slides.map((slide, index) =>
         isMobile ? (
@@ -132,19 +134,19 @@ function Banner() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full  w-full text-nowrap  z-10"
+          className="relative h-full mt-20 md:mt-0 w-full md:text-nowrap  z-10"
         >
           <div className="px-5 sm:px-10  lg:px-24 grid h-full w-full  items-center md:grid-cols-2">
             <div className="space-y-10 ">
-              <motion.h1
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                // className="text-4xl md:text-5xl"
+                className="text-4xl md:text-5xl"
                 // className={`${styles.BannerHeadText} text-white`}
               >
                 {slides[currentSlide].title}
-              </motion.h1>
+              </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

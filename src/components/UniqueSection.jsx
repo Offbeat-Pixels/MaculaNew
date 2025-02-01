@@ -8,13 +8,13 @@ import { styles } from '../style';
 const ref = useRef(null);
 const isInView = useInView(ref, { once: true, amount: 0.8 });
   return (
-    <div className="w-full px-4 py-16">
+    <div className="w-full  px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <h2
           ref={ref}
           className={` ${styles.sectionHeadText} ${
             isInView ? "motion-preset-slide-right-md" : "opacity-0"
-          } transition-all duration-1000 ease-in-out  text-center mb-16`}
+          } transition-all duration-1000 ease-in-out text-left md:text-center mb-16`}
         >
           {" "}
           We're reaching your <span className=" italic">unique needs.</span>
@@ -22,14 +22,14 @@ const isInView = useInView(ref, { once: true, amount: 0.8 });
 
         <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Step 1 */}
-          <div className="flex  flex-col items-center text-center relative">
+          <div className="flex  flex-col px-5 md:px-0  items-start md:items-center text-left md:text-center relative">
             <div className="w-16 h-16  bg-[#e7e7e7]  rounded-full flex items-center justify-center text-black mb-4 relative">
               <Users className="w-8 h-8 text-[#588157]  " />
               <span className="absolute top-5 -right-5 border-2 border-[#e7e7e7] w-10 h-10 rounded-full bg-white  flex items-center justify-center text-lg font-bold">
                 01
               </span>
             </div>
-            <h3 className="text-xl font-semibold mb-3">Experienced Team</h3>
+            <h3 className="text-xl font-semibold mb-3 ">Experienced Team</h3>
             <p className="text-sm text-gray-600">
               Our consultants have a proven track record of helping businesses
               succeed.
@@ -52,7 +52,7 @@ const isInView = useInView(ref, { once: true, amount: 0.8 });
           </div>
 
           {/* Step 2 */}
-          <div className="flex flex-col items-center text-center relative">
+          <div className="flex flex-col px-5 md:px-0  items-start md:items-center text-left md:text-center relative">
             <div className="w-16 h-16 bg-[#e7e7e7] rounded-full flex items-center justify-center text-black mb-4 relative">
               <Globe className="w-8 h-8 text-[#588157]" />
               <span className="absolute top-3 -right-7 border-2 border-[#e7e7e7] w-10 h-10  rounded-full bg-white text-black flex items-center justify-center text-lg font-bold">
@@ -85,7 +85,7 @@ const isInView = useInView(ref, { once: true, amount: 0.8 });
           </div>
 
           {/* Step 3 */}
-          <div className="flex flex-col items-center text-center relative">
+          <div className="flex flex-col px-5 md:px-0  items-start md:items-center text-left md:text-center relative">
             <div className="w-16 h-16 bg-[#e7e7e7] rounded-full flex items-center justify-center text-black mb-4 relative">
               <MessageCircle className="w-8 h-8 text-[#588157]" />
               <span className="absolute top-3 -right-7 border-2 border-[#e7e7e7] w-10 h-10  rounded-full bg-white text-black flex items-center justify-center text-lg font-bold">

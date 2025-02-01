@@ -58,7 +58,7 @@ import { Transition } from "./components/ui/Transition";
 
 function App() {
   return (
-    <div data-scroll-container className="text-justify overflow-hidden">
+    <div  className="text-pretty overflow-hidden">
       
       <Banner />
     <ImageCarousel/>
