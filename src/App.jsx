@@ -65,7 +65,7 @@ function App() {
       {/* <div className="bg-why-pattern bg-cover bg-no-repeat bg-center">
         <WhySection />
       </div> */}
-      <div className="bg-service-pattern bg-cover bg-no-repeat bg-center">
+      <div className="bg--pattern backdrop-blur-md bg-cover bg-no-repeat bg-center">
         <ServicesSection />
       </div>
       <motion.div

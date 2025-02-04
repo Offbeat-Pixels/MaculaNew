@@ -1400,13 +1400,14 @@ import {
 import { styles } from "../style.js";
 import { useMediaQuery } from "react-responsive";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useSwipeable } from "react-swipeable";
 
 const images = [
   {
     id: 1,
     src: slider1,
     text: (
-      <p>
+      <p className="">
         Strategic Support and <br /> Accountability
       </p>
     ),
@@ -1440,9 +1441,14 @@ const images = [
   {
     id: 6,
     src: slider7,
-    text: <p>Expertise and Specialized <br /> Knowledge</p>,
-    subtext:
-      "Provide advanced expertise and addresses internal capability gaps.",
+    text: (
+      <p>
+        Expertise and Specialized <br /> Knowledge
+      </p>
+    ),
+    subtext: (
+      <p>Provide advanced expertise and addresses internal capability <br /> gaps.</p>
+    ),
   },
   {
     id: 7,
@@ -1462,9 +1468,20 @@ function ImageCarousel() {
     e.preventDefault();
     setTimeout(() => navigate("/services"), 300); // Proper navigate call
   }
+    const handlers = useSwipeable({
+    onSwipedLeft: () =>
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length),
+    onSwipedRight: () =>
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      ),
+    preventDefaultTouchmoveEvent: true,
+    trackTouch: true,
+    trackMouse: false,
+  });
 
   return (
-    <div className="py-5 md:py-20 bg-white/90 min-h-fit relative">
+    <div className=" py-14 md:py-20 bg-white/90 min-h-fit max-w-screen-4xl relative">
       {/* Background image with blur */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
@@ -1487,17 +1504,21 @@ function ImageCarousel() {
       </div>
 
       {/* Content */}
-      <div className="lg:flex w-full  lg:pr-72 2xl:pr-96">
+      <div className="lg:flex w-full  lg:pr-72 2xl:pr-96" {...handlers}>
         {/* Left Side Text */}
-        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32">
+        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32 4x">
           <AnimatePresence>
-            <div key={images[currentIndex].id} className=" mt-10 absolute">
+            <div
+              key={images[currentIndex].id}
+              className="mt-10 md:mt-0 mb-10 absolute"
+            >
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
-                className="text-2xl md:text-4xl  md:px-0 w-fit  font-semibold"
+                // className="text-2xl md:text-4xl  md:px-0 w-fit  font-semibold"
+                className="text-2xl md:text-4xl  font-bold text-[#67883B] md:text-black mb-1"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1506,7 +1527,7 @@ function ImageCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-xl px-5 md:px-0 my-4 "
+                className="text-xl mxa-w-6xl  md:px-0 my-1 md:my-4 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1528,7 +1549,7 @@ function ImageCarousel() {
               <motion.span
                 onClick={() => setIsClicked(true)}
                 animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-                className="items-center font-bold bg-[#67883B] text-white px-4 py-2 rounded-full transition-colors"
+                className="items-center  font-bold bg-[#67883B] text-white px-4 py-2 rounded-full transition-colors"
               >
                 Explore More
               </motion.span>
@@ -1543,10 +1564,10 @@ function ImageCarousel() {
               const isActive = index === currentIndex;
               const offset = (index - currentIndex) % images.length;
               const imageGap = isMobile ? 10 : 20; // Adjust gap for mobile
-              const translateX = isMobile ? 200 : 380; // Movement adjustment for mobile
+              const translateX = isMobile ? 150 : 380; // Movement adjustment for mobile
               const scale = isMobile
                 ? isActive
-                  ? 0.9
+                  ? 1
                   : 0.5
                 : isActive
                 ? 1
@@ -1555,7 +1576,7 @@ function ImageCarousel() {
               return (
                 <motion.div
                   key={image.id}
-                  className="absolute mt-52 md:mt-0 "
+                  className="absolute ml-5 mt-52 md:mt-0 "
                   style={
                     {
                       // transform: `translateX(${offset * (100 + imageGap)}px)`,
@@ -1596,7 +1617,7 @@ function ImageCarousel() {
       </div>
 
       {/* Pagination Dots */}
-      <div className="flex justify-center ">
+      <div className="hidden md:flex justify-center ">
         {images.map((_, index) => (
           <button
             key={index}

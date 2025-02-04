@@ -8,7 +8,7 @@ import { styles } from '../style';
 const ref = useRef(null);
 const isInView = useInView(ref, { once: true, amount: 0.8 });
   return (
-    <div className="w-full  px-4 py-16">
+    <div className="w-full  px-4 mb-10 md:mb-32">
       <div className="max-w-6xl mx-auto">
         <h2
           ref={ref}

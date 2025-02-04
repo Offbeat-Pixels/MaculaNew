@@ -57,6 +57,13 @@ import MaculaVideo from "./MaculaVideo.webm";
 
 
 
+//@red footer img
+import Footer1 from "./footer1.jpg"
+import Footer2 from "./footer2.jpg"
+import Footer3 from "./footer3.jpg"
+import Footer4 from "./footer4.jpg"
+import Footer5 from "./footer5.jpg"
+
 
 
 
@@ -103,7 +110,12 @@ export {
   IndividualityIcon,
   AdaptabilityIcon,
 genAiImg ,
-salesImg
+salesImg,
+Footer1,
+Footer2,
+Footer3,
+Footer4,
+Footer5,
  
  
 };

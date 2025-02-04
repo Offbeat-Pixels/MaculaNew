@@ -149,7 +149,7 @@ export default function Navbar() {
           alt="Macula Logo"
           width={120}
           height={60}
-          className="h-10  md:h-14  object-contain w-44"
+          className="h-10 mr-24 md:mr-0  md:h-14  object-contain w-44"
         />
       </Link>
       <div className="flex items-center gap-4">
@@ -202,7 +202,7 @@ export default function Navbar() {
               variants={ButtonFade(isClicked)}
               animate="animate"
               // className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
-              className="bg-[#67883B] rounded-full p-2 shadow-md cursor-pointer"
+              className="bg-[#373737] rounded-full p-2 shadow-md cursor-pointer"
             >
               <PhoneCall className="w-5 h-5 text-white" />
             </motion.div>
@@ -210,7 +210,7 @@ export default function Navbar() {
               onClick={() => setIsClicked(true)}
               animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
               // className="hidden md:block bg-[#67883B] text-white py-2 px-4 rounded-full text-sm sm:text-base"
-              className="hidden md:block bg-[#67883B] text-white py-2 px-2 rounded-full text-sm sm:text-base"
+              className="hidden md:block bg-[#373737] text-white py-2 px-2 rounded-full text-sm sm:text-base"
             >
               Book Your Session
             </motion.span>

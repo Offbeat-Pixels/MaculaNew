@@ -65,11 +65,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full min-h-fit  p-4 md:p-8 lg:p-12 bg-contact-pattern bg-cover bg-no-repeat bg-center">
-      <div className="max-w-7xl md:pl-14 shadow-none">
+    <div className="w-full min-h-fit  p-4 md:p-8 lg:p-12 md:bg-contact-pattern bg-cover bg-no-repeat bg-center">
+      <div className="max-w-7xl mt-10 md:mt-0 md:pl-14 shadow-none">
         <div className="p-0">
           <p
-            className={`${styles.sectionHeadText} text-[3rem] bg-[#618519] md:bg-transparent bg-opacity-50 rounded-lg`}
+            className={`${styles.sectionHeadText} text-[3rem] bg-transparent bg-opacity-50 rounded-lg`}
           >
             Let's <span className="italic">Talk</span>
           </p>

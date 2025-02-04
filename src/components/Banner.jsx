@@ -13,58 +13,51 @@ import {
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ShinyText from './ui/ShinyText';
+
+
 const slides = [
   {
     title: (
-      <>
-        <div className={`${styles.BannerHeadText} text-white w-fit`}>
-          <p>Gen AI</p>
-          <p className={`${styles.BannerSubText} `}>Driven Products</p>
-        </div>
-      </>
+      <div className={`${styles.BannerHeadText} text-white w-fit`}>
+        <p>Gen AI</p>
+        <p className={styles.BannerSubText}>Driven Products</p>
+      </div>
     ),
-
     category: "Gen AI Enabled Products",
     video: Papper11,
     mobileImage: WhitePapper2,
   },
   {
     title: (
-      <>
-        <div className={`${styles.BannerHeadText} `}>
-          <p className="  text-white lg:text-black mb-5   ">
-            The Founder’s Trap{" "}
-          </p>
-          <div className={`${styles.BannerSubText} text-white lg:text-black l`}>
-            <p className="">How Selling Stifles </p>
-            <p className=" ">Startup Growth</p>
-          </div>
+      <div className={styles.BannerHeadText}>
+        <p className="text-white lg:text-black mb-5">The Founder’s Trap</p>
+        <div className={`${styles.BannerSubText} text-white lg:text-black`}>
+          <p>How Selling Stifles Startup</p>
+          <p> Growth</p>
         </div>
-      </>
+      </div>
     ),
-
     category: "Sales as a Service",
     video: Papper22,
     mobileImage: WhitePapper4,
   },
   {
     title: (
-      <>
-        <div className={`${styles.BannerHeadText} `}>
-          <p className="text-white  mb-5  ">Digital Marketing</p>
-          <div className={`${styles.BannerSubText} `}>
-            <p className="  text-white  ">A Crucial Piece of </p>
-            <p className=" text-white  ">the Marketing Puzzle </p>
-          </div>
+      <div className={styles.BannerHeadText}>
+        <p className="text-white mb-5">Digital Marketing</p>
+        <div className={styles.BannerSubText}>
+          <p className="text-white">A Crucial Piece of the</p>
+          <p className="text-white"> Marketing Puzzle</p>
         </div>
-      </>
+      </div>
     ),
-
     category: "Business Consulting",
     video: Papper33,
     mobileImage: WhitePapper6,
   },
 ];
+
 
 function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -96,7 +89,7 @@ function Banner() {
   }, [currentSlide, isMobile]);
 
   return (
-    <div className="h-[50vh] md:h-[92vh] w-full overflow-hidden relative">
+    <div className="h-[60vh] md:h-[92vh] w-full overflow-hidden relative">
       {/* Background Video or Image for the Current Slide */}
       {slides.map((slide, index) =>
         isMobile ? (
@@ -134,7 +127,7 @@ function Banner() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full mt-20 md:mt-0 w-full md:text-nowrap  z-10"
+          className="relative h-full  md:mt-0 max-w-7xl md:text-nowrap  z-10"
         >
           <div className="px-5 sm:px-10  lg:px-24 grid h-full w-full  items-center md:grid-cols-2">
             <div className="space-y-10 ">
@@ -166,15 +159,19 @@ function Banner() {
                   state={{ category: slides[currentSlide].category }}
                   className="group flex items-center -space-x-1"
                 >
-                  <span className="text-[#333333] xs:text-lg sm:text-xl z-50 border-t-2 border-black font-medium bg-white px-4 md:px-8 py-2 md:py-4 rounded-full shadow-md hover:shadow-xl transition-shadow">
-                    Let's Get Started
-                  </span>
-                  <div className="relative z-0 mt-2">
-                    <div className="w-14 h-10 bg-slate-500 md:bg-white rounded-cylinder"></div>
+                  <span className=" xs:text-lg sm:text-xl z-50 border-t-2 border-black font-medium bg-black px-4 md:px-8 py-2 md:py-4 rounded-full shadow-md hover:shadow-xl transition-shadow">
+                  <ShinyText
+                    text="Let's Get Started"
+                    disabled={false}
+                    speed={3}
+                    className="custom-class "
+                  /></span>
+                  {/* <div className="hidden md:block relative z-0 mt-2">
+                    <div className="w-10 md:w-14 h-10 md:h-10 bg-slate-500 md:bg-white rounded-cylinder"></div>
                   </div>
-                  <div className="bg-[#588157] border-2 z-20 border-white rounded-full p-5 shadow-md">
-                    <ArrowUpRight className="w-5 h-5 text-white transform group-hover:rotate-45 transition-transform" />
-                  </div>
+                  <div className="  hidden md:block  bg-[#588157] border-2 z-20 border-white rounded-full p-5 shadow-md">
+                    <ArrowUpRight className="w-2 md:w-5 h-2 md:h-5 text-white transform group-hover:rotate-45 transition-transform" />
+                  </div> */}
                 </Link>
               </motion.div>
             </div>
@@ -183,7 +180,7 @@ function Banner() {
       </AnimatePresence>
 
       {/* Pagination Dots */}
-      <div className="absolute left-1/2 flex -translate-x-1/2 -translate-y-32 md:-translate-y-20 gap-2 z-50">
+      <div className="absolute left-1/2 flex -translate-x-1/2 -translate-y-10 md:-translate-y-20 gap-2 z-50">
         {slides.map((_, index) => (
           <button
             key={index}
