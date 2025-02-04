@@ -1406,11 +1406,7 @@ const images = [
   {
     id: 1,
     src: slider1,
-    text: (
-      <p className="">
-        Strategic Support and <br /> Accountability
-      </p>
-    ),
+    text: "Strategic Support and Accountability",
     subtext: "Develop actionable strategies and ensure accountability.",
   },
   {
@@ -1441,14 +1437,9 @@ const images = [
   {
     id: 6,
     src: slider7,
-    text: (
-      <p>
-        Expertise and Specialized <br /> Knowledge
-      </p>
-    ),
-    subtext: (
-      <p>Provide advanced expertise and addresses internal capability <br /> gaps.</p>
-    ),
+    text: " Expertise and Specialized   Knowledge",
+    subtext:
+      "Provide advanced expertise and addresses internal capability  gaps.",
   },
   {
     id: 7,
@@ -1472,16 +1463,14 @@ function ImageCarousel() {
     onSwipedLeft: () =>
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length),
     onSwipedRight: () =>
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      ),
+      setCurrentIndex((prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1 ),
     preventDefaultTouchmoveEvent: true,
     trackTouch: true,
     trackMouse: false,
   });
 
   return (
-    <div className=" py-14 md:py-20 bg-white/90 min-h-fit max-w-screen-4xl relative">
+    <div className=" py-14 md:py-10 bg-white/90 max-h-fit max-w-screen-4xl relative">
       {/* Background image with blur */}
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
@@ -1492,25 +1481,26 @@ function ImageCarousel() {
       ></div>
 
       {/* Title Section */}
-      <div className="text-left px-5 md:text-center">
-        <p className={`text-3xl  ${styles.sectionHeadText}`}>
+      <div className="px-2  text-center">
+        <p className={`font-bold ${styles.sectionHeadText}`}>
           Why <span className="text-[#000000] italic">Consulting</span> is
           Important?
         </p>
-        <p className="text-lg pt-5">
+        {/* <p className="text-lg md:text-xl pt-5"> */}
+        <p className={`pt-5   ${styles.sectionSubText}`}>
           We specialize in providing practical advice and hands-on support to
           businesses like yours.
         </p>
       </div>
 
       {/* Content */}
-      <div className="lg:flex w-full  lg:pr-72 2xl:pr-96" {...handlers}>
+      <div className="lg:flex w-full text-left   lg:pr-72 2xl:pr-96" {...handlers}>
         {/* Left Side Text */}
-        <div className="w-full lg:flex items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32 4x">
+        <div className="w-full lg:flex  items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32 ">
           <AnimatePresence>
             <div
               key={images[currentIndex].id}
-              className="mt-10 md:mt-0 mb-10 absolute"
+              className="mt-10 md:mt-24 xl:mt-0 mb-10 absolute lg:w-[30rem] 3xl:w-full"
             >
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
@@ -1518,7 +1508,7 @@ function ImageCarousel() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
                 // className="text-2xl md:text-4xl  md:px-0 w-fit  font-semibold"
-                className="text-2xl md:text-4xl  font-bold text-[#67883B] md:text-black mb-1"
+                className="text-xl md:text-4xl  font-bold text-[#67883B] md:text-black mb-1"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1527,7 +1517,7 @@ function ImageCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-xl mxa-w-6xl  md:px-0 my-1 md:my-4 "
+                className="text-lg md:text-xl mxa-w-6xl  md:px-0 my-1 md:my-4 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1536,7 +1526,7 @@ function ImageCarousel() {
               to="/services"
               onClick={delayAndGo}
               onMouseLeave={() => setIsClicked(false)}
-              className="md:flex items-center border gap-2 hidden   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
+              className="xl:flex items-center border gap-2 hidden   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
             >
               <motion.div
                 onClick={() => setIsClicked(true)}
@@ -1558,13 +1548,13 @@ function ImageCarousel() {
         </div>
 
         {/* Right Side Slider */}
-        <div className="w-full  pr-20 2xl:pr-32">
-          <div className="relative flex justify-center items-center w-full h-[65vh] lg:h-[80vh]">
+        <div className="w-full md:pt-44  xl:pt-0 pr-20 2xl:pr-24">
+          <div className="relative flex justify-center items-center w-full h-[65vh] md:h-[50vh] lg:h-[80vh]">
             {images.map((image, index) => {
               const isActive = index === currentIndex;
               const offset = (index - currentIndex) % images.length;
               const imageGap = isMobile ? 10 : 20; // Adjust gap for mobile
-              const translateX = isMobile ? 150 : 380; // Movement adjustment for mobile
+              const translateX = isMobile ? 150 : 400; // Movement adjustment for mobile
               const scale = isMobile
                 ? isActive
                   ? 1
@@ -1576,7 +1566,7 @@ function ImageCarousel() {
               return (
                 <motion.div
                   key={image.id}
-                  className="absolute ml-5 mt-52 md:mt-0 "
+                  className="absolute ml-5 mt-52 md:mt-24 xl:mt-0 "
                   style={
                     {
                       // transform: `translateX(${offset * (100 + imageGap)}px)`,

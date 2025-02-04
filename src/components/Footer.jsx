@@ -10,9 +10,9 @@ import { Footer1,
 
 export default function Footer() {
   return (
-    <div className="min-h-fit mx-auto max-w-5xl  ">
+    <div className="min-h-fit mx-auto max-w-5xl md:px-10 lg:px-0 ">
       {/* Header Section */}
-      <header className="max-w-7xl   px-5 pt-8 pb-4">
+      <header className="max-w-7xl   px-5  pt-8 pb-4">
         <div className=" mb-8">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-light mb-4">
             Turn Your Vision Into Reality.
@@ -64,9 +64,9 @@ export default function Footer() {
 
       <div className=" flex items-center justify-center   ">
         <div className="bg-white rounded-3xl border shadow-md p-4 overflow-hidden ">
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col lg:flex-row">
             {/* Left Section */}
-            <div className=" md:w-5/6  md:flex ">
+            <div className="  lg:w-5/6  md:flex  ">
               <LazyLoadImage
                 src={Footer1}
                 alt=""
@@ -76,28 +76,28 @@ export default function Footer() {
                 <LazyLoadImage
                   src={Footer2}
                   alt="img1"
-                  className="rounded-2xl w-full md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl w-full lg:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <LazyLoadImage
                   src={Footer3}
                   alt="img1"
-                  className="rounded-2xl w-full md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl w-full lg:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <LazyLoadImage
                   src={Footer4}
                   alt="img1"
-                  className="rounded-2xl w-full md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-2xl w-full lg:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <LazyLoadImage
                   src={Footer5}
                   alt="img1"
-                  className=" rounded-2xl w-full md:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
+                  className=" rounded-2xl w-full lg:w-28 h-40 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
 
             {/* Right Section  */}
-            <div className="w-full mt-5 md:w-[60%] md:py-14 md:pr-5 ">
+            <div className="w-full mt-5 lg:w-[60%] md:py-14 md:pr-5 ">
               <p className="text-2xl md:text-3xl  text-gray-800 mb-4">
                 Book Your Consultation with Macula Consultant
               </p>
@@ -106,7 +106,7 @@ export default function Footer() {
                 fusion of innovation, expertise, and strategic vision.
               </p>
 
-              <div className="space-x-4">
+              <div className="space-x-4 md:mt-5 lg:mt-0">
                 <div className="flex flex-wrap gap-5 items-center md:space-x-3">
                   <input
                     type="text"

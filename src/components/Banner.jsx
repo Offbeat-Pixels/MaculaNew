@@ -31,10 +31,10 @@ const slides = [
   {
     title: (
       <div className={styles.BannerHeadText}>
-        <p className="text-white lg:text-black mb-5">The Founder’s Trap</p>
-        <div className={`${styles.BannerSubText} text-white lg:text-black`}>
-          <p>How Selling Stifles Startup</p>
-          <p> Growth</p>
+        <p className="text-white  mb-5">The Founder’s Trap</p>
+        <div className={`${styles.BannerSubText} text-white  `}>
+          <p>How Selling Stifles Startup Growth</p>
+          {/* <p> Growth</p> */}
         </div>
       </div>
     ),
@@ -47,8 +47,8 @@ const slides = [
       <div className={styles.BannerHeadText}>
         <p className="text-white mb-5">Digital Marketing</p>
         <div className={styles.BannerSubText}>
-          <p className="text-white">A Crucial Piece of the</p>
-          <p className="text-white"> Marketing Puzzle</p>
+          <p className="text-white">A Crucial Piece of the Marketing Puzzle</p>
+          {/* <p className="text-white"> Marketing Puzzle</p> */}
         </div>
       </div>
     ),
@@ -89,7 +89,7 @@ function Banner() {
   }, [currentSlide, isMobile]);
 
   return (
-    <div className="h-[60vh] md:h-[92vh] w-full overflow-hidden relative">
+    <div className="h-[60vh] md:h-[98vh] w-full  overflow-hidden relative">
       {/* Background Video or Image for the Current Slide */}
       {slides.map((slide, index) =>
         isMobile ? (
@@ -127,15 +127,15 @@ function Banner() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full  md:mt-0 max-w-7xl md:text-nowrap  z-10"
+          className="relative h-full  md:mt-0 max-w-7xl text-nowrap  z-10"
         >
           <div className="px-5 sm:px-10  lg:px-24 grid h-full w-full  items-center md:grid-cols-2">
-            <div className="space-y-10 ">
+            <div className="space-y-10  ">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-4xl md:text-5xl"
+                // className="text-4xl md:text-5xl"
                 // className={`${styles.BannerHeadText} text-white`}
               >
                 {slides[currentSlide].title}
@@ -144,7 +144,8 @@ function Banner() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className={`${styles.BannerSubText} text-white`}
+                // className={`${styles.BannerSubText} text-white`}
+                
               >
                 {slides[currentSlide].subtitle}
               </motion.p>
@@ -160,12 +161,13 @@ function Banner() {
                   className="group flex items-center -space-x-1"
                 >
                   <span className=" xs:text-lg sm:text-xl z-50 border-t-2 border-black font-medium bg-black px-4 md:px-8 py-2 md:py-4 rounded-full shadow-md hover:shadow-xl transition-shadow">
-                  <ShinyText
-                    text="Let's Get Started"
-                    disabled={false}
-                    speed={3}
-                    className="custom-class "
-                  /></span>
+                    <ShinyText
+                      text="Let's Get Started"
+                      disabled={false}
+                      speed={3}
+                      className="custom-class "
+                    />
+                  </span>
                   {/* <div className="hidden md:block relative z-0 mt-2">
                     <div className="w-10 md:w-14 h-10 md:h-10 bg-slate-500 md:bg-white rounded-cylinder"></div>
                   </div>

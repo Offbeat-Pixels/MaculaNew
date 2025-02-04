@@ -5,7 +5,6 @@ import { styles } from "../style";
 import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
 import { useInView } from "framer-motion";
 import { ButtonFade } from "./ui/motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -140,7 +139,7 @@ function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid  lg:grid-cols-3 gap-6 ">
+        <div className="grid  lg:grid-cols-3  gap-6 ">
           {services.map((service, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...service} />
           ))}

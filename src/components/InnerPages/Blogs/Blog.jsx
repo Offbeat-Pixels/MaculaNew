@@ -218,7 +218,7 @@ function Blog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FDF8F7] p-8 text-justify">
+    <div className="min-h-screen bg-[#FDF8F7] p-2 md:p-8  text-justify">
       <div className="lg:pl-14 lg:pr-28">
         <h3 className={`text-center pt-5 ${styles.sectionHeadText}`}>Our Blogs</h3>
 
@@ -258,10 +258,10 @@ const Section = ({
 
 
   return (
-    <div className="mt-20">
+    <div className="mt-10">
       <p className="my-5 text-4xl font-bold">{title}</p>
-      <div className="mb-12 overflow-hidden rounded-2xl h-[40rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
-        <div className="grid lg:grid-cols-2">
+      <div className="mb-12 overflow-hidden rounded-2xl h-[60rem] sm:h-[80rem] lg:h-[30rem] bg-white p-2 lg:p-10 shadow-sm">
+        <div className="grid lg:grid-cols-2 gap-10 md:p-5">
           <LazyLoadImage
             src={selectedBlog.image}
             alt="Featured blog post"
