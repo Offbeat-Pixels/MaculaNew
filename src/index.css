@@ -7,7 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.hero__image {
+    --clip-size: min(5vw, 6rem);
+    clip-path: polygon(0% 0%,100% 0,100% 100%,calc(0% + var(--clip-size)) 100%,0 calc(100% - var(--clip-size)));
+}
 
 .bg-grid-primary {
   background-size: 40px 40px;

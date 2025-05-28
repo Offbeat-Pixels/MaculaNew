@@ -1382,6 +1382,256 @@
 //   );
 // }
 
+
+// @red Wokrking Carousel
+
+// import React, { useState } from "react";
+// import { motion, AnimatePresence, useInView } from "framer-motion";
+// import { Link, useNavigate } from "react-router-dom"; // Add useNavigate import
+// import { ArrowRight } from "lucide-react";
+// import { ButtonFade } from "./ui/motion.js";
+// import {
+//   slider1,
+//   slider2,
+//   slider3,
+//   slider4,
+//   slider5,
+//   slider6,
+//   slider7,
+//   slider8,
+// } from "../assets/index.js";
+// import { styles } from "../style.js";
+// import { useMediaQuery } from "react-responsive";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { useSwipeable } from "react-swipeable";
+
+// const images = [
+//   {
+//     id: 1,
+//     src: slider1,
+//     text: "Strategic Support and Accountability",
+//     subtext: "Develop actionable strategies and ensure accountability.",
+//   },
+//   {
+//     id: 2,
+//     src: slider2,
+//     text: "Goal Setting and Monitoring",
+//     subtext: "Set clear goals and track progress effectively.",
+//   },
+//   {
+//     id: 3,
+//     src: slider3,
+//     text: "Risk Mitigation",
+//     subtext: "Minimize risks and prepares for challenges.",
+//   },
+//   {
+//     id: 4,
+//     src: slider4,
+//     text: "Effective Solutions",
+//     subtext: "Deliver efficient solutions for maximum ROI.",
+//   },
+//   {
+//     id: 5,
+//     src: slider5,
+//     text: "Training and Development",
+//     subtext: "Enhance workforce skills and growth.",
+//   },
+
+//   {
+//     id: 6,
+//     src: slider7,
+//     text: " Expertise and Specialized   Knowledge",
+//     subtext:
+//       "Provide advanced expertise and addresses internal capability  gaps.",
+//   },
+//   {
+//     id: 7,
+//     src: slider8,
+//     text: "Networking Opportunities",
+//     subtext: "Connect to networks for partnerships and growth.",
+//   },
+// ];
+
+// function ImageCarousel() {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [isClicked, setIsClicked] = useState(false);
+//   const navigate = useNavigate(); // Use navigate hook here
+//   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+//   function delayAndGo(e) {
+//     e.preventDefault();
+//     setTimeout(() => navigate("/services"), 300); // Proper navigate call
+//   }
+//     const handlers = useSwipeable({
+//     onSwipedLeft: () =>
+//       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length),
+//     onSwipedRight: () =>
+//       setCurrentIndex((prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1 ),
+//     preventDefaultTouchmoveEvent: true,
+//     trackTouch: true,
+//     trackMouse: false,
+//   });
+
+//   return (
+//     <div className=" py-14 md:py-10 bg-white/90 max-h-fit max-w-screen-4xl relative">
+//       {/* Background image with blur */}
+//       <div
+//         className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
+//         style={{
+//           backgroundImage: `url(${encodeURI(images[currentIndex].src)})`,
+//           zIndex: -1,
+//         }}
+//       ></div>
+
+//       {/* Title Section */}
+//       <div className="px-2  text-center">
+//         <p className={`font-bold ${styles.sectionHeadText}`}>
+//           Why <span className="text-[#000000] italic">Consulting</span> is
+//           Important?
+//         </p>
+//         {/* <p className="text-lg md:text-xl pt-5"> */}
+//         <p className={`pt-5   ${styles.sectionSubText}`}>
+//           We specialize in providing practical advice and hands-on support to
+//           businesses like yours.
+//         </p>
+//       </div>
+
+//       {/* Content */}
+//       <div className="lg:flex w-full text-left   lg:pr-72 2xl:pr-96" {...handlers}>
+//         {/* Left Side Text */}
+//         <div className="w-full lg:flex  items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32 ">
+//           <AnimatePresence>
+//             <div
+//               key={images[currentIndex].id}
+//               className="mt-10 md:mt-24 xl:mt-0 mb-10 absolute lg:w-[30rem] 3xl:w-full"
+//             >
+//               <motion.p
+//                 initial={{ opacity: 0, y: 50 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 exit={{ opacity: 0, y: -20 }}
+//                 transition={{ duration: 0.8 }}
+//                 // className="text-2xl md:text-4xl  md:px-0 w-fit  font-semibold"
+//                 className="text-xl md:text-4xl  font-bold text-[#67883B] md:text-black mb-1"
+//               >
+//                 {images[currentIndex].text}
+//               </motion.p>
+//               <motion.p
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 exit={{ opacity: 0 }}
+//                 transition={{ duration: 1 }}
+//                 className="text-lg md:text-xl mxa-w-6xl  md:px-0 my-1 md:my-4 "
+//               >
+//                 {images[currentIndex].subtext}
+//               </motion.p>
+//             </div>
+//             <Link
+//               to="/services"
+//               onClick={delayAndGo}
+//               onMouseLeave={() => setIsClicked(false)}
+//               className="xl:flex items-center border gap-2 hidden   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
+//             >
+//               <motion.div
+//                 onClick={() => setIsClicked(true)}
+//                 variants={ButtonFade(isClicked)}
+//                 animate="animate"
+//                 className="bg-[#67883B] rounded-full p-2 shadow-md"
+//               >
+//                 <ArrowRight className="w-5 h-5 text-white transform transition-transform" />
+//               </motion.div>
+//               <motion.span
+//                 onClick={() => setIsClicked(true)}
+//                 animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
+//                 className="items-center  font-bold bg-[#67883B] text-white px-4 py-2 rounded-full transition-colors"
+//               >
+//                 Explore More
+//               </motion.span>
+//             </Link>
+//           </AnimatePresence>
+//         </div>
+
+//         {/* Right Side Slider */}
+//         <div className="w-full md:pt-44  xl:pt-0 pr-20 2xl:pr-24">
+//           <div className="relative flex justify-center items-center w-full h-[65vh] md:h-[50vh] lg:h-[80vh]">
+//             {images.map((image, index) => {
+//               const isActive = index === currentIndex;
+//               const offset = (index - currentIndex) % images.length;
+//               const imageGap = isMobile ? 10 : 20; // Adjust gap for mobile
+//               const translateX = isMobile ? 150 : 400; // Movement adjustment for mobile
+//               const scale = isMobile
+//                 ? isActive
+//                   ? 1
+//                   : 0.5
+//                 : isActive
+//                 ? 1
+//                 : 0.7;
+
+//               return (
+//                 <motion.div
+//                   key={image.id}
+//                   className="absolute ml-5 mt-52 md:mt-24 xl:mt-0 "
+//                   style={
+//                     {
+//                       // transform: `translateX(${offset * (100 + imageGap)}px)`,
+//                       // zIndex: images.length - Math.abs(offset),
+//                     }
+//                   }
+//                   animate={{
+//                     scale: scale,
+//                     // x: offset * (translateX + imageGap),
+//                     x: isActive ? 0 : offset * translateX + 70,
+//                     y: isActive ? 0 : isMobile ? 50 : 70,
+//                     opacity: offset < 0 ? 0 : 1,
+//                   }}
+//                   transition={{
+//                     type: "spring",
+//                     delay: 0.1,
+//                     duration: 1,
+//                     stiffness: isMobile ? 100 : 100,
+//                     damping: isMobile ? 15 : 20,
+//                   }}
+//                   onClick={() => setCurrentIndex(index)}
+//                 >
+//                   <LazyLoadImage
+//                     src={image.src}
+//                     alt={image.text}
+//                     // @red Images are correct just need to upload same rounded image
+//                     className={` rounded-[3rem]  cursor-pointer object-center object-cover ${
+//                       isMobile
+//                         ? "w-[18rem] h-[18rem]"
+//                         : "md:w-[30rem] md:h-[30rem]  "
+//                     } `}
+//                   />
+//                 </motion.div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Pagination Dots */}
+//       <div className="hidden md:flex justify-center ">
+//         {images.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => setCurrentIndex(index)}
+//             className={`w-4 h-4 mx-2 rounded-full ${
+//               index === currentIndex
+//                 ? "bg-gray-800"
+//                 : "bg-gray-400 hover:bg-gray-600"
+//             }`}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ImageCarousel;
+
+
+
+
 import React, { useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom"; // Add useNavigate import
@@ -1401,6 +1651,7 @@ import { styles } from "../style.js";
 import { useMediaQuery } from "react-responsive";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSwipeable } from "react-swipeable";
+import ShinyText from "./ui/ShinyText.jsx";
 
 const images = [
   {
@@ -1470,37 +1721,31 @@ function ImageCarousel() {
   });
 
   return (
-    <div className=" py-14 md:py-10 bg-white/90 max-h-fit max-w-screen-4xl relative">
-      {/* Background image with blur */}
-      <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center filter"
-        style={{
-          backgroundImage: `url(${encodeURI(images[currentIndex].src)})`,
-          zIndex: -1,
-        }}
-      ></div>
-
+    <div className=" py-14 md:py-10 bg-[#e7f0e7]  max-h-fit max-w-screen-4xl relative">
       {/* Title Section */}
       <div className="px-2  text-center">
-        <p className={`font-bold ${styles.sectionHeadText}`}>
-          Why <span className="text-[#000000] italic">Consulting</span> is
+        <p className={`text-4xl md:text-5xl font-serif`}>
+          Why <span className="text-[#3D533D] italic">Consulting</span> is
           Important?
         </p>
         {/* <p className="text-lg md:text-xl pt-5"> */}
-        <p className={`pt-5   ${styles.sectionSubText}`}>
+        <p className={`pt-5   text-2xl md:text-3xl font-serif`}>
           We specialize in providing practical advice and hands-on support to
           businesses like yours.
         </p>
       </div>
 
       {/* Content */}
-      <div className="lg:flex w-full text-left   lg:pr-72 2xl:pr-96" {...handlers}>
+      <div
+        className="lg:flex w-full text-left   lg:pr-72 2xl:pr-96"
+        {...handlers}
+      >
         {/* Left Side Text */}
-        <div className="w-full lg:flex  items-center tracking-tighter pl-5 md:pl-14  2xl:pl-32 ">
+        <div className="w-full lg:flex  items-center  pl-5 md:pl-14  2xl:pl-32 ">
           <AnimatePresence>
             <div
               key={images[currentIndex].id}
-              className="mt-10 md:mt-24 xl:mt-0 mb-10 absolute lg:w-[30rem] 3xl:w-full"
+              className="mt-10 md:mt-24 xl:mt-0 mb-10 absolute lg:w-[32rem] 3xl:w-full"
             >
               <motion.p
                 initial={{ opacity: 0, y: 50 }}
@@ -1508,7 +1753,7 @@ function ImageCarousel() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8 }}
                 // className="text-2xl md:text-4xl  md:px-0 w-fit  font-semibold"
-                className="text-xl md:text-4xl  font-bold text-[#67883B] md:text-black mb-1"
+                className="text-3xl  font-serif mb-1"
               >
                 {images[currentIndex].text}
               </motion.p>
@@ -1517,7 +1762,7 @@ function ImageCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1 }}
-                className="text-lg md:text-xl mxa-w-6xl  md:px-0 my-1 md:my-4 "
+                className="text-lg md:text-xl font-serif mxa-w-6xl  md:px-0 my-1 md:my-4 "
               >
                 {images[currentIndex].subtext}
               </motion.p>
@@ -1526,22 +1771,27 @@ function ImageCarousel() {
               to="/services"
               onClick={delayAndGo}
               onMouseLeave={() => setIsClicked(false)}
-              className="xl:flex items-center border gap-2 hidden   lg:mt-52 bg-white w-fit pl-2 rounded-full hover:bg-slate-300 transition-colors"
+              className="xl:flex items-center border gap-2 hidden   lg:mt-52 bg-white w-fit pl-2 rounded- hover:bg-slate-300 transition-colors"
             >
               <motion.div
                 onClick={() => setIsClicked(true)}
                 variants={ButtonFade(isClicked)}
                 animate="animate"
-                className="bg-[#67883B] rounded-full p-2 shadow-md"
+                className="bg-[#000000] rounded-full p-2 shadow-md"
               >
                 <ArrowRight className="w-5 h-5 text-white transform transition-transform" />
               </motion.div>
               <motion.span
                 onClick={() => setIsClicked(true)}
                 animate={isClicked ? { opacity: 0 } : { opacity: 1 }}
-                className="items-center  font-bold bg-[#67883B] text-white px-4 py-2 rounded-full transition-colors"
+                className="items-center  font-bold bg-[#000000] text-white px-4 py-2 rounded- transition-colors"
               >
-                Explore More
+                <ShinyText
+                  text="Explore More"
+                  disabled={false}
+                  speed={1}
+                  className=" "
+                />
               </motion.span>
             </Link>
           </AnimatePresence>
@@ -1625,3 +1875,11 @@ function ImageCarousel() {
 }
 
 export default ImageCarousel;
+
+
+
+
+
+
+
+
